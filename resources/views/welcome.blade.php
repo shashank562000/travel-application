@@ -40,6 +40,17 @@
             border: 1px solid white;
             margin-bottom: 300px;
         }
+        .form-control{
+            width:20%;
+            margin:10px;
+        }
+        .search-box{
+            padding: 30px;
+            display: flex;
+        }
+        .search-container{
+            background: rgba( 0, 46, 64, 1.00 );
+        }
     </style>
 </head>
 
@@ -62,19 +73,32 @@
     @include('partials.header')
 
     <section class="custom-section text-center " style="padding:0">
-        <div class="container-fluid" style="background-color:#232f66!important;color:white;font-family:none">
-            <h2> Your Adventure Begins Here </h2>
-           
-                
+        <div class="search-container">
+            <h1 class="pt-4 text-white">Your Adventure Begins Here </h1>
+            <div class="search-box">
+                <input type="text" class="form-control" placeholder="Keywords">
+                <select class="form-control">
+                    <option value="" disabled selected>Category</option>
+                    <!-- Add category options here -->
+                </select>
+                <select class="form-control">
+                    <option value="" disabled selected>Activity</option>
+                    <!-- Add activity options here -->
+                </select>
+                <select class="form-control">
+                    <option value="" disabled selected>Destination</option>
+                    <!-- Add destination options here -->
+                </select>
+                <button type="button" class="form-control">Search</button>
+            </div>
         </div>
         <div class="container">
-            <h2>Affordable Tours From 2 - 15 Days</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            <a href="#" class="btn btn-primary">DETAILS</a>
+            <div class="gdlr-core-pbf-wrapper " style="padding: 80px 0px 30px 0px;" data-skin="WildChina Section"><div class="gdlr-core-pbf-background-wrap"></div><div class="gdlr-core-pbf-wrapper-content gdlr-core-js "><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container"><div class="gdlr-core-pbf-element"><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;"><div class="gdlr-core-title-item-title-wrap"><h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 38px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Journey Through History & Natural Wonders<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h1></div></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-top: 20px ;margin-bottom: 20px ;"><div class="gdlr-core-divider-container" style="max-width: 640px ;"><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #999999 ;"></div></div></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align"><div class="gdlr-core-text-box-item-content" style="text-transform: none ;"><p style="text-align: center;">Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable .</p><p style="text-align: center;">people you can imagine. It’s a place where an adventurous soul will ﬁt right in and 
+                where a wanderlust spirit will ﬁnally feel at peace.&nbsp;</p></div></div></div><div class="gdlr-core-pbf-element"><div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"><div class="gdlr-core-title-item-title-wrap"><h2 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 22px ;font-weight: 400 ;font-style: italic ;text-transform: none ;color: #898989 ;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h2></div></div></div></div></div></div>
         </div>
     </section>
 
-    <section class="custom-section bg-light text-center">
+    <section class="custom-section bg-light text-center" style="background-image:url()">
         <div class="container">
             <h2>Our Favourite Expert-Led Tours</h2>
             <div class="row">

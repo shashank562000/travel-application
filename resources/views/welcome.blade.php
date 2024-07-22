@@ -36,6 +36,10 @@
             padding: 270px 0 0 0;
             background-repeat: no-repeat;
         }
+        a.btn{
+            border: 1px solid white;
+            margin-bottom: 300px;
+        }
     </style>
 </head>
 
@@ -55,90 +59,13 @@
             </ul>
         </div>
     </nav> --}}
-
-    <nav class="navbar navbar-expand-lg navbar-dark" style="position: absolute;width:100%">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Plan Your Trip</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tours & Excursions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">What We Offer</a>
-            </li>
-            <li class="nav-item logo-item">
-              <a class="navbar-brand" href="#">
-                <img src="../resources/images/full lofo.png" alt="Adventure Planners Pakistan" width="150" height="100">
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Why Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog & Videos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Start Planning</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    
-      <!-- Hero Section -->
-      {{-- <section class="hero-section">
-        <div class="hero-content">
-          <h1>ADVENTURE PLANNERS PAKISTAN</h1>
-          <h2>NAMED AS</h2>
-          <h1>DESTINATION OF THE YEAR</h1>
-          <p>By Condé Nast Traveller magazine</p>
-          <p>Here's what you need to know to enter Pakistan in 2024</p>
-          <a href="#" class="read-more-btn">READ MORE</a>
-        </div>
-      </section> --}}
-    <header class="hero-section">
-        <div class="container">
-            <h1>Destination of the year</h1>
-            <p>Journey Through History & Natural Wonders</p>
-            <a href="#" class="btn btn-primary">Start Planning</a>
-        </div>
-    </header>
-
+    @include('partials.header')
 
     <section class="custom-section text-center " style="padding:0">
         <div class="container-fluid" style="background-color:#232f66!important;color:white;font-family:none">
             <h2> Your Adventure Begins Here </h2>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Plan Your Trip</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Tours & Excursions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">What We Offer</a>
-                  </li>
-                  <li class="nav-item logo-item">
-                    <a class="navbar-brand" href="#">
-                      <img src="../resources/images/full lofo.png" alt="Adventure Planners Pakistan" width="150" height="100">
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Why Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Blog & Videos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Start Planning</a>
-                  </li>
-                </ul>
-              </div>
+           
+                
         </div>
         <div class="container">
             <h2>Affordable Tours From 2 - 15 Days</h2>
@@ -213,11 +140,11 @@
         </div>
     </section>
 
-    <footer class="footer">
+    {{-- <footer class="footer"> 
         <div class="container">
             <p>© 2010-2024 - ALL RIGHTS RESERVED | TERMS & CONDITIONS | PRIVACY POLICY | SUPPORT CENTER</p>
         </div>
-    </footer>
+    </footer> --}}
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

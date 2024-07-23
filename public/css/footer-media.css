@@ -1,0 +1,71 @@
+
+@media (max-width: 767.98px) {
+    .zero-section h1.text-white {
+        font-size: 50px;
+        letter-spacing: 10px;
+    }
+    .zero-section input {
+        margin-bottom: 10px;
+    }
+    .zero-section .row {
+        text-align: center;
+    }
+    .zero-section .col-6 {
+        border-right: 0px;
+        margin-bottom: 20px;
+    }
+    .zero-section .col-4 {
+        margin-bottom: 20px;
+    }
+    .zero-section .text-center {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .zero-section h1.text-white {
+        font-size: 75px;
+        letter-spacing: 20px;
+    }
+    .zero-section .col-6 {
+        border-right: 1px solid white;
+    }
+    .zero-section .row {
+        text-align: left;
+    }
+    .zero-section .text-center {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .zero-section h1.text-white {
+        font-size: 100px;
+        letter-spacing: 25px;
+    }
+    .zero-section .col-6 {
+        border-right: 1px solid white;
+    }
+    .zero-section .row {
+        text-align: left;
+    }
+    .zero-section .text-center {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .zero-section h1.text-white {
+        font-size: 125px;
+        letter-spacing: 33px;
+    }
+    .zero-section .col-6 {
+        border-right: 2px solid white;
+    }
+    .zero-section .row {
+        text-align: left;
+    }
+    .zero-section .text-center {
+        text-align: center;
+    }
+}

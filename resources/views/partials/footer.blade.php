@@ -1,18 +1,17 @@
 <section class="footer">
     <div class="container-fluid zero-section">
-        <h1 class="text-white"> ADVENTURE </h1>
+        <h1 class="text-white" style="font-family:sans-serif!important"> ADVENTURE </h1>
         <form action="" class="form-group">
             <h4 class="text-white">Keep me updated</h4>
             <div class="form-group ">
-                <input type="text" class="mb-4" placeholder="First Name">
-                <input type="text" class="mb-4" placeholder="Last Name">
+                <input type="text" class="mb-4" placeholder="First Name" style="background-color:transparent!important">
+                <input type="text" class="mb-4" placeholder="Last Name" style="background-color:transparent!important">
             </div>
             <div class="form-group ">
-                <input type="text" class="mb-4" placeholder="Email">
-                <input type="text" class="mb-4 d-none" placeholder="Email">
+                <input type="text" class="mb-4" placeholder="Email" style="background-color:transparent!important">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-light"> SUBMIT </button>
+                <button type="submit" class="btn btn-outline-light" style="background-color:transparent"> SUBMIT </button>
             </div>
         </form>
         <div class="row" style="display:flex;justify-content:center">

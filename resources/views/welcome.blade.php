@@ -113,7 +113,7 @@
 
 <body>
     @include('partials.header')
-
+    @include('partials.hero')
     <section class="custom-section text-center " style="padding:0;">
         <div class="search-container">
             <h1 class="pt-4 text-white">Your Adventure Begins Here </h1>

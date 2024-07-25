@@ -1,118 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventure Planners Pakistan</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('css/header.css')}}" rel="stylesheet">
-    <link href="{{asset('css/header-media.css')}}" rel="stylesheet">
-    <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <style>
-        @media (max-width: 767.98px) {
-        .search-box {
-            flex-direction: column;
-        }
-        .search-box input,
-        .search-box select,
-        .search-box button {
-            width: 100%;
-            margin-bottom: 10px;
-            background-color: lightgray;
-        }
-
-        .journey-card {
-            margin-bottom: 20px;
-        }
-        .journey-card img {
-            width: 100%;
-        }
-        .support-section img {
-            width: 100%;
-        }
-        .month-card {
-            width: 100%;
-        }
+@extends('layouts.default')
+@section('content')
+<style>
+    @media (max-width: 767.98px) {
+    .search-box {
+        flex-direction: column;
+    }
+    .search-box input,
+    .search-box select,
+    .search-box button {
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: lightgray;
     }
 
-    @media (min-width: 768px) and (max-width: 991.98px) {
-        .search-box {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .search-box input,
-        .search-box select,
-        .search-box button {
-            width: 30%;
-        }
+    .journey-card {
+        margin-bottom: 20px;
+    }
+    .journey-card img {
+        width: 100%;
+    }
+    .support-section img {
+        width: 100%;
+    }
+    .month-card {
+        width: 100%;
+    }
+}
 
-        .journey-card img {
-            width: 100%;
-        }
-        .support-section img {
-            width: 100%;
-        }
-        .month-card {
-            width: 48%;
-            margin-bottom: 20px;
-        }
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .search-box {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .search-box input,
+    .search-box select,
+    .search-box button {
+        width: 30%;
     }
 
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-        .search-box {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .search-box input,
-        .search-box select,
-        .search-box button {
-            width: 24%;
-        }
-
-        .journey-card img {
-            width: 100%;
-        }
-        .support-section img {
-            width: 100%;
-        }
-        .month-card {
-            width: 30%;
-            margin-bottom: 20px;
-        }
+    .journey-card img {
+        width: 100%;
     }
-    .search-container{
-        background-color:#002e44;
+    .support-section img {
+        width: 100%;
+    }
+    .month-card {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .search-box {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .search-box input,
+    .search-box select,
+    .search-box button {
+        width: 24%;
     }
 
-    @media (min-width: 1200px) {
-        .search-box {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .search-box input,
-        .search-box select,
-        .search-box button {
-            width: 20%;
-        }
-
-        .journey-card img {
-            width: 100%;
-        }
-        .support-section img {
-            width: 100%;
-        }
-        .month-card {
-            width: 23%;
-            margin-bottom: 20px;
-        }
+    .journey-card img {
+        width: 100%;
     }
-    </style>
-</head>
+    .support-section img {
+        width: 100%;
+    }
+    .month-card {
+        width: 30%;
+        margin-bottom: 20px;
+    }
+}
+.search-container{
+    background-color:#002e44;
+}
 
-<body>
-    @include('partials.header')
+@media (min-width: 1200px) {
+    .search-box {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .search-box input,
+    .search-box select,
+    .search-box button {
+        width: 20%;
+    }
+
+    .journey-card img {
+        width: 100%;
+    }
+    .support-section img {
+        width: 100%;
+    }
+    .month-card {
+        width: 23%;
+        margin-bottom: 20px;
+    }
+}
+</style>
+@include('partials.header')
+@include('partials.hero')
 
     <section class="custom-section text-center " style="padding:0;">
         <div class="search-container">
@@ -307,11 +295,5 @@
         </div>
     </div>
 
-    @include('partials.footer')
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+@include('partials.footer')
+@endsection

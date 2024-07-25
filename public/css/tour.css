@@ -1,0 +1,91 @@
+
+.tour-booking {
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+.container {
+width: 80%;
+margin: 0 auto;
+}
+
+.tour-details {
+margin-bottom: 20px;
+}
+
+.booking-form {
+background-color: #fff;
+padding: 20px;
+border-radius: 5px;
+}
+
+.booking-form h3 {
+margin-top: 0;
+}
+
+.booking-form label {
+display: block;
+margin-bottom: 5px;
+}
+
+.booking-form input {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.booking-form button {
+background-color: #ff9900;
+border: none;
+padding: 10px 20px;
+color: #fff;
+cursor: pointer;
+}
+
+.location-map {
+padding: 20px 0;
+}
+
+.map-image {
+width: 100%;
+height: auto;
+}
+
+.highlights {
+background-color: #f4f4f4;
+padding: 20px 0;
+}
+
+.highlight-cards {
+display: flex;
+gap: 20px;
+}
+
+.card {
+background-color: #fff;
+padding: 20px;
+border-radius: 5px;
+text-align: center;
+width: 45%;
+}
+
+.more-tours {
+padding: 20px 0;
+}
+
+.tour-cards {
+display: flex;
+gap: 20px;
+}
+
+.tour-cards .card {
+width: 22%;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}

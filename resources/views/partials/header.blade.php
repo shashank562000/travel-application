@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark" style="position: absolute; width:100%;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,7 +15,7 @@
             </li>
             <li class="nav-item logo-item">
                 <a class="navbar-brand" href="#">
-                    <img src="../resources/images/full lofo.png" alt="Adventure Planners Pakistan" width="150" height="100">
+                    <img src="{{ asset('images/full lofo.png') }}" alt="Adventure Planners Pakistan" width="150" height="100">
                 </a>
             </li>
             <li class="nav-item">
@@ -32,21 +31,3 @@
     </div>
 </nav>
 
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-        <p>NAMED AS</p>
-        <h1>DESTINATION OF THE YEAR</h1>
-        <i>By Condé Nast Traveller magazine</i>
-        <p>Here's what you need to know to enter Pakistan in 2024</p>
-        <a href="#" class="btn text-white">READ MORE</a>
-    </div>
- </section>
-{{-- <header class="hero-section">
-    <div class="container">
-        <h1>Destination of the year</h1>
-        <p>Journey Through History & Natural Wonders</p>
-        <a href="#" class="btn btn-primary">Start Planning</a>
-    </div>
-</header> --}}

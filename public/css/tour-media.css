@@ -1,0 +1,67 @@
+@media (max-width: 1200px) {
+    .booking-form {
+        left: 65%;
+        top: -85%!important;
+    }
+    .nav-link {
+        width: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .booking-form {
+        left: 60%;
+        top: -80%!important;
+    }
+    .nav-link {
+        width: 130px;
+    }
+    .tour-details .col-4,
+    .tour-details .col-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-form {
+        left: 50%;
+        top: -75%!important;
+        width: 40%;
+    }
+    .nav-link {
+        width: 100px;
+    }
+    .submitBtn {
+        width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    .booking-form {
+        left: 45%;
+        top: -70%!important;
+        width: 50%;
+    }
+    .nav-link {
+        width: 80px;
+    }
+    .submitBtn {
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    .booking-form {
+        left: 40%;
+        top: -65%!important;
+        width: 60%;
+    }
+    .nav-link {
+        width: 60px;
+    }
+    .submitBtn {
+        width: 100%;
+    }
+}

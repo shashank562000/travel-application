@@ -4,8 +4,7 @@
     font-weight: 500;
 }
 .hero-section {
-    background: url('../images/landing-header.jpg') no-repeat center center;
-    background-size: cover;
+    background-size: cover!important;
     color: white;
     text-align: center;
     padding: 100px 0;
@@ -41,7 +40,7 @@
 }
 .hero-section a.btn {
     border: 1px solid white;
-    margin-bottom: 30px;
+    margin-bottom: 131px;
 }
 .form-control {
     width: 20%;

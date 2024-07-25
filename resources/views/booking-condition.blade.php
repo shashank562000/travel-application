@@ -9,12 +9,14 @@
 <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
 <body class="page-template-default page page-id-27965 gdlr-core-body tourmaster-body traveltour-body traveltour-body-front traveltour-full  traveltour-with-sticky-navigation gdlr-core-link-to-lightbox">
 
-    @include('partials.header')
+    {{-- @include('partials.header') --}}
     @include('partials.head.booking-condition')
+    @include('partials.head.header')
     <!-- header end -->
     <div class="traveltour-body-outer-wrapper ">
         <div class="traveltour-body-wrapper clearfix  traveltour-with-transparent-header traveltour-with-frame">
             <!-- header inclued here -->
+            @include('partials.head.header-transparent')
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
                     <div class="gdlr-core-pbf-wrapper gdrl-bg" style="padding: 400px 0px 200px 0px;">

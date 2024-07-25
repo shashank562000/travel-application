@@ -3,15 +3,16 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link href="{{asset('css/header.css')}}" rel="stylesheet">
 <link href="{{asset('css/header-media.css')}}" rel="stylesheet">
-<link href="{{ asset('css/footer.css') }}" rel="stylesheet" >
+<link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
 
 <body class="tour-template-default single single-tour postid-32947 gdlr-core-body tourmaster-bottom-booking-bar tourmaster-mobile-read-more tourmaster-body traveltour-body traveltour-body-front traveltour-full  traveltour-with-sticky-navigation gdlr-core-link-to-lightbox">
-@include('partials.header')
-@include('partials.head.booking-condition')
+    {{-- @include('partials.header') --}}
+    @include('partials.head.booking-condition')
+    @include('partials.head.header')
     <div class="traveltour-body-outer-wrapper ">
         <div class="traveltour-body-wrapper clearfix  traveltour-with-transparent-header traveltour-with-frame">
-           
+            @include('partials.head.header-transparent')
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
                 <div class="tourmaster-page-wrapper tourmaster-tour-style-1 tourmaster-with-sidebar" id="tourmaster-page-wrapper">
                     <script type="application/ld+json">
@@ -118,7 +119,7 @@
                                                     });
                                                 </script>
                                                 <div class='gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper gform-theme--no-framework' data-form-theme='legacy' data-form-index='0' id='gform_wrapper_1'>
-                                                    <form method='post' enctype='multipart/form-data' id='gform_1' action='https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/' data-formid='1' novalidate> <input type='hidden' class='gforms-pum' value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}' />
+                                                    <form method='post' enctype='multipart/form-data' id='gform_1' action='#' data-formid='1' novalidate> <input type='hidden' class='gforms-pum' value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}' />
                                                         <div class='gform-body gform_body'>
                                                             <ul id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below validation_below'>
                                                                 <li id="field_1_1" class="gfield gfield--type-text gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_1"><label class='gfield_label gform-field-label' for='input_1_1'>Given name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label>
@@ -414,7 +415,7 @@
                                                                     <div class='ginput_container ginput_container_date'>
                                                                         <input name='input_7' id='input_1_7' type='text' value='' class='datepicker gform-datepicker mdy datepicker_with_icon gdatepicker_with_icon' placeholder='mm/dd/yyyy' aria-describedby="input_1_7_date_format" aria-invalid="false" /> <span id='input_1_7_date_format' class='screen-reader-text'>MM slash DD slash
                                                                             YYYY</span>
-                                                                    </div> <input type='hidden' id='gforms_calendar_icon_input_1_7' class='gform_hidden' value='https://wildchina.com/wp-content/plugins/gravityforms/images/datepicker/datepicker.svg' />
+                                                                    </div> <input type='hidden' id='gforms_calendar_icon_input_1_7' class='gform_hidden' value='../../wp-content/plugins/gravityforms/images/datepicker/datepicker.svg' />
                                                                 </li>
                                                                 <li id="field_1_8" class="gfield gfield--type-checkbox gfield--type-choice field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_1_8"><label class='gfield_label gform-field-label gfield_label_before_complex'>Travel
                                                                         interests</label>
@@ -501,7 +502,7 @@
                                                                     <div class='ginput_container ginput_container_radio'>
                                                                         <ul class='gfield_radio' id='input_1_12'>
                                                                             <li class='gchoice gchoice_1_12_0'> <input name='input_12' type='radio' value='Yes, I&#039;ve read the &lt;a href=_https_/wildchina.com/terms/_terms.html and conditions&lt;/a&gt;' id='choice_1_12_0' /> <label for='choice_1_12_0' id='label_1_12_0' class='gform-field-label gform-field-label--type-inline'>Yes,
-                                                                                    I've read the <a href="https://wildchina.com/terms/">terms
+                                                                                    I've read the <a href="#">terms
                                                                                         and conditions</a></label></li>
                                                                         </ul>
                                                                     </div>
@@ -529,7 +530,7 @@
                                                 <script type="text/javascript">
                                                     /* <![CDATA[ */
                                                     gform.initializeOnLoaded(function() {
-                                                        gformInitSpinner(1, 'https://wildchina.com/wp-content/plugins/gravityforms/images/spinner.svg', true);
+                                                        gformInitSpinner(1, '../../wp-content/plugins/gravityforms/images/spinner.svg', true);
                                                         jQuery('#gform_ajax_frame_1').on('load', function() {
                                                             var contents = jQuery(this).contents().find('*').html();
                                                             var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;
@@ -558,7 +559,7 @@
                                                                     gformInitPriceFields();
                                                                 }
                                                                 var current_page = jQuery('#gform_source_page_number_1').val();
-                                                                gformInitSpinner(1, 'https://wildchina.com/wp-content/plugins/gravityforms/images/spinner.svg', true);
+                                                                gformInitSpinner(1, '../../wp-content/plugins/gravityforms/images/spinner.svg', true);
                                                                 jQuery(document).trigger('gform_page_loaded', [1, current_page]);
                                                                 window['gf_submitting_1'] = false;
                                                             } else if (!is_redirect) {
@@ -665,7 +666,7 @@
                                                     </div>
                                                     <div class="tourmaster-lightbox-content">
                                                         <div class="tourmaster-login-form2-wrap clearfix">
-                                                            <form class="tourmaster-login-form2 tourmaster-form-field tourmaster-with-border" method="post" action="https://wildchina.com/wp-login.php">
+                                                            <form class="tourmaster-login-form2 tourmaster-form-field tourmaster-with-border" method="post" action="">
                                                                 <h3 class="tourmaster-login-title">Already A Member?
                                                                 </h3>
                                                                 <div class="tourmaster-login-form-fields clearfix">
@@ -676,7 +677,7 @@
                                                                     </p>
                                                                 </div>
                                                                 <p class="tourmaster-login-submit"> <input type="submit" name="wp-submit" class="tourmaster-button" value="Sign In!" /></p>
-                                                                <p class="tourmaster-login-lost-password"> <a href="https://wildchina.com/wp-login.php?action=lostpassword&amp;source=tm&amp;lang">Forget
+                                                                <p class="tourmaster-login-lost-password"> <a href="">Forget
                                                                         Password?</a></p> <input type="hidden" name="rememberme" value="forever" /> <input type="hidden" name="redirect_to" value="/tour/hiking-the-great-wall-jiankou-to-mutianyu/" />
                                                                 <input type="hidden" name="source" value="tm" />
                                                             </form>
@@ -688,7 +689,7 @@
                                                                         When you book with an account, you will be able
                                                                         to track your payment status, track the
                                                                         confirmation and you can also rate the tour
-                                                                        after you finished the tour.</div> <a class="tourmaster-button tourmaster-register-button" href="https://wildchina.com/?redirect=32947">Sign
+                                                                        after you finished the tour.</div> <a class="tourmaster-button tourmaster-register-button" href="">Sign
                                                                         Up</a>
                                                                 </div>
                                                             </div>
@@ -722,7 +723,7 @@
                                                     WildChina_Journeys. On WeChat, you&#8217;ll have China-travel
                                                     inspiration at your fingertips and we have travel designers on call
                                                     24/7 to answer your questions.</p>
-                                                <p><img decoding="async" class="alignnone size-full wp-image-27439" src="../../wp-content/uploads/2020/08/wechat.png" alt="" width="344" height="344" srcset="https://wildchina.com/wp-content/uploads/2020/08/wechat.png 344w, https://wildchina.com/wp-content/uploads/2020/08/wechat-300x300.png 300w, https://wildchina.com/wp-content/uploads/2020/08/wechat-150x150.png 150w" sizes="(max-width: 344px) 100vw, 344px" /></p>
+                                                <p><img decoding="async" class="alignnone size-full wp-image-27439" src="../../wp-content/uploads/2020/08/wechat.png" alt="" width="344" height="344" srcset="../..//wp-content/uploads/2020/08/wechat.png 344w, ../..//wp-content/uploads/2020/08/wechat-300x300.png 300w, ../../wp-content/uploads/2020/08/wechat-150x150.png 150w" sizes="(max-width: 344px) 100vw, 344px" /></p>
                                             </div>
                                         </div>
                                     </div>
@@ -1263,42 +1264,42 @@
                                                                     <ul class="slides">
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay.jpg" width="1200" height="800" srcset="https://wildchina.com/wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay.jpg" width="1200" height="800" srcset="../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay-400x266.jpg 400w, ../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay-600x400.jpg 600w, ../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay-800x533.jpg 800w, ../../wp-content/uploads/2022/11/mutianyu-4822218-Image-by-H.-Hach-from-Pixabay.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg" width="1200" height="784" srcset="https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay-400x261.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay-600x392.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay-800x522.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg" width="1200" height="784" srcset="../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay-400x261.jpg 400w, ../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay-600x392.jpg 600w, ../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay-800x522.jpg 800w, ../../wp-content/uploads/2022/11/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/i-qBhGCt5-X3.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/i-qBhGCt5-X3.jpg" width="1200" height="801" srcset="https://wildchina.com/wp-content/uploads/2022/11/i-qBhGCt5-X3-400x267.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/i-qBhGCt5-X3-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/i-qBhGCt5-X3-800x534.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/i-qBhGCt5-X3.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/i-qBhGCt5-X3.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/i-qBhGCt5-X3.jpg" width="1200" height="801" srcset="../../wp-content/uploads/2022/11/i-qBhGCt5-X3-400x267.jpg 400w, ../../wp-content/uploads/2022/11/i-qBhGCt5-X3-600x400.jpg 600w, ../../wp-content/uploads/2022/11/i-qBhGCt5-X3-800x534.jpg 800w, ../../wp-content/uploads/2022/11/i-qBhGCt5-X3.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina.jpg" width="1200" height="800" srcset="https://wildchina.com/wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina.jpg" width="1200" height="800" srcset="../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina-400x266.jpg 400w, ../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina-600x400.jpg 600w, ../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina-800x533.jpg 800w, ../../wp-content/uploads/2022/11/Beijing-Great-Wall.-Photo-credit-WildChina.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW.jpg" width="1200" height="800" srcset="https://wildchina.com/wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW.jpg" width="1200" height="800" srcset="../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW-400x266.jpg 400w, ../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW-600x400.jpg 600w, ../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW-800x533.jpg 800w, ../../wp-content/uploads/2022/11/The-Great-Wall-Beijing-WOW.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg" width="1200" height="801" srcset="https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image-400x267.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image-800x534.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg" width="1200" height="801" srcset="../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image-400x267.jpg 400w, ../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image-600x400.jpg 600w, ../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image-800x534.jpg 800w, ../../wp-content/uploads/2022/11/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu.jpg" width="1200" height="800" srcset="https://wildchina.com/wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu.jpg" width="1200" height="800" srcset="../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu-400x266.jpg 400w, ../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu-600x400.jpg 600w, ../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu-800x533.jpg 800w, ../../wp-content/uploads/2022/11/i-Cb99Pzk-X3_mutianyu.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                         <li>
                                                                             <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg" width="1200" height="800" srcset="https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
+                                                                                <a class="gdlr-core-ilightbox gdlr-core-js " href="../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg" data-ilightbox-group="gdlr-core-img-group-1" data-type="image"><img src="../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg" width="1200" height="800" srcset="../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay-400x266.jpg 400w, ../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay-600x400.jpg 600w, ../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay-800x533.jpg 800w, ../../wp-content/uploads/2022/11/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg 1200w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="Great Wall of China" /></a>
                                                                             </div>
                                                                         </li>
                                                                     </ul>
@@ -1315,7 +1316,8 @@
                                     <div class="gdlr-core-pbf-section-container gdlr-core-container clearfix">
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-right-align gdlr-core-social-share-left-text gdlr-core-item-mglr gdlr-core-style-plain" style="padding-bottom: 10px ;"><span class="gdlr-core-social-share-count gdlr-core-skin-title" style="color: #002e40 ;"><span class="gdlr-core-suffix">SHARE THIS
-                                                        JOURNEY</span><span class="gdlr-core-divider gdlr-core-skin-divider" style="border-color: #002e40 ;"></span></span><span class="gdlr-core-social-share-wrap"><a class="gdlr-core-social-share-facebook" href="https://www.facebook.com/sharer/sharer.php?caption=WildBeijing%3A+Hiking+the+Great+Wall+%E2%80%93+Jiankou+to+Mutianyu&amp;u=https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/" target="_blank" onclick="javascript:window.open(this.href,&#039;&#039;, &#039;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=602,width=555&#039;);return false;" style="font-size: 18px ;color: #002e40 ;"><i class="fa fa-facebook"></i></a><a class="gdlr-core-social-share-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/&amp;title=WildBeijing%3A+Hiking+the+Great+Wall+%E2%80%93+Jiankou+to+Mutianyu" target="_blank" onclick="javascript:window.open(this.href,&#039;&#039;, &#039;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=452,width=550&#039;);return false;" style="font-size: 18px ;color: #002e40 ;"><i class="fa fa-linkedin"></i></a><a class="gdlr-core-social-share-pinterest" href="../../../pinterest.com/pin/create/button/indexe7ea.html?url=https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/&amp;media=https://wildchina.com/wp-content/uploads/2022/11/Great-Wall-sunset-Image-by-u_2ui6kzp77g-from-Pixabay-001.jpg" target="_blank" onclick="javascript:window.open(this.href,&#039;&#039;, &#039;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=553,width=750&#039;);return false;" style="font-size: 18px ;color: #002e40 ;"><i class="fa fa-pinterest-p"></i></a><a class="gdlr-core-social-share-stumbleupon" href="http://www.stumbleupon.com/submit?url=https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/&amp;title=WildBeijing%3A+Hiking+the+Great+Wall+%E2%80%93+Jiankou+to+Mutianyu" target="_blank" onclick="javascript:window.open(this.href,&#039;&#039;, &#039;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=553,width=750&#039;);return false;" style="font-size: 18px ;color: #002e40 ;"><i class="fa fa-stumbleupon"></i></a><a class="gdlr-core-social-share-twitter" href="https://twitter.com/intent/tweet?text=WildBeijing%3A+Hiking+the+Great+Wall+%E2%80%93+Jiankou+to+Mutianyu&amp;url=https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/" target="_blank" onclick="javascript:window.open(this.href,&#039;&#039;, &#039;menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=255,width=555&#039;);return false;" style="font-size: 18px ;color: #002e40 ;"><i class="fa fa-twitter"></i></a><a class="gdlr-core-social-share-email" href="mailto:?subject=Site%20sharing&#038;body=Please%20check%20this%20site%20out%20https://wildchina.com/tour/hiking-the-great-wall-jiankou-to-mutianyu/" style="font-size: 18px ;color: #002e40 ;"><i class="fa fa-envelope"></i></a></span></div>
+                                                        JOURNEY</span><span class="gdlr-core-divider gdlr-core-skin-divider" style="border-color: #002e40 ;"></span></span>
+                                            </div>
                                         </div>
                                         <div class="gdlr-core-pbf-element">
                                             <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-top: 10px ;margin-bottom: 25px ;">
@@ -1436,42 +1438,52 @@
                                                                     <div class="gdlr-core-item-list-wrap gdlr-core-column-60 ">
                                                                         <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix  gdlr-core-style-large gdlr-core-style-1">
                                                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                                                <a href="https://wildchina.com/2017/09/beijing-day-tours-how-to-spend-72-hours-or-less-in-beijing/"><img src="{{asset('images/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg')}}" alt="Fisherman in YangShuo" width="150" height="150" title="Li River" /></a>
+                                                                                <a href="#"><img src="{{asset('images/Great-Wall-Image-by-JLB1988-from-Pixabay.jpg')}}" alt="Fisherman in YangShuo" width="150" height="150" title="Li River" /></a>
                                                                             </div>
                                                                             <div class="gdlr-core-blog-widget-content">
-                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="https://wildchina.com/2017/09/beijing-day-tours-how-to-spend-72-hours-or-less-in-beijing/">Beijing
+                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="#">Beijing
                                                                                         Day Tours: How to Spend 72 Hours
                                                                                         or Less in Beijing</a></h3>
                                                                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="https://wildchina.com/2017/09/08/">September
-                                                                                            8, 2017</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="https://wildchina.com/destinations/beijing/" rel="tag">Beijing</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag"><span class="gdlr-core-head"><i class="icon_tags_alt"></i></span><a href="https://wildchina.com/tag/beijing/" rel="tag">Beijing</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/beijing-hutongs/" rel="tag">Beijing
+                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">September
+                                                                                            8, 2017</a></span>
+                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                                        <span class="gdlr-core-head">
+                                                                                            <i class="icon_folder-alt"></i>
+                                                                                        </span>
+                                                                                        <a href="#" rel="tag">Beijing</a>
+                                                                                    </span>
+                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
+                                                                                        <span class="gdlr-core-head"><i class="icon_tags_alt"></i></span>
+                                                                                        <a href="#" rel="tag">Beijing</a>
+                                                                                        <span class="gdlr-core-sep">,</span>
+                                                                                        <a href="#" rel="tag">Beijing
                                                                                             hutongs</a></span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix  gdlr-core-style-large gdlr-core-style-1">
                                                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                                                <a href="https://wildchina.com/2013/03/can-i-breathe-that/"><img src="{{asset('images/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg')}}" alt="Buddhist sculpture and art" width="150" height="150" title="Buddhist sculpture and art" /></a>
+                                                                                <a href="#"><img src="{{asset('images/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg')}}" alt="Buddhist sculpture and art" width="150" height="150" title="Buddhist sculpture and art" /></a>
                                                                             </div>
                                                                             <div class="gdlr-core-blog-widget-content">
-                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="https://wildchina.com/2013/03/can-i-breathe-that/">Can
+                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="#">Can
                                                                                         I breathe that?</a></h3>
                                                                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="https://wildchina.com/2013/03/13/">March
-                                                                                            13, 2013</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="https://wildchina.com/insider-tips/" rel="tag">Insider
+                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">March
+                                                                                            13, 2013</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Insider
                                                                                             Tips</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/beijing/" rel="tag">Beijing</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag"><span class="gdlr-core-head"><i class="icon_tags_alt"></i></span><a href="https://wildchina.com/tag/first-timers/" rel="tag">First-timers</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/forbidden-city/" rel="tag">Forbidden
+                                                                                        <a href="#" rel="tag">Beijing</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag"><span class="gdlr-core-head"><i class="icon_tags_alt"></i></span><a href="#" rel="tag">First-timers</a><span class="gdlr-core-sep">,</span>
+                                                                                        <a href="#" rel="tag">Forbidden
                                                                                             City</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/guangxi/" rel="tag">Guangxi</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/guizhou/" rel="tag">Guizhou</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/wild-china/" rel="tag">wild
+                                                                                        <a href="#" rel="tag">Guangxi</a><span class="gdlr-core-sep">,</span>
+                                                                                        <a href="#" rel="tag">Guizhou</a><span class="gdlr-core-sep">,</span>
+                                                                                        <a href="#" rel="tag">wild
                                                                                             China</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/wildchina/" rel="tag">WildChina</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/wildchina-travel/" rel="tag">WildChina
+                                                                                        <a href="#" rel="tag">WildChina</a><span class="gdlr-core-sep">,</span>
+                                                                                        <a href="#" rel="tag">WildChina
                                                                                             Travel</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/yunnan/" rel="tag">Yunnan</a></span>
+                                                                                        <a href="" rel="tag">Yunnan</a></span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1480,78 +1492,56 @@
                                                                                 <a href="Ethnic Minorities of ChinaEthnic Minorities of ChinaEthnic Minorities of Chinay-by-city-guide/"><img src="{{asset('images/Great-Wall-Image-by-jawed-iqbal-from-Pixabay.jpg')}}" alt="Ethnic Minorities of China" width="150" height="150" title="Ethnic Minorities of China" /></a>
                                                                             </div>
                                                                             <div class="gdlr-core-blog-widget-content">
-                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="https://wildchina.com/2016/11/best-chinese-food-in-china-a-city-by-city-guide/">Best
+                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="">Best
                                                                                         Chinese Food in China: A City by
                                                                                         City Guide</a></h3>
                                                                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="https://wildchina.com/2016/11/10/">November
-                                                                                            10, 2016</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="https://wildchina.com/destinations/beijing/" rel="tag">Beijing</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/foodie-finds/" rel="tag">Foodie
+                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">November
+                                                                                            10, 2016</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Beijing</a><span class="gdlr-core-sep">,</span>
+                                                                                        <a href="#" rel="tag">Foodie
                                                                                             Finds</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/xian/" rel="tag">Xian</a></span>
+                                                                                        <a href="#" rel="tag">Xian</a></span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix  gdlr-core-style-large gdlr-core-style-1">
                                                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                                                <a href="https://wildchina.com/2015/09/peter-wynne-opposite-house-interview/"><img src="{{asset('images/Great-Wall-sunset-Image-by-u_2ui6kzp77g-from-Pixabay-001.jpg')}}" alt="Chinese door in Hutong alley" width="150" height="150" title="Chinese door in Hutong alley" /></a>
+                                                                                <a href="#"><img src="{{asset('images/Great-Wall-sunset-Image-by-u_2ui6kzp77g-from-Pixabay-001.jpg')}}" alt="Chinese door in Hutong alley" width="150" height="150" title="Chinese door in Hutong alley" /></a>
                                                                             </div>
                                                                             <div class="gdlr-core-blog-widget-content">
-                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="https://wildchina.com/2015/09/peter-wynne-opposite-house-interview/">Art
+                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="#">Art
                                                                                         in Modern Beijing: An interview
                                                                                         with Peter Wynne, Manager of The
                                                                                         Opposite House</a></h3>
                                                                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="https://wildchina.com/2015/09/22/">September
-                                                                                            22, 2015</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="https://wildchina.com/destinations/beijing/" rel="tag">Beijing</a></span>
+                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">September
+                                                                                            22, 2015</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Beijing</a></span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix  gdlr-core-style-large gdlr-core-style-1">
                                                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                                                <a href="https://wildchina.com/2020/04/eight-places-to-visit-as-china-emerges-from-coronavirus/"><img src="{{asset('images/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg')}}" alt="Chinese door in Hutong alley" width="150" height="150" title="Chinese door in Hutong alley" /></a>
+                                                                                <a href="#"><img src="{{asset('images/Great-Wall-Snow-Beijing-Shutterstock-Image.jpg')}}" alt="Chinese door in Hutong alley" width="150" height="150" title="Chinese door in Hutong alley" /></a>
                                                                             </div>
                                                                             <div class="gdlr-core-blog-widget-content">
-                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="https://wildchina.com/2020/04/eight-places-to-visit-as-china-emerges-from-coronavirus/">Eight
+                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="#">Eight
                                                                                         Places to Visit as China Emerges
                                                                                         From Coronavirus</a></h3>
                                                                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="https://wildchina.com/2020/04/29/">April
-                                                                                            29, 2020</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="https://wildchina.com/wildchina/" rel="tag">WildChina</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/beijing/" rel="tag">Beijing</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/caixin/" rel="tag">Caixin</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/in-the-news/" rel="tag">In the
-                                                                                            News</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/insider-tips/" rel="tag">Insider
-                                                                                            Tips</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/mei-zhang-advice/" rel="tag">Mei's
-                                                                                            Advice</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/shanghai/" rel="tag">Shanghai</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/xian/" rel="tag">Xian</a></span>
+                                                                                   
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix  gdlr-core-style-large gdlr-core-style-1">
                                                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                                                <a href="https://wildchina.com/2024/03/sustainable-sites-green-initiatives-in-china/"><img src="{{asset('images/Beijing-Great-Wall.-Photo-credit-WildChina.jpg')}}" alt="" width="150" height="100" title="Yerba Buena（bushi" /></a>
+                                                                                <a href="#"><img src="{{asset('images/Beijing-Great-Wall.-Photo-credit-WildChina.jpg')}}" alt="" width="150" height="100" title="Yerba Buena（bushi" /></a>
                                                                             </div>
                                                                             <div class="gdlr-core-blog-widget-content">
-                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="https://wildchina.com/2024/03/sustainable-sites-green-initiatives-in-china/">Sustainable
+                                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-weight: 600 ;"><a href="#">Sustainable
                                                                                         Sites: Green Initiatives in
                                                                                         China’s Cities</a></h3>
                                                                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="https://wildchina.com/2024/03/22/">March
-                                                                                            22, 2024</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="https://wildchina.com/wildchina/" rel="tag">WildChina</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/beijing/" rel="tag">Beijing</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/chengdu/" rel="tag">Chengdu</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/hong-kong-and-macau/" rel="tag">Hong Kong and
-                                                                                            Macau</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/destinations/shanghai/" rel="tag">Shanghai</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/sustainable-travel/" rel="tag">Sustainable
-                                                                                            Travel</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag"><span class="gdlr-core-head"><i class="icon_tags_alt"></i></span><a href="https://wildchina.com/tag/sustainability-in-china/" rel="tag">Sustainability in
-                                                                                            China</a><span class="gdlr-core-sep">,</span>
-                                                                                        <a href="https://wildchina.com/tag/travel-to-china/" rel="tag">Travel to
-                                                                                            China</a></span>
+                                
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1593,9 +1583,9 @@
                                                 Group Travel
                                             </div>
                                             <div class="tourmaster-tour-grid-inner">
-                                                <div class="tourmaster-tour-thumbnail tourmaster-media-image "><a href="https://wildchina.com/tour/chinese-treasures-group/"><img src="../../wp-content/uploads/2024/02/ChineseTreasures-GroupDept-1024x683.jpg" width="1024" height="683" srcset="https://wildchina.com/wp-content/uploads/2024/02/ChineseTreasures-GroupDept-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2024/02/ChineseTreasures-GroupDept-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2024/02/ChineseTreasures-GroupDept-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2024/02/ChineseTreasures-GroupDept-1024x683.jpg 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="" /></a></div>
+                                                <div class="tourmaster-tour-thumbnail tourmaster-media-image "><a href="#"><img src="../../wp-content/uploads/2024/02/ChineseTreasures-GroupDept-1024x683.jpg" width="1024" height="683" srcset="../../wp-content/uploads/2024/02/ChineseTreasures-GroupDept-400x266.jpg 400w, ../../wp-content/uploads/2024/02/ChineseTreasures-GroupDept-600x400.jpg 600w, ../../wp-content/uploads/2024/02/ChineseTreasures-GroupDept-800x533.jpg 800w, ../../wp-content/uploads/2024/02/ChineseTreasures-GroupDept-1024x683.jpg 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="" /></a></div>
                                                 <div class="tourmaster-tour-content-wrap gdlr-core-skin-e-background ">
-                                                    <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="https://wildchina.com/tour/chinese-treasures-group/">Chinese
+                                                    <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="#">Chinese
                                                             Treasures</a></h3>
                                                     <div class="tourmaster-tour-price-wrap "><span class="tourmaster-tour-price"><span class="tourmaster-head">
                                                             </span><span class="tourmaster-tail">$6,417</span></span>
@@ -1622,9 +1612,9 @@
                                                 Group Travel
                                             </div>
                                             <div class="tourmaster-tour-grid-inner">
-                                                <div class="tourmaster-tour-thumbnail tourmaster-media-image "><a href="https://wildchina.com/tour/family-fun-small-group/"><img src="../../wp-content/uploads/2024/02/PandaWarriors_FamilyFun-1024x683.jpg" width="1024" height="683" srcset="https://wildchina.com/wp-content/uploads/2024/02/PandaWarriors_FamilyFun-400x266.jpg 400w, https://wildchina.com/wp-content/uploads/2024/02/PandaWarriors_FamilyFun-600x400.jpg 600w, https://wildchina.com/wp-content/uploads/2024/02/PandaWarriors_FamilyFun-800x533.jpg 800w, https://wildchina.com/wp-content/uploads/2024/02/PandaWarriors_FamilyFun-1024x683.jpg 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="" /></a></div>
+                                                <div class="tourmaster-tour-thumbnail tourmaster-media-image "><a href="#"><img src="{{asset('/wp-content/uploads/2024/02/PandaWarriors_FamilyFun-1024x683.jpg')}}" width="1024" height="683" srcset="/wp-content/uploads/2024/02/PandaWarriors_FamilyFun-400x266.jpg 400w, ../../wp-content/uploads/2024/02/PandaWarriors_FamilyFun-600x400.jpg 600w, ../../wp-content/uploads/2024/02/PandaWarriors_FamilyFun-800x533.jpg 800w, ../../wp-content/uploads/2024/02/PandaWarriors_FamilyFun-1024x683.jpg 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1150px) 100vw, 1150px" alt="" /></a></div>
                                                 <div class="tourmaster-tour-content-wrap gdlr-core-skin-e-background ">
-                                                    <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="https://wildchina.com/tour/family-fun-small-group/">Pandas
+                                                    <h3 class="tourmaster-tour-title gdlr-core-skin-title"><a href="#">Pandas
                                                             and Warriors: Family Fun through China</a></h3>
                                                     <div class="tourmaster-tour-price-wrap "><span class="tourmaster-tour-price"><span class="tourmaster-head">
                                                             </span><span class="tourmaster-tail">$5,954</span></span>
@@ -1655,15 +1645,15 @@
         </div>
 
 
-        <link rel='stylesheet' id='gforms_reset_css-css' href='../../wp-content/plugins/gravityforms/legacy/css/formreset.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='gforms_datepicker_css-css' href='../../wp-content/plugins/gravityforms/legacy/css/datepicker.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='gforms_formsmain_css-css' href='../../wp-content/plugins/gravityforms/legacy/css/formsmain.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='gforms_ready_class_css-css' href='../../wp-content/plugins/gravityforms/legacy/css/readyclass.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='gforms_browsers_css-css' href='../../wp-content/plugins/gravityforms/legacy/css/browsers.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='mediaelement-css' href='../../wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' id='wp-mediaelement-css' href='../../wp-includes/js/mediaelement/wp-mediaelement.min.css' type='text/css' media='all' />
-        <script type="text/javascript" src="../../wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+        <link rel='stylesheet' id='gforms_reset_css-css' href="{{asset('/wp-content/plugins/gravityforms/legacy/css/formreset.min.css')}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='gforms_datepicker_css-css' href="{{asset('/wp-content/plugins/gravityforms/legacy/css/datepicker.min.css')}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='gforms_formsmain_css-css' href="{{asset('/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css')}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='gforms_ready_class_css-css' href="{{asset('/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css')}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='gforms_browsers_css-css' href="{{asset('/wp-content/plugins/gravityforms/legacy/css/browsers.min.css')}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='mediaelement-css' href="{{asset('/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css')}}" type='text/css' media='all' />
+        <link rel='stylesheet' id='wp-mediaelement-css' href="{{asset('/wp-includes/js/mediaelement/wp-mediaelement.min.css')}}" type='text/css' media='all' />
+        <script type="text/javascript" src="{{asset('/wp-includes/js/jquery/ui/core.min.js')}}" id="jquery-ui-core-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/jquery/ui/datepicker.min.js')}}" id="jquery-ui-datepicker-js"></script>
         <script type="text/javascript" id="jquery-ui-datepicker-js-after">
             /* <![CDATA[ */
             jQuery(function(jQuery) {
@@ -1684,18 +1674,18 @@
             });
             /* ]]> */
         </script>
-        <script type="text/javascript" src="../../wp-content/uploads/siteground-optimizer-assets/mec-typekit-script.min.js" id="mec-typekit-script-js"></script>
-        <script type="text/javascript" src="../../wp-content/uploads/siteground-optimizer-assets/featherlight.min.js" id="featherlight-js"></script>
-        <script type="text/javascript" src="../../wp-content/plugins/modern-events-calendar-lite/assets/packages/select2/select2.full.min.js" id="mec-select2-script-js"></script>
-        <script type="text/javascript" src="../../wp-content/uploads/siteground-optimizer-assets/mec-tooltip-script.min.js" id="mec-tooltip-script-js"></script>
-        <script type="text/javascript" src="../../wp-content/plugins/modern-events-calendar-lite/assets/packages/lity/lity.min.js" id="mec-lity-script-js"></script>
-        <script type="text/javascript" src="../../wp-content/plugins/modern-events-calendar-lite/assets/packages/colorbrightness/colorbrightness.min.js" id="mec-colorbrightness-script-js"></script>
-        <script type="text/javascript" src="../../wp-content/plugins/modern-events-calendar-lite/assets/packages/owl-carousel/owl.carousel.min.js" id="mec-owl-carousel-script-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/dist/vendor/wp-polyfill-inert.min.js" id="wp-polyfill-inert-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/dist/vendor/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/dist/vendor/wp-polyfill.min.js" id="wp-polyfill-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/dist/i18n.min.js" id="wp-i18n-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/uploads/siteground-optimizer-assets/mec-typekit-script.min.js')}}" id="mec-typekit-script-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/uploads/siteground-optimizer-assets/featherlight.min.js')}}" id="featherlight-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/plugins/modern-events-calendar-lite/assets/packages/select2/select2.full.min.js')}}" id="mec-select2-script-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/uploads/siteground-optimizer-assets/mec-tooltip-script.min.js')}}" id="mec-tooltip-script-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/plugins/modern-events-calendar-lite/assets/packages/lity/lity.min.js')}}" id="mec-lity-script-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/plugins/modern-events-calendar-lite/assets/packages/colorbrightness/colorbrightness.min.js')}}" id="mec-colorbrightness-script-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-content/plugins/modern-events-calendar-lite/assets/packages/owl-carousel/owl.carousel.min.js')}}" id="mec-owl-carousel-script-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js')}}" id="wp-polyfill-inert-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/dist/vendor/regenerator-runtime.min.js')}}" id="regenerator-runtime-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/dist/vendor/wp-polyfill.min.js')}}" id="wp-polyfill-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/dist/hooks.min.js')}}" id="wp-hooks-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/dist/i18n.min.js')}}" id="wp-i18n-js"></script>
         <script type="text/javascript" id="wp-i18n-js-after">
             /* <![CDATA[ */
             wp.i18n.setLocaleData({
@@ -1905,11 +1895,11 @@
             };
             /* ]]> */
         </script>
-        <script type="text/javascript" defer='defer' src="../../wp-content/plugins/gravityforms/js/gravityforms.min.js" id="gform_gravityforms-js"></script>
-        <script type="text/javascript" defer='defer' src="../../wp-content/plugins/gravityforms/js/datepicker-legacy.min.js" id="gform_datepicker_legacy-js"></script>
-        <script type="text/javascript" defer='defer' src="../../wp-content/plugins/gravityforms/js/datepicker.min.js" id="gform_datepicker_init-js"></script>
-        <script type="text/javascript" defer='defer' src="../../wp-content/plugins/gravityforms/assets/js/dist/utils.min.js" id="gform_gravityforms_utils-js"></script>
-        <script type="text/javascript" defer='defer' src="../../wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js" id="gform_gravityforms_theme_vendors-js"></script>
+        <script type="text/javascript" defer='defer' src="{{asset('/wp-content/plugins/gravityforms/js/gravityforms.min.js')}}" id="gform_gravityforms-js"></script>
+        <script type="text/javascript" defer='defer' src="{{asset('/wp-content/plugins/gravityforms/js/datepicker-legacy.min.js')}}" id="gform_datepicker_legacy-js"></script>
+        <script type="text/javascript" defer='defer' src="{{asset('/wp-content/plugins/gravityforms/js/datepicker.min.js')}}" id="gform_datepicker_init-js"></script>
+        <script type="text/javascript" defer='defer' src="{{asset('/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js')}}" id="gform_gravityforms_utils-js"></script>
+        <script type="text/javascript" defer='defer' src="{{asset('/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js')}}" id="gform_gravityforms_theme_vendors-js"></script>
         <script type="text/javascript" id="gform_gravityforms_theme-js-extra">
             /* <![CDATA[ */
             var gform_theme_config = {
@@ -1925,7 +1915,7 @@
             };
             /* ]]> */
         </script>
-        <script type="text/javascript" defer='defer' src="../../wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js" id="gform_gravityforms_theme-js"></script>
+        <script type="text/javascript" defer='defer' src="{{asset('/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js')}}" id="gform_gravityforms_theme-js"></script>
         <script type="text/javascript" id="mediaelement-core-js-before">
             /* <![CDATA[ */
             var mejsL10n = {
@@ -2007,8 +1997,8 @@
             };
             /* ]]> */
         </script>
-        <script type="text/javascript" src="../../wp-includes/js/mediaelement/mediaelement-and-player.min.js" id="mediaelement-core-js"></script>
-        <script type="text/javascript" src="../../wp-includes/js/mediaelement/mediaelement-migrate.min.js" id="mediaelement-migrate-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/mediaelement/mediaelement-and-player.min.js')}}" id="mediaelement-core-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/mediaelement/mediaelement-migrate.min.js')}}" id="mediaelement-migrate-js"></script>
         <script type="text/javascript" id="mediaelement-js-extra">
             /* <![CDATA[ */
             var _wpmejsSettings = {
@@ -2020,7 +2010,7 @@
             };
             /* ]]> */
         </script>
-        <script type="text/javascript" src="../../wp-includes/js/mediaelement/wp-mediaelement.min.js" id="wp-mediaelement-js"></script>
+        <script type="text/javascript" src="{{asset('/wp-includes/js/mediaelement/wp-mediaelement.min.js')}}" id="wp-mediaelement-js"></script>
         <script type="text/javascript">
             /* <![CDATA[ */
             gform.initializeOnLoaded(function() {
@@ -2112,4 +2102,5 @@
             /* ]]> */
         </script>
 </body>
+
 </html>

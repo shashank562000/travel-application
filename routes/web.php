@@ -13,3 +13,8 @@ Route::get('/booking-condition', function () {
 Route::get('/tour', function () {
     return view('hiking');
 });
+
+Route::get('/get-started', function () {
+    $_COOKIE['path'] = asset('images/tour/tour-header.png');
+    return view('tour.get-started');
+});

@@ -2,7 +2,10 @@
 <link rel="stylesheet" src="{{asset('css/header.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour-media.css')}}">
-@include('partials.header')
+<!-- @include('partials.header') -->
+    @include('partials.head.booking-condition')
+    @include('partials.head.header')
+    @include('partials.head.header-transparent')
 @include('partials.hero')
 <style>
 /* General Styles */

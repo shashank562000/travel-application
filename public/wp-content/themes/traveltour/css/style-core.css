@@ -412,7 +412,7 @@ body.admin-bar .traveltour-overlay-menu-content{ margin-top: 32px; }
 .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-logo{ float: left; }
 .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-navigation{ float: right; }
 .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu{ display: inline-block; vertical-align: top; }
-.traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap{ display: inline-block; line-height: 1.7; margin-left: 10px; vertical-align: top; margin-top: -1px; }
+.traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap{ display: inline-block; line-height: 1.7; margin-left: 10px; vertical-align: top; margin-top: -2%; }
 .traveltour-header-style-plain.traveltour-style-menu-right.traveltour-fixed-navigation .traveltour-main-menu-right-wrap{ margin-top: -3px; }
 
 .traveltour-header-style-plain.traveltour-style-center-logo .traveltour-logo-inner{ margin-left: auto; margin-right: auto; }

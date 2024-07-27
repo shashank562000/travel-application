@@ -10,7 +10,7 @@ Route::get('/booking-condition', function () {
     return view('booking-condition');
 });
 
-Route::get('/tour', function () {
+Route::get('/what-we-Offer', function () {
     return view('hiking');
 });
 

@@ -168,10 +168,10 @@ body.traveltour-boxed.traveltour-background-pattern .traveltour-body-outer-wrapp
 .traveltour-header-side-nav.traveltour-style-side{ padding-left: 70px; padding-right: 70px; }.traveltour-header-side-nav.traveltour-style-left .sf-vertical > li > ul.sub-menu{ padding-left: 70px; }.traveltour-header-side-nav.traveltour-style-right .sf-vertical > li > ul.sub-menu{ padding-right: 70px; } 
  .traveltour-navigation .sf-vertical > li{ padding-top: 16px; padding-bottom: 16px; } 
 .traveltour-header-style-bar .traveltour-logo-right-text{ padding-top: 30px; } 
-.traveltour-logo{ padding-top: 15px; } 
-.traveltour-logo{ padding-bottom: 5px; } 
+.traveltour-logo{ padding-top: 0; margin-top: -2%;} 
+.traveltour-logo{ padding-bottom: 0; } 
 .traveltour-logo.traveltour-item-pdlr{ padding-left: 50px; } 
-.traveltour-navigation{ padding-top: 25px; }.traveltour-navigation-top{ top: 25px; } 
+.traveltour-navigation{ padding-top: 0; }.traveltour-navigation-top{ top: 25px; } 
 .traveltour-navigation .sf-menu > li > a{ padding-bottom: 25px; } 
 .traveltour-navigation-login-full-button .tourmaster-currency-switcher{ background: #333333; } 
 .traveltour-navigation-login-full-button .tourmaster-currency-switcher .tourmaster-head{ color: #fff; } 
@@ -224,7 +224,7 @@ body.archive .traveltour-page-title-wrap{ background-image: url(2020/07/28-agric
 .traveltour-body{ font-size: 16px; } 
 .traveltour-body, p, .traveltour-line-height, .gdlr-core-line-height{ line-height: 2; } 
 .traveltour-navigation .sf-menu > li > a, .traveltour-navigation .sf-vertical > li > a{ font-size: 14px; } 
-.traveltour-navigation .sf-menu > li > a{ font-weight: 400; } 
+.traveltour-navigation .sf-menu > li > a{ font-weight: 500; } 
 .traveltour-navigation .sf-menu > li > a{ text-transform: uppercase; } 
 .traveltour-sidebar-area .traveltour-widget-title{ text-transform: uppercase; } 
 .traveltour-footer-wrapper .traveltour-widget-title{ font-size: 18px; } 

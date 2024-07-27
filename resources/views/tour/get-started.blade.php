@@ -15,7 +15,22 @@ body, html {
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
+.image-bars img {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+    border-radius: 6px
+}
+.col-5 img{
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+    border-radius: 6px
+}
+.col-5 img:hover{
+    transform:scale(1.05)
+}
+.image-bars img:hover {
+    transform:scale(1.05)
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;

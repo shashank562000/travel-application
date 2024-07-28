@@ -11,7 +11,7 @@
                 <input type="text" class="mb-4" placeholder="Email" style="background-color:transparent!important">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-light" style="background-color:transparent;border:3px solid white;border-radius:0px;padding-inline:30px;font-weight:600">
+                <button type="submit" class="btn btn-outline-light tourBtn" >
                     SUBMIT
                 </button>
             </div>

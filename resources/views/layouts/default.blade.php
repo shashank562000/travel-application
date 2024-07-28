@@ -7,6 +7,7 @@
     <title>Adventure Planners Pakistan</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{asset('css/header.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('css/header-media.css')}}" rel="stylesheet">
     <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">

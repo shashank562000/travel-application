@@ -1,6 +1,5 @@
 <section class="footer">
     <div class="container-fluid zero-section">
-        <!-- <h1 class="text-white" style="font-family:sans-serif!important"> ADVENTURE </h1> -->
         <form action="" class="form-group">
             <h3 class="text-white">Keep me updated!</h3>
             <div class="form-group ">
@@ -26,7 +25,7 @@
         <div class="row">
             <div class="col-6" style="border-right:2px solid white;height:auto;">
                 <b class="float-right" style="padding-top:10%">
-                    PAKISTAN
+                    <img class="thumbImg" src="{{asset('images/pakistan icon-footer.png')}}">
                 </b>
             </div>
             <div class="col-6">

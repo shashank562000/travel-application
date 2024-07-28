@@ -23,7 +23,7 @@
             <b class="nav-link text-white">SINDH</b>
             <b class="nav-link text-white">BALOCHISTAN</b>
             <b class="nav-link text-white">PUNJAB</b>
-            <b class="nav-link text-white">JAMMU & KASHMIR </b>
+            <b class="nav-link text-white">AZAD JAMMU & KASHMIR </b>
         </div>
         <div class="row">
             <div class="col-6" style="border-right:2px solid white;height:auto;">

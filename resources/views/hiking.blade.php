@@ -5,9 +5,8 @@
 <link href="{{asset('css/header-media.css')}}" rel="stylesheet">
 <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
 <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body class="tour-template-default single single-tour postid-32947 gdlr-core-body tourmaster-bottom-booking-bar tourmaster-mobile-read-more tourmaster-body traveltour-body traveltour-body-front traveltour-full  traveltour-with-sticky-navigation gdlr-core-link-to-lightbox">
-    {{-- @include('partials.header') --}}
     @include('partials.head.booking-condition')
     @include('partials.head.header')
     <div class="traveltour-body-outer-wrapper ">

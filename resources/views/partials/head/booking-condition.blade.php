@@ -6,6 +6,7 @@
     <title>Booking Conditions | WildChina</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="stylesheet" href="{{asset('css/app.css')}}" >
     <style type="text/css">
         @font-face {
             font-family: 'Montserrat';

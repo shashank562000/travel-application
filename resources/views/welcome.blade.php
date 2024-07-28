@@ -11,6 +11,7 @@
     <link href="{{asset('css/header-media.css')}}" rel="stylesheet">
     <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         h1, h2, h3, h4, h5, h6{
             font-family: Georgia, serif;

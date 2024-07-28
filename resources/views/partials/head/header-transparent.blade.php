@@ -128,14 +128,13 @@
         .traveltour-main-menu-search {
             color: white;
             cursor: pointer;
-            margin-right: 10px;
+            /* margin-right: 10px; */
         }
 
         .traveltour-main-menu-right-button {
-            background-color: white;
-            color: #005f73;
+            background-color: #005f73;
+            color: white;
             padding: 10px 20px;
-            border-radius: 4px;
             text-decoration: none;
             border: 1px solid #005f73;
         }

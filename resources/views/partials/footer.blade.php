@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100,200,300,400" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <section class="footer">
     <div class="container-fluid zero-section">
         <form action="" class="form-group">
@@ -10,7 +13,7 @@
                 <input type="text" class="mb-4" placeholder="Email" style="background-color:transparent!important">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-outline-light tourBtn" >
+                <button type="submit" class="btn btn-outline-light tourBtn">
                     SUBMIT
                 </button>
             </div>
@@ -32,7 +35,7 @@
                 <div class="text-white mb-2" style="margin-left:0px">
                     <small class="footer-info"> MOBILE & WHATSAPP </small>
                     <small class="footer-info"> +92 301 858 5054 </small>
-                </div> 
+                </div>
                 <div class="text-white mb-2">
                     <small class="footer-info"> info@adventureplanners.net </small>
                     <small class="footer-info"> adventureplanners.net </small>
@@ -44,14 +47,24 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center mt-2 mb-2">
+
+        <div class="textwidget custom-html-widget">
+            <span class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px ;display: block ;">
+                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" rel="noopener"><i class="fa fa-facebook"></i></a>
+
+                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="instagram" rel="noopener"><i class="fa fa-instagram"></i></a>
+                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="youtube" rel="noopener"><i class="fa fa-youtube"></i></a>
+            </span>
+        </div>
+
+        <!-- <div class="row justify-content-center align-items-center mt-2 mb-2">
             <div class="text-center ">
                 <i class="fa fa-facebook-official" aria-hidden="true"></i>
                 <i class="fa fa-instagram" aria-hidden="true"></i>
                 <i class="fa fa-twitter" aria-hidden="true"></i>
                 <i class="fa fa-youtube-play" aria-hidden="true"></i>
             </div>
-        </div>
+        </div> -->
         @include('partials.footer-bottom')
     </div>
-    </section>
+</section>

@@ -1,6 +1,6 @@
 <section class="footer">
     <div class="container-fluid zero-section">
-        <h1 class="text-white" style="font-family:sans-serif!important"> ADVENTURE </h1>
+        <!-- <h1 class="text-white" style="font-family:sans-serif!important"> ADVENTURE </h1> -->
         <form action="" class="form-group">
             <h3 class="text-white">Keep me updated!</h3>
             <div class="form-group ">
@@ -33,7 +33,7 @@
                 <div class="text-white mb-2" style="margin-left:0px">
                     <small class="footer-info"> MOBILE & WHATSAPP </small>
                     <small class="footer-info"> +92 301 858 5054 </small>
-                </div>
+                </div> 
                 <div class="text-white mb-2">
                     <small class="footer-info"> info@adventureplanners.net </small>
                     <small class="footer-info"> adventureplanners.net </small>

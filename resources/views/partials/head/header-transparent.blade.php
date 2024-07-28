@@ -21,41 +21,63 @@
             align-items: center;
             padding: 10px 20px;
             background-color: #002939;
+            font-size: 0.8em;
         }
 
-        .traveltour-top-bar-right-text {
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .traveltour-top-bar-right-text img {
-            margin-right: 5px;
-        }
-
-        .traveltour-top-bar-right-social {
+        .traveltour-top-bar-left,
+        .traveltour-top-bar-right {
             display: flex;
             align-items: center;
         }
 
-        .traveltour-top-bar-right-text a {
+        .traveltour-top-bar-left a {
             color: white;
             text-decoration: none;
         }
 
-        .traveltour-top-bar-right-social a {
-            margin-left: 15px;
+        .traveltour-top-bar-right .contact-number {
             color: white;
-            /* text-decoration: none; */
+            margin-right: 20px;
+            text-decoration: none;
         }
 
-        .traveltour-top-bar-right-social a:hover {
-            color: #007bff;
+        .traveltour-top-bar-right .social-icon {
+            color: white;
+            margin-left: 10px;
+        }
+
+        .traveltour-top-bar-right .social-icon i {
+            font-size: 18px;
+            color: white;
+        }
+
+        .traveltour-main-menu-right-button {
+            margin-top: -18px;
+        }
+
+        .traveltour-main-menu-search img {
+            height: 20px;
+        }
+
+        .search-link,
+        .help-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .help-link .fa-caret-down {
+            margin-left: 5px;
+        }
+
+        .contact-number {
+            font-weight: bold;
         }
 
         .traveltour-header-wrap {
-            /* background-color: #005f73; */
             color: black;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .traveltour-header-container {
@@ -68,12 +90,12 @@
 
         .traveltour-navigation ul {
             list-style-type: none;
-            margin-top: -20px;
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .traveltour-navigation ul li {
@@ -83,17 +105,10 @@
         .traveltour-navigation ul li a {
             color: black;
             text-decoration: none;
-            padding: 20px 10px 0px 10px;
+            padding: 10px 10px;
             display: block;
         }
 
-        .women-only-fa span {
-            margin-left: 10px;
-        }
-
-        /* .traveltour-navigation ul li a:hover {
-            color: #007bff;
-        } */
         .traveltour-main-menu a::after {
             content: '';
             display: block;
@@ -113,7 +128,7 @@
         .traveltour-main-menu-search {
             color: white;
             cursor: pointer;
-            margin-right: 20px;
+            margin-right: 10px;
         }
 
         .traveltour-main-menu-right-button {
@@ -131,8 +146,9 @@
         }
 
         .traveltour-logo img {
-            max-height: 70px;
+            max-height: 50px;
             padding: 0;
+            margin-top: 2%;
         }
 
         .traveltour-navigation {
@@ -141,6 +157,79 @@
             justify-content: space-between;
             width: 100%;
         }
+
+        /* Media query for devices with a max-width of 1024px */
+        @media (max-width: 1024px) {
+            .traveltour-header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .traveltour-navigation ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .traveltour-main-menu-right-button {
+                margin-top: 10px;
+                padding: 5px 10px;
+            }
+        }
+
+        /* Media query for devices with a max-width of 768px */
+        @media (max-width: 768px) {
+            .traveltour-top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 0.7em;
+            }
+
+            .traveltour-header-container {
+                padding: 10px;
+            }
+
+            .traveltour-navigation ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .traveltour-main-menu-right-button {
+                padding: 5px 10px;
+            }
+        }
+
+        /* Media query for devices with a max-width of 480px */
+        @media (max-width: 480px) {
+            .traveltour-top-bar {
+                padding: 5px 10px;
+                font-size: 0.6em;
+            }
+
+            .traveltour-header-container {
+                padding: 5px;
+            }
+
+            .traveltour-navigation ul {
+                align-items: flex-start;
+            }
+
+            .traveltour-main-menu-right-button {
+                padding: 5px 10px;
+            }
+        }
+
+        /* Media query for devices with a min-width of 1500px */
+        @media (min-width: 1500px) {
+
+            .traveltour-main-menu-search img {
+                height: 20px;
+            }
+
+            .traveltour-main-menu-right-button {
+                margin-top: -18px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>
@@ -148,22 +237,22 @@
 <body>
 
     <div class="traveltour-header-background-transparent">
-        <div class="traveltour-top-bar traveltour-with-divider">
-            <div class="traveltour-top-bar-right traveltour-item-pdlr traveltour-disable">
-                <div class="traveltour-top-bar-right-text">
-                    <img src="../../wp-content/uploads/2021/04/SDG-Wheel_PRINT_Transparent12px.png" alt="SDGs">
-                    <a href="#" class=""><i class="fa fa-th-large" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px ;"></i></a>
-                    <a href="#" rel="noopener"><i class="fa fa-handshake-o" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px ;"></i></a>
-                    <a href="#" class="popmake-28709"><i class="fa fa-globe" style="font-size: 14px ;margin-left: 10px ;margin-right: 10px ;"></i></a>
+        <div class="traveltour-wrapper">
+            <header>
+                <div class="traveltour-top-bar">
+                    <div class="traveltour-top-bar-left">
+                        <a href="#" class="search-link"><b>SEARCH FOR TOURS | </b><a>
+                                <a href="#" class="help-link"><b> HELP</b><span class="fa fa-caret-down"></span></a>
+                    </div>
+                    <div class="traveltour-top-bar-right">
+                        <span class="contact-number">+92 301 858 5054</span>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
-                <div class="traveltour-top-bar-right-social">
-                    <a href="#" target="_blank" title="facebook"><i class="fa fa-facebook" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px"></i></a>
-                    <a href="#" target="_blank" title="linkedin"><i class="fa fa-linkedin" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px"></i></a>
-                    <a href="#" target="_blank" title="twitter"><i class="fa fa-twitter" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px"></i></a>
-                    <a href="https://www.youtube.com" target="_blank" class="infinite-top-bar-social-icon" title="youtube"><i class="fa fa-youtube" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px"></i></a>
-                    <a href="https://www.instagram.com" target="_blank" class="infinite-top-bar-social-icon" title="instagram"><i class="fa fa-instagram" style="font-size: 14px ;margin-left: 15px ;margin-right: 5px"></i></a>
-                </div>
-            </div>
+            </header>
         </div>
         <header class="traveltour-header-wrap traveltour-header-style-plain traveltour-style-menu-right traveltour-sticky-navigation traveltour-style-slide">
             <div class="traveltour-header-container traveltour-header-full">
@@ -330,8 +419,9 @@
                             </li>
                         </ul>
                     </div>
+
                     <div class="traveltour-main-menu-right-wrap clearfix">
-                        <div class="traveltour-main-menu-search" id="traveltour-top-search"><i class="fa fa-search"></i></div>
+                        <div class="traveltour-main-menu-search" id="traveltour-top-search"><i class="fi fi-rr-user"><img src="{{asset('/images/user.svg')}}" alt=""></i></div>
                         <div class="traveltour-top-search-wrap">
                             <div class="traveltour-top-search-close"></div>
                             <div class="traveltour-top-search-row">

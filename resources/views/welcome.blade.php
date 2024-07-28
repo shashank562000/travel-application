@@ -138,6 +138,39 @@
                 margin-bottom: 20px;
             }
         }
+        .position-relative {
+    position: relative;
+}
+
+.custom-badge {
+    position: absolute;
+    width: 120px;
+    /* bottom: 10px; */
+    top: 10px;
+    left: -10px;
+    background-color: rgb(16, 207, 73);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0px;
+    font-size: 0.9em;
+
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 46%;
+        transform: translateY(40%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid rgb(16, 207, 73); 
+    }
+   
+
+}
+
     </style>
 </head>
 
@@ -218,7 +251,7 @@
                     <div class="journey-card">
                         <div class="position-relative">
                             <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="badge">Trekking</div>
+                            <div class="custom-badge">Trekking</div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
@@ -235,7 +268,26 @@
                     <div class="journey-card">
                         <div class="position-relative">
                             <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="badge">Trekking</div>
+                            <div class="custom-badge">Balochistan</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
+                            <p class="card-text">Lorem Ipsum is simply dummy text
+                                of the printing and typeseing
+                                industry. Lorem Ipsum has been
+                                the industry's standard.
+                            </p>
+                            <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="journey-card">
+                        <div class="position-relative">
+                            <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
+                            <div class="custom-badge">North</div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
@@ -252,24 +304,7 @@
                     <div class="journey-card">
                         <div class="position-relative">
                             <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="badge">Trekking</div>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text
-                                of the printing and typeseing
-                                industry. Lorem Ipsum has been
-                                the industry's standard.
-                            </p>
-                            <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="journey-card">
-                        <div class="position-relative">
-                            <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="badge">Trekking</div>
+                            <div class="custom-badge">Motorbike</div>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>

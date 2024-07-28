@@ -3,7 +3,7 @@
     src: url('../fonts/Vanib.ttf');
 }
 .zero-section {
-    background: url('../images/landing-footer.jpg') no-repeat center center;
+    background: url('../images/footer.jpg') no-repeat center center;
     background-size: cover;
     padding: 20px;
 }

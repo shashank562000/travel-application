@@ -9,21 +9,35 @@
 @include('partials.hero')
 <style>
 /* General Styles */
+.journey-card .badge:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 46%;
+        transform: translateY(40%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid rgb(16, 207, 73);
+}
+.nav-link:hover {
+    transition: transform .5s;
+    transform: scale(1.1);
+}
 body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
 }
-.image-bars img {
+.image-bars img:not(.col-4 img) {
     transition: transform .2s; /* Animation */
     margin: 0 auto;
-    border-radius: 6px
 }
 .col-5 img{
     transition: transform .2s; /* Animation */
     margin: 0 auto;
-    border-radius: 6px
 }
 .col-5 img:hover{
     transform:scale(1.05)
@@ -421,7 +435,7 @@ section.itinerary p {
     margin-bottom: .5rem;
 }
 
-.booking-form .form-group input {
+.booking-form .form-group input:nth-of-type(type=[checkbox]) {
     width: calc(100% - 2rem);
     padding: .5rem;
     border: 1px solid #ccc;
@@ -542,11 +556,13 @@ i.fa-check, i.fa-close {
                         </div>
                         <div class="form-group">
                             <p> Please confirm you agree to our
-                                <a href="#" class="text-decoration-none">terms and conditions</a>
+                                <a href="#" class="text-decoration-none">
+                                    terms and conditions
+                                </a>
                             </p>
-                            <div class="form-group d-flex col-10 mx-5">
+                            <div class="form-group d-flex col-12">
                                 <input type="checkbox">
-                                <small class="mx-1"> Yes, I've read the Terms <br>  & conditions  </small><br>
+                                <small class="mx-4"> Yes, I've read the Terms <br>  & conditions  </small><br>
                             </div>
                         </div>
                         <button class="submitBtn"> Submit </button>
@@ -849,7 +865,7 @@ i.fa-check, i.fa-close {
                 <div class="journey-card">
                     <div class="position-relative">
                         <img src="{{asset('images/tour/lake.png')}}" alt="Inside Guizhou: A Discovery Of Miao, Buyi, And Dong Traditions">
-                        <div class="badge" style="background-color: #17a2b8;">Editor's Choice</div>
+                        <div class="badge" > Editor's Choice</div>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
@@ -870,7 +886,7 @@ i.fa-check, i.fa-close {
     <div class="container">
         <div class="card text-center">
           <div class="card-body p-5">
-            <h4 class="card-title" style="">What is lorem ipsum ?</h4>
+            <h4 class="card-title" >What is lorem ipsum ?</h4>
             <hr>
             <p class="card-text">
               Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.

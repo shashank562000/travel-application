@@ -6,8 +6,8 @@
     background: url('../images/footer.jpg') no-repeat center center;
     background-size: cover;
     padding: 20px;
-    padding-top:280px!important;
 }
+
 .zero-section h3 {
     font-family:  footerFont;
 }

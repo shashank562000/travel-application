@@ -6,8 +6,8 @@
         <form action="" class="form-group">
             <h3 class="text-white">Keep me updated!</h3>
             <div class="form-group ">
-                <input type="text" class="mb-4" placeholder="First Name" style="background-color:transparent!important">
-                <input type="text" class="mb-4" placeholder="Last Name" style="background-color:transparent!important">
+                <input type="text" class="mb-1" placeholder="First Name" style="background-color:transparent!important">
+                <input type="text" class="mb-1" placeholder="Last Name" style="background-color:transparent!important">
             </div>
             <div class="form-group ">
                 <input type="text" class="mb-4" placeholder="Email" style="background-color:transparent!important">
@@ -32,15 +32,15 @@
                 </b>
             </div>
             <div class="col-6">
-                <div class="text-white mb-2" style="margin-left:0px">
+                <div class="text-white mb-1" style="margin-left:0px">
                     <small class="footer-info"> MOBILE & WHATSAPP </small>
                     <small class="footer-info"> +92 301 858 5054 </small>
                 </div>
-                <div class="text-white mb-2">
+                <div class="text-white mb-1">
                     <small class="footer-info"> info@adventureplanners.net </small>
                     <small class="footer-info"> adventureplanners.net </small>
                 </div>
-                <div class="text-white mb-2">
+                <div class="text-white mb-1">
                     <small class="footer-info"> Office no.7, Mughal Plaza </small>
                     <small class="footer-info"> Main Murree Road </small>
                     <small class="footer-info"> Rawalpindi, Pakistan </small>

@@ -27,7 +27,7 @@
         font-size: 75px;
         letter-spacing: 20px;
     }
-    .zero-section .col-6 {
+    .zero-section .col-6:first-child {
         border-right: 1px solid white;
     }
     .zero-section .row {
@@ -43,7 +43,7 @@
         font-size: 100px;
         letter-spacing: 25px;
     }
-    .zero-section .col-6 {
+    .zero-section .col-6:first-child {
         border-right: 1px solid white;
     }
     .zero-section .row {
@@ -59,7 +59,7 @@
         font-size: 125px;
         letter-spacing: 33px;
     }
-    .zero-section .col-6 {
+    .zero-section .col-6:first-of-type {
         border-right: 2px solid white;
     }
     .zero-section .row {

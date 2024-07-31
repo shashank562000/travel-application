@@ -160,18 +160,18 @@ body.traveltour-boxed.traveltour-background-pattern .traveltour-body-outer-wrapp
 .traveltour-header-container.traveltour-header-full{ padding-right: 14px; padding-left: 14px; } 
 .traveltour-header-boxed-wrap .traveltour-header-background{ border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; } 
 .traveltour-header-style-boxed .traveltour-header-container-item{ padding-left: 49px; padding-right: 49px; }.traveltour-navigation-right{ right: 49px; } .traveltour-navigation-left{ left: 49px; } 
-.traveltour-header-style-plain.traveltour-style-splitted-menu .traveltour-navigation .sf-menu > li > a{ padding-top: 0px; } .traveltour-header-style-plain.traveltour-style-splitted-menu .traveltour-main-menu-left-wrap,.traveltour-header-style-plain.traveltour-style-splitted-menu .traveltour-main-menu-right-wrap{ padding-top: 0px; } 
-.traveltour-header-style-boxed.traveltour-style-splitted-menu .traveltour-navigation .sf-menu > li > a{ padding-top: 0px; } .traveltour-header-style-boxed.traveltour-style-splitted-menu .traveltour-main-menu-left-wrap,.traveltour-header-style-boxed.traveltour-style-splitted-menu .traveltour-main-menu-right-wrap{ padding-top: 0px; } 
+.traveltour-header-style-plain.traveltour-style-splitted-menu .traveltour-navigation .sf-menu > li > a{ padding-top: 0px; } .traveltour-header-style-plain.traveltour-style-splitted-menu .traveltour-main-menu-left-wrap,.traveltour-header-style-plain.traveltour-style-splitted-menu .traveltour-main-menu-right-wrap{ padding-top: 2px; } 
+.traveltour-header-style-boxed.traveltour-style-splitted-menu .traveltour-navigation .sf-menu > li > a{ padding-top: 0px; } .traveltour-header-style-boxed.traveltour-style-splitted-menu .traveltour-main-menu-left-wrap,.traveltour-header-style-boxed.traveltour-style-splitted-menu .traveltour-main-menu-right-wrap{ padding-top: 2px; } 
 .traveltour-navigation .sf-menu > li{ padding-left: 10px; padding-right: 10px; } 
 .traveltour-navigation .traveltour-main-menu{ margin-left: 0px; } 
 .traveltour-header-side-nav{ width: 340px; }.traveltour-header-side-content.traveltour-style-left{ margin-left: 340px; }.traveltour-header-side-content.traveltour-style-right{ margin-right: 340px; } 
 .traveltour-header-side-nav.traveltour-style-side{ padding-left: 70px; padding-right: 70px; }.traveltour-header-side-nav.traveltour-style-left .sf-vertical > li > ul.sub-menu{ padding-left: 70px; }.traveltour-header-side-nav.traveltour-style-right .sf-vertical > li > ul.sub-menu{ padding-right: 70px; } 
  .traveltour-navigation .sf-vertical > li{ padding-top: 16px; padding-bottom: 16px; } 
 .traveltour-header-style-bar .traveltour-logo-right-text{ padding-top: 30px; } 
-.traveltour-logo{ padding-top: 15px; } 
-.traveltour-logo{ padding-bottom: 5px; } 
+.traveltour-logo{ padding-top: 0; margin-top: -2%;} 
+.traveltour-logo{ padding-bottom: 0; } 
 .traveltour-logo.traveltour-item-pdlr{ padding-left: 50px; } 
-.traveltour-navigation{ padding-top: 25px; }.traveltour-navigation-top{ top: 25px; } 
+.traveltour-navigation{ padding-top: 0; }.traveltour-navigation-top{ top: 25px; } 
 .traveltour-navigation .sf-menu > li > a{ padding-bottom: 25px; } 
 .traveltour-navigation-login-full-button .tourmaster-currency-switcher{ background: #333333; } 
 .traveltour-navigation-login-full-button .tourmaster-currency-switcher .tourmaster-head{ color: #fff; } 
@@ -224,7 +224,7 @@ body.archive .traveltour-page-title-wrap{ background-image: url(2020/07/28-agric
 .traveltour-body{ font-size: 16px; } 
 .traveltour-body, p, .traveltour-line-height, .gdlr-core-line-height{ line-height: 2; } 
 .traveltour-navigation .sf-menu > li > a, .traveltour-navigation .sf-vertical > li > a{ font-size: 14px; } 
-.traveltour-navigation .sf-menu > li > a{ font-weight: 400; } 
+.traveltour-navigation .sf-menu > li > a{ font-weight: 500; } 
 .traveltour-navigation .sf-menu > li > a{ text-transform: uppercase; } 
 .traveltour-sidebar-area .traveltour-widget-title{ text-transform: uppercase; } 
 .traveltour-footer-wrapper .traveltour-widget-title{ font-size: 18px; } 

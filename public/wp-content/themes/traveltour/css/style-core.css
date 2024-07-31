@@ -412,7 +412,7 @@ body.admin-bar .traveltour-overlay-menu-content{ margin-top: 32px; }
 .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-logo{ float: left; }
 .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-navigation{ float: right; }
 .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu{ display: inline-block; vertical-align: top; }
-.traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap{ display: inline-block; line-height: 1.7; margin-left: 10px; vertical-align: top; margin-top: -1px; }
+.traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap{ display: inline-block; line-height: 1.7; margin-left: 10px; vertical-align: top; margin-top:0; }
 .traveltour-header-style-plain.traveltour-style-menu-right.traveltour-fixed-navigation .traveltour-main-menu-right-wrap{ margin-top: -3px; }
 
 .traveltour-header-style-plain.traveltour-style-center-logo .traveltour-logo-inner{ margin-left: auto; margin-right: auto; }
@@ -535,7 +535,7 @@ html.mm-opened body.admin-bar .traveltour-header-side-nav{ padding-top: 0px; }
 	transition: height 200ms; -moz-transition: height 200ms; -o-transition: height 200ms; -webkit-transition: height 200ms; }
 
 .traveltour-fixed-navigation.traveltour-style-fixed,
-.traveltour-fixed-navigation.traveltour-style-slide{ position: fixed; top: 0px; left: 0px; right: 0px; z-index: 99; 
+.traveltour-fixed-navigation.traveltour-style-slide{ position: sticky; top: 0px; left: 0px; right: 0px; z-index: 99; 
 	box-shadow: 0px 1px 2px rgba(0,0,0,0.1); -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.1); }
 .traveltour-fixed-navigation.traveltour-style-slide .traveltour-logo-inner img{ max-height: 35px !important; width: auto; }
 

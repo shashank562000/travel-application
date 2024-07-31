@@ -1,7 +1,15 @@
+@font-face {
+    font-family: footerFont;
+    src: url('../fonts/Vanib.ttf');
+}
 .zero-section {
-    background: url('../images/landing-footer.jpg') no-repeat center center;
+    background: url('../images/footer.jpg') no-repeat center center;
     background-size: cover;
     padding: 20px;
+    padding-top:280px!important;
+}
+.zero-section h3 {
+    font-family:  footerFont;
 }
 .zero-section input {
     background-color: transparent;
@@ -12,6 +20,7 @@
 }
 .zero-section input::placeholder {
     color: white;
+    font-weight: 600;
 }
 .zero-section small.footer-info {
     display: flex;
@@ -20,4 +29,10 @@
 .zero-section h1.text-white {
     font-size: 125px;
     letter-spacing: 33px;
+}
+.zero-section .row{
+    font-size: large;
+}
+.zero-section i {
+    color: white;
 }

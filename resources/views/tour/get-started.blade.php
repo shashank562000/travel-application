@@ -2,7 +2,10 @@
 <link rel="stylesheet" src="{{asset('css/header.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour-media.css')}}">
-@include('partials.header')
+<!-- @include('partials.header') -->
+    @include('partials.head.booking-condition')
+    @include('partials.head.header')
+    @include('partials.head.header-transparent')
 @include('partials.hero')
 <style>
 /* General Styles */
@@ -12,7 +15,22 @@ body, html {
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
+.image-bars img {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+    border-radius: 6px
+}
+.col-5 img{
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+    border-radius: 6px
+}
+.col-5 img:hover{
+    transform:scale(1.05)
+}
+.image-bars img:hover {
+    transform:scale(1.05)
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -265,7 +283,7 @@ section.more-tours .card {
 }
 
 @media (min-width: 1200px) {
-    
+
     .booking-form {
         width: 25%;
         right: 5%;
@@ -437,7 +455,9 @@ section.itinerary p {
 .booking-form .form-group .terms input {
     margin-right: .5rem;
 }
-
+i.fa-check, i.fa-close {
+    color:darkgray
+}
 
 </style>
 @section('content')
@@ -584,12 +604,12 @@ section.itinerary p {
         <h6 class="card-subtitle mb-2 mt-3 text-muted">Highlights of your trip</h6>
         <div class="p-5">
             <ul class="list-unstyled">
-            <li><span class="fa fa-circle mr-2"></span>Go dolphin watching</li>
-            <li><span class="fa fa-circle mr-2"></span>Visit vibrant cities & remote villages</li>
-            <li><span class="fa fa-circle mr-2"></span>Climb a volcano</li>
-            <li><span class="fa fa-circle mr-2"></span>Stay in 5-star luxury & boutique hotels</li>
-            <li><span class="fa fa-circle mr-2"></span>Be the 1st to travel in Pakistan's #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)</li>
-            <li><span class="fa fa-circle mr-2"></span>Relax with a decadent beach picnic on the Arabian Sea</li>
+            <li><span class="fa fa-dot-circle-o mr-2"></span>Go dolphin watching</li>
+            <li><span class="fa fa-dot-circle-o mr-2"></span>Visit vibrant cities & remote villages</li>
+            <li><span class="fa fa-dot-circle-o mr-2"></span>Climb a volcano</li>
+            <li><span class="fa fa-dot-circle-o mr-2"></span>Stay in 5-star luxury & boutique hotels</li>
+            <li><span class="fa fa-dot-circle-o mr-2"></span>Be the 1st to travel in Pakistan's #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)</li>
+            <li><span class="fa fa-dot-circle-o mr-2"></span>Relax with a decadent beach picnic on the Arabian Sea</li>
             </ul>
         </div>
       </div>
@@ -666,17 +686,98 @@ section.itinerary p {
 
 </div>
 
-<div class="container-fluid image-bars">
-    <div class="d-flex">
-        <div class="col-8">
-            <img src="{{ asset('images/tour/boats.png') }}" class="img-fluid" alt="" >
+<div class="container-fluid image-bars mt-4">
+    <div class="d-flex justify-content-center">
+        <img src="{{ asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="" >
+    </div>
+    <div class="row mx-4 p-5 justify-content-center text-center" style="border: 0px;">
+    <div class="col-12">
+        <h5 style="font-family:math;font-weight:600"> Envision the dream </h5> <br>
+        <button class="btn-outline-light text-dark tourBtn"> VIEW TRIP </button>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-10" style="border-top:2px solid darkgray">
+        <div class="hstack mx-3 mt-5 mb-5">
+            <h5 style="font-family:fangsong;font-weight:600" class="text-secondary"> Details </h5>
         </div>
-        <div class="col-4">
-            <div class="card">
-                What is Lorem Ipsum
+        <div class="d-flex mb-5">
+            <div class="col-4">
+                What's included
+            </div>
+            <div class="col-8">
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Visa Support
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> NOC for Balochistan
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i>
+                    Airport transfer upon arrival and departure (departure transfer day/time depends on if additional excursions or travel days are added)
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Hotel Accodomations
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Transportation in a private cabin sleeper bus with driver and fuel
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Breakfast, group meals when noted in itinerary & box lunches when sightseeing
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Expert local tour guides
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Highway toll taxes
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-check mr-2"></i> Enterance tickets for the heritage sites, museums, etc
+                </div>
             </div>
         </div>
+        <div class="d-flex mt-5 mb-4">
+            <div class="col-4">
+                What's excluded
+            </div>
+            <div class="col-8">
+                <div class="hstack">
+                    <i class="fa fa-close mr-2" ></i> Meals and transportation during free time
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-close mr-2" ></i> International Flights
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-close mr-2" ></i> Personal and travel insurance
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-close mr-2" ></i> Hotel Accodomations
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-close mr-2" ></i> Tips to Driver/Hotel/Guides
+                </div>
+                <div class="hstack">
+                    <i class="fa fa-close mr-2" ></i> Laundry, bevarages, and any expenses of a personal nature
+                </div>
+        </div>
     </div>
+    <div class="d-flex mt-5 mb-4" style="border-top:2px solid darkgray;border-bottom:2px solid darkgray;">
+            <div class="col-4 mt-5 mb-5">
+                Trip Costs
+            </div>
+            <div class="col-8 mt-5 mb-5">
+                <div class="hstack">
+                        $6417 per person (double occupancy)
+                        <br>
+                        Single Supplement $1949
+                        <br>
+                        <br>
+                        (VAT is already included in the prices above)
+                </div>
+            </div>
+        </div>
+
+</div>
     <div class="row mt-3" id="Videos-Pics">
         <div class="col-4 position-relative">
             <img src="{{ asset('images/tour/desert-walk.png') }}" class="w-100" alt="">

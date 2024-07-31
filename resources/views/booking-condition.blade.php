@@ -5,18 +5,23 @@
 <link href="{{asset('css/header-media.css')}}" rel="stylesheet">
 
 
+
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 <link href="{{asset('css/footer-media.css')}}" rel="stylesheet">
-<body class="page-template-default page page-id-27965 gdlr-core-body tourmaster-body traveltour-body traveltour-body-front traveltour-full  traveltour-with-sticky-navigation gdlr-core-link-to-lightbox">
+
+<body class="page-template-default page page-id-27965 gdlr-core-body tourmaster-body traveltour-body traveltour-body-front traveltour-full traveltour-with-sticky-navigation gdlr-core-link-to-lightbox">
 
     {{-- @include('partials.header') --}}
     @include('partials.head.booking-condition')
     @include('partials.head.header')
     <!-- header end -->
     <div class="traveltour-body-outer-wrapper ">
+    @include('partials.head.header-transparent')
         <div class="traveltour-body-wrapper clearfix  traveltour-with-transparent-header traveltour-with-frame">
             <!-- header inclued here -->
-            @include('partials.head.header-transparent')
+                
+            
+
             <div class="traveltour-page-wrapper" id="traveltour-page-wrapper">
                 <div class="gdlr-core-page-builder-body clearfix">
                     <div class="gdlr-core-pbf-wrapper gdrl-bg" style="padding: 400px 0px 200px 0px;">
@@ -69,13 +74,15 @@
                                                             our valued travelers. This page outlines our booking
                                                             conditions and policies, ensuring that you have all the
                                                             necessary details to make informed decisions about your
-                                                            journey with us.</p>
+                                                            journey with us.
+                                                        </p>
                                                         <p style="text-align: center;">We believe in flexibility and
                                                             strive to offer favorable terms that prioritize your
                                                             convenience and peace of mind. Whether you&#8217;re planning
                                                             an immersive cultural experience or an adventurous
                                                             expedition, we are committed to providing exceptional
-                                                            service and unforgettable memories.</p>
+                                                            service and unforgettable memories.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -396,8 +403,8 @@
                     </div>
                 </div>
             </div>
-                <!-- footer hear -->
-                @include('partials.footer')
+            <!-- footer hear -->
+            @include('partials.footer')
         </div>
     </div>
 

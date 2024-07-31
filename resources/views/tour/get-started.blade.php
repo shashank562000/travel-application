@@ -9,6 +9,10 @@
 @include('partials.hero')
 <style>
 /* General Styles */
+.fa-tag {
+    rotate:430deg;
+    margin-right: 18px;
+}
 .journey-card .badge:before {
         content: "";
         position: absolute;
@@ -514,7 +518,7 @@ i.fa-check, i.fa-close {
             <div class="row form-container">
                 <div class="d-flex form-head justify-content-center bg-dark w-100">
                     <i class="fa-solid text-white fa-tag" ></i>
-                    <h2 class="text-white"> &dollar; 2,597</h2>
+                    <h2 class="text-white"> &dollar;2,597</h2>
                 </div>
                 <div class="row form-body">
                     <div class="container justify-content-center">

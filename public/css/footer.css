@@ -2,15 +2,20 @@
     font-family: footerFont;
     src: url('../fonts/Vanib.ttf');
 }
+
 .zero-section {
     background: url('../images/footer.jpg') no-repeat center center;
     background-size: cover;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .zero-section h3 {
-    font-family:  footerFont;
+    font-family: footerFont;
 }
+
 .zero-section input {
     background-color: transparent;
     border: 0px;
@@ -18,21 +23,26 @@
     padding: 10px;
     color: white;
 }
+
 .zero-section input::placeholder {
     color: white;
     font-weight: 600;
 }
+
 .zero-section small.footer-info {
     display: flex;
     font-weight: 500;
 }
+
 .zero-section h1.text-white {
     font-size: 125px;
     letter-spacing: 33px;
 }
-.zero-section .row{
+
+.zero-section .row {
     font-size: large;
 }
+
 .zero-section i {
     color: white;
 }

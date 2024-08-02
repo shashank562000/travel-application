@@ -60,7 +60,7 @@
         <p class="lens-clinic">NAMED AS</p>
         <h1>DESTINATION OF THE YEAR</h1>
         <i><b>By Condé Nast Traveller magazine</b></i>
-        <p style="text-justify"><b>Here's what you need to know to </br>enter Pakistan in 2024</b></p>
+        <p style="text-justify:'';"><b>Here's what you need to know to </br>enter Pakistan in 2024</b></p>
         <a href="#" class="btn text-white">READ MORE</a>
         <center>
             <div class="circle">

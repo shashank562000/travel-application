@@ -144,7 +144,7 @@
             color: white;
         }
 
-        
+
 
         .traveltour-navigation {
             display: flex;
@@ -153,7 +153,7 @@
             width: 100%;
         }
 
-        .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap{
+        .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap {
             margin-top: -48px;
         }
 
@@ -256,10 +256,10 @@
                 margin-top: 2%;
             }
 
-            
+
         }
 
-        @media (max-width: 1290px) {
+        @media (max-width: 1360px) {
             .traveltour-navigation {
                 display: contents;
                 width: 100%;
@@ -267,15 +267,51 @@
 
             .traveltour-logo img {
                 max-height: 81px;
-                top:10px;
+                top: 10px;
             }
 
-            .traveltour-header-style-plain .traveltour-navigation{
-                /* line-height: 8; */
+            .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap {
+                margin-top: 0px;
             }
         }
 
-        
+        @media (min-width: 1141px) and (max-width: 1234px) {
+            .traveltour-navigation {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .traveltour-logo img {
+                max-height: 75px;
+                position: relative;
+                top: 10px;
+            }
+
+            .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap {
+                margin-top: 0px;
+            }
+
+            .traveltour-navigation ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+            }
+
+            .traveltour-navigation .sf-menu>li {
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+            .traveltour-navigation .sf-menu > li > a{
+                font-size: 12px;
+            }
+            .traveltour-item-pdlr{
+                 padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>

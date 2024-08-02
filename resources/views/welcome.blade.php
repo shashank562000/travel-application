@@ -13,10 +13,16 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        h1, h2, h3, h4, h5, h6{
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: Georgia, serif;
             font-weight: bold;
         }
+
         .journey-card-block .card-body {
             text-align: left;
         }
@@ -141,66 +147,68 @@
                 margin-bottom: 20px;
             }
         }
+
         .position-relative {
-    position: relative;
-}
+            position: relative;
+        }
 
-.custom-badge {
-    position: absolute;
-    width: 120px;
-    /* bottom: 10px; */
-    top: 10px;
-    left: -10px;
-    background-color: rgb(16, 207, 73);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 0px;
-    font-size: 0.9em;
+        .custom-badge {
+            position: absolute;
+            width: 120px;
+            /* bottom: 10px; */
+            top: 10px;
+            left: -10px;
+            background-color: rgb(16, 207, 73);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 0px;
+            font-size: 0.9em;
 
 
-    &:before {
-        content: "";
-        position: absolute;
-        left: 0px;
-        top: 46%;
-        transform: translateY(40%);
-        width: 0;
-        height: 0;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        border-right: 10px solid rgb(16, 207, 73); 
-    }
-   
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 46%;
+                transform: translateY(40%);
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid rgb(16, 207, 73);
+            }
 
-}
-.image-container {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
-}
 
-.box-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400px;
-    height:400px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
+        }
 
-.image-container:hover .box-image {
-    transform: scale(1.1);
-}
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            width: 100%;
+            padding-top: 100%;
+            /* 1:1 Aspect Ratio */
+        }
 
-.month-card {
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 20px;
-}
+        .box-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
+        .image-container:hover .box-image {
+            transform: scale(1.1);
+        }
+
+        .month-card {
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -421,7 +429,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 p-0">
-                    <img src="{{asset('images/landing page.pdf-image-020.jpg')}}" alt="Hikers Image" class="img-fluid">
+                    <img src="{{asset('images/landing 20page.pdf-image-026.jpg')}}" alt="Hikers Image" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -434,81 +442,82 @@
             <p><em>There is always somewhere wonderful to explore in Pakistan!</em></p>
             <p>
                 <center>
-                     Here you'll find the best month to adventure around our diverse eco-systems: from 
-                </br> beaches, dunes & deserts to the top of K2.</center></p>
+                    Here you'll find the best month to adventure around our diverse eco-systems: from
+                    </br> beaches, dunes & deserts to the top of K2.</center>
+            </p>
         </div>
         <div class="row">
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-015.jpg')}}" class="box-image" alt="January">
-                    <div class="month-label">January</div>
                 </div>
+                <div class="month-label">January</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
-                    <div class="month-label">February</div>
                 </div>
+                <div class="month-label">February</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="March">
-                    <div class="month-label">March</div>
                 </div>
+                <div class="month-label">March</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
-                    <div class="month-label">April</div>
                 </div>
+                <div class="month-label">April</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
-                    <div class="month-label">May</div>
                 </div>
+                <div class="month-label">May</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
-                    <div class="month-label">June</div>
                 </div>
+                <div class="month-label">June</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="July">
-                    <div class="month-label">July</div>
                 </div>
+                <div class="month-label">July</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="August">
-                    <div class="month-label">August</div>
                 </div>
+                <div class="month-label">August</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="September">
-                    <div class="month-label">September</div>
                 </div>
+                <div class="month-label">September</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="October">
-                    <div class="month-label">October</div>
                 </div>
+                <div class="month-label">October</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/2.jpg')}}" class="box-image" alt="November">
-                    <div class="month-label">November</div>
                 </div>
+                <div class="month-label">November</div>
             </div>
             <div class="col-md-4 month-card">
                 <div class="image-container">
                     <img src="{{asset('images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="December">
-                    <div class="month-label">December</div>
                 </div>
+                <div class="month-label">December</div>
             </div>
         </div>
     </div>

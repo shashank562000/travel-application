@@ -2,13 +2,17 @@
 <link rel="stylesheet" src="{{asset('css/header.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour-media.css')}}">
-<!-- @include('partials.header') -->
     @include('partials.head.booking-condition')
     @include('partials.head.header')
     @include('partials.head.header-transparent')
-@include('partials.hero')
+    @include('partials.hero')
 <style>
-/* General Styles */
+.sticky{
+    position:fixed;
+    width: 100%;
+    z-index: 110;
+    top:0px;
+}
 .fa-tag {
     rotate:430deg;
     margin-right: 18px;
@@ -577,7 +581,7 @@ i.fa-check, i.fa-close {
             </div>
         </form>
       </div>
-      <div class="row" style="background-color:#aab4b8">
+      <div class="row" style="background-color:#aab4b8" id="sticked">
         <nav class="navbar navbar-expand-lg" style="width:100%;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -906,3 +910,16 @@ i.fa-check, i.fa-close {
 
   @include('partials.footer')
   @endsection
+  <script>
+    jQuery(document).ready(function(){
+        window.addEventListener('scroll',function(){
+            let navRow = document.getElementById('sticked')
+            console.log(window.pageYOffset)
+            if(window.pageYOffset> 900){
+                navRow.classList.add('sticky')
+            }else{
+                navRow.classList.remove('sticky')
+            }
+        })
+    })
+  </script>

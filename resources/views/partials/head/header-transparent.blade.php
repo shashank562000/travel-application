@@ -144,11 +144,7 @@
             color: white;
         }
 
-        .traveltour-logo img {
-            max-height: 50px;
-            padding: 0;
-            margin-top: 2%;
-        }
+        
 
         .traveltour-navigation {
             display: flex;
@@ -157,8 +153,19 @@
             width: 100%;
         }
 
+        .traveltour-header-style-plain.traveltour-style-menu-right .traveltour-main-menu-right-wrap{
+            margin-top: -48px;
+        }
+
         /* Media query for devices with a max-width of 1024px */
         @media (max-width: 1024px) {
+
+            .traveltour-logo img {
+                max-height: 50px;
+                padding: 0;
+                margin-top: 2%;
+            }
+
             .traveltour-header-container {
                 flex-direction: column;
                 align-items: flex-start;
@@ -174,10 +181,17 @@
                 margin-top: 10px;
                 padding: 5px 10px;
             }
+
         }
 
         /* Media query for devices with a max-width of 768px */
         @media (max-width: 768px) {
+            .traveltour-logo img {
+                max-height: 50px;
+                padding: 0;
+                margin-top: 2%;
+            }
+
             .traveltour-top-bar {
                 flex-direction: column;
                 align-items: flex-start;
@@ -200,6 +214,13 @@
 
         /* Media query for devices with a max-width of 480px */
         @media (max-width: 480px) {
+
+            .traveltour-logo img {
+                max-height: 50px;
+                padding: 0;
+                margin-top: 2%;
+            }
+
             .traveltour-top-bar {
                 padding: 5px 10px;
                 font-size: 0.6em;
@@ -228,7 +249,33 @@
             .traveltour-main-menu-right-button {
                 margin-top: -18px;
             }
+
+            .traveltour-logo img {
+                max-height: 50px;
+                padding: 0;
+                margin-top: 2%;
+            }
+
+            
         }
+
+        @media (max-width: 1290px) {
+            .traveltour-navigation {
+                display: contents;
+                width: 100%;
+            }
+
+            .traveltour-logo img {
+                max-height: 81px;
+                top:10px;
+            }
+
+            .traveltour-header-style-plain .traveltour-navigation{
+                /* line-height: 8; */
+            }
+        }
+
+        
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>

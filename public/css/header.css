@@ -82,7 +82,7 @@
     position: absolute;
     height: 2.3rem;
     top: 15px;
-    left: 0px;
+    left: -10px;
     background-color: rgb(16, 207, 73);
     color: white;
     padding: 10px 10px;
@@ -118,9 +118,9 @@
 }
 
 .month-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    /* width: 100%; */
+    /* height: auto; */
+    border-radius: 0;
 }
 
 .month-label {
@@ -128,7 +128,7 @@
     width: 120px;
     /* bottom: 10px; */
     top: 10px;
-    left: 10px;
+    /* left: 10px; */
     background-color: #002939;
     color: white;
     padding: 5px 10px;
@@ -146,9 +146,9 @@
         height: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-right: 10px solid #17202A; 
+        border-right: 10px solid #17202A;
     }
-   
+
 
 }
 
@@ -166,7 +166,7 @@
         height: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-right: 10px solid #28a745; 
+        border-right: 10px solid #28a745;
     }
 }
 
@@ -174,9 +174,6 @@
     margin-bottom: 30px;
 }
 
-.box-image {
-    height: 200px !important;
-}
 
 
 button.navbar-toggler {

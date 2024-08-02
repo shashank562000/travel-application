@@ -1,13 +1,14 @@
 <style>
     .circle {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         border: 2px dashed white;
         border-radius: 50%;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: slideDown 2s infinite;
     }
 
     .arrow {
@@ -17,7 +18,7 @@
         border-right: 10px solid transparent;
         border-top: 20px solid white;
         position: absolute;
-        top: 39px;
+        top: 32px;
     }
 
     .line {
@@ -32,14 +33,34 @@
         font-family: Georgia, serif;
         font-weight: bold;
     }
+
+    .hero-section i {
+        font-family: 'Garamond', 'Times New Roman', serif;
+        font-size: 20px;
+        font-weight: normal;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 </style>
 <section class="hero-section">
     <div class="container p-4 m-5"></div>
     <div class="container">
         <p class="lens-clinic">NAMED AS</p>
         <h1>DESTINATION OF THE YEAR</h1>
-        <i>By Condé Nast Traveller magazine</i>
-        <p>Here's what you need to know to enter Pakistan in 2024</p>
+        <i><b>By Condé Nast Traveller magazine</b></i>
+        <p style="text-justify"><b>Here's what you need to know to </br>enter Pakistan in 2024</b></p>
         <a href="#" class="btn text-white">READ MORE</a>
         <center>
             <div class="circle">

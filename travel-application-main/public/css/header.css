@@ -1,0 +1,184 @@
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.btn-outline-dark {
+    border-radius: 0px;
+}
+
+.hero-section {
+    background: url('../images/landing-header.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: black;
+    color: black;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 15px;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.custom-section {
+    padding: 60px 0;
+}
+
+.footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.hero-section a.btn {
+    border: 1px solid white;
+    margin-bottom: 30px;
+    border-radius: 0px;
+}
+
+.form-control {
+    width: 20%;
+    margin: 10px;
+    border-radius: 0px;
+    background-color: gray;
+}
+
+.search-box {
+    padding: 30px;
+    display: flex;
+}
+
+.journey-card {
+    background-color: white;
+    border-radius: 5px;
+    /* overflow: hidden; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.journey-card img {
+    width: 100%;
+    height: auto;
+}
+
+.badge {
+    position: absolute;
+    height: 2.3rem;
+    top: 15px;
+    left: -10px;
+    background-color: rgb(16, 207, 73);
+    color: white;
+    padding: 10px 10px;
+    border-radius: 0px;
+    font-size: 0.8em;
+    width: 160px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.support-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.support-section img {
+    width: 100%;
+    height: auto;
+}
+
+.support-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.month-card {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.month-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.month-label {
+    position: absolute;
+    width: 120px;
+    /* bottom: 10px; */
+    top: 10px;
+    left: 10px;
+    background-color: #002939;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0px;
+    font-size: 0.9em;
+
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 46%;
+        transform: translateY(40%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #17202A;
+    }
+
+
+}
+
+
+.month-label.april {
+    background-color: #28a745;
+    /* Green for April */
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 47%;
+        transform: translateY(40%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #28a745;
+    }
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.box-image {
+    height: 200px !important;
+}
+
+
+button.navbar-toggler {
+    z-index: 1000;
+}

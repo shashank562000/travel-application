@@ -1,0 +1,136 @@
+
+@media (max-width: 767.98px) {
+    .navbar {
+        position: relative;
+    }
+    .navbar-toggler {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .navbar-collapse {
+        background-color: #343a40;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-item {
+        margin: 10px 0;
+    }
+    .logo-item {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+ 
+@media (max-width: 767.98px) {
+    .navbar {
+        position: relative;
+    }
+    .navbar-toggler {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .navbar-collapse {
+        background-color: #343a40;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+    }
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-item {
+        margin: 10px 0;
+    }
+    .logo-item {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-collapse {
+        position: static;
+        height: auto;
+        background-color: transparent;
+        transform: translateX(0);
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .nav-item {
+        margin: 0 15px;
+    }
+    .logo-item {
+        order: 0;
+        margin: 0;
+    }
+} 
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .hero-section {
+        padding: 50px 0;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .hero-section a.btn {
+        font-size: 0.8rem;
+    }
+    .form-control {
+        width: 80%;
+    }
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 30px 0;
+    }
+    .hero-section h1 {
+        font-size: 1.5rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    .hero-section a.btn {
+        font-size: 0.7rem;
+    }
+    .form-control {
+        width: 90%;
+    }
+}

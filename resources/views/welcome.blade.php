@@ -25,6 +25,7 @@
             padding-top: 20px;
             font-size: 10px;
             font-weight: bold;
+            border-radius: 0;
         }
 
 
@@ -171,6 +172,33 @@
     }
    
 
+}
+.image-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+
+.box-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height:400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover .box-image {
+    transform: scale(1.1);
+}
+
+.month-card {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
 }
 
     </style>
@@ -350,10 +378,14 @@
 
                 <div class="col-md-6 support-content">
                     <div>
-                        <h2>Visa & LOI Support</h2>
+                        <h2>Affordable Tours From 2 - 15 Days</h2>
                         <hr>
-                        <p>We offer trusted visa support and letter of invitation services 7 days a week and free of charge if you book a tour with us. If you'd simply like to engage our visa services, the price is US$75.</p>
-                        <a href="#" class="btn btn-outline-dark">APPLY HERE</a>
+                        <p>Pakistan’s lakes and mountains are the jewel in
+                            Still working on it, use lorem ipsum: Lorem
+                            ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eusmod tempor incididunt ut labore
+                            et dolore magna aliqua. Ut enim ad minim.</p>
+                        <a href="#" class="btn btn-outline-dark">DETAILS</a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0">
@@ -364,18 +396,28 @@
                 </div>
                 <div class="col-md-6 support-content">
                     <div>
-                        <h2>Visa & LOI Support</h2>
+                        <h2>Custom-Made Luxury Journeys</h2>
                         <hr>
-                        <p>We offer trusted visa support and letter of invitation services 7 days a week and free of charge if you book a tour with us. If you'd simply like to engage our visa services, the price is US$75.</p>
-                        <a href="#" class="btn btn-outline-dark">APPLY HERE</a>
+                        <p>Let our luxury expert craft the perfect bespoke
+                            itinerary for your independent nature. We’ll
+                            include everything from moments with top
+                            chefs, 5-star hotels, and wonderful local guides
+                            who will make each stop in your journey
+                            something special</p>
+                        <a href="#" class="btn btn-outline-dark">DETAILS</a>
                     </div>
                 </div>
                 <div class="col-md-6 support-content">
                     <div>
-                        <h2>Visa & LOI Support</h2>
+                        <h2>Explore Balochistan In Style</h2>
                         <hr>
-                        <p>We offer trusted visa support and letter of invitation services 7 days a week and free of charge if you book a tour with us. If you'd simply like to engage our visa services, the price is US$75.</p>
-                        <a href="#" class="btn btn-outline-dark">APPLY HERE</a>
+                        <p>Still working on it, use lorem ipsum:Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex ea commodo consequat..</p>
+                        <a href="#" class="btn btn-outline-dark">EXPLORE</a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0">
@@ -390,62 +432,96 @@
             <h2>Explore by Month</h2>
             <hr>
             <p><em>There is always somewhere wonderful to explore in Pakistan!</em></p>
-            <p>Here you'll find the best month to adventure around our diverse eco-systems: from the beaches, dunes & deserts to the top of K2.</p>
+            <p>
+                <center>
+                     Here you'll find the best month to adventure around our diverse eco-systems: from 
+                </br> beaches, dunes & deserts to the top of K2.</center></p>
         </div>
         <div class="row">
             <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-015.jpg')}}" class="box-image" alt="January">
-                <div class="month-label">January</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
-                <div class="month-label">February</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="March">
-                <div class="month-label">March</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
-                <div class="month-label april">April</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
-                <div class="month-label">May</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">June</div>
-            </div>
-            <div class="col-md-4 month-card r-0">
-                <img src="{{asset('images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">July</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">August</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">
-                    September
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-015.jpg')}}" class="box-image" alt="January">
+                    <div class="month-label">January</div>
                 </div>
             </div>
             <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">October</div>
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
+                    <div class="month-label">February</div>
+                </div>
             </div>
             <div class="col-md-4 month-card">
-                <img src="{{asset('images/2.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">November</div>
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="March">
+                    <div class="month-label">March</div>
+                </div>
             </div>
             <div class="col-md-4 month-card">
-                <img src="{{asset('images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="June">
-                <div class="month-label">December</div>
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
+                    <div class="month-label">April</div>
+                </div>
             </div>
-
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
+                    <div class="month-label">May</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
+                    <div class="month-label">June</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="July">
+                    <div class="month-label">July</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="August">
+                    <div class="month-label">August</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="September">
+                    <div class="month-label">September</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="October">
+                    <div class="month-label">October</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/2.jpg')}}" class="box-image" alt="November">
+                    <div class="month-label">November</div>
+                </div>
+            </div>
+            <div class="col-md-4 month-card">
+                <div class="image-container">
+                    <img src="{{asset('images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="December">
+                    <div class="month-label">December</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <section class="custom-section bg-light text-center">
+        <div class="container" style="width: 50%;">
+            <h2>What is Lorem Ipsum?</h2>
+            <hr>
+            <p>Lorem Ipsum is simply dummy text of the printing and typeseing
+                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s, when an unknown .</p>
+        </div>
+    </section>
 
     @include('partials.footer')
 

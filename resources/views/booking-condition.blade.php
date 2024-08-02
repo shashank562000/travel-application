@@ -500,7 +500,7 @@
         };
         /* ]]> */
     </script>
-    <script type="text/javascript" src="{{asset('/wp-content/uploads/siteground-optimizer-assets/traveltour-script-core.min.js')}}" id="traveltour-script-core-js"></script>
+    {{-- <script type="text/javascript" src="{{asset('/wp-content/uploads/siteground-optimizer-assets/traveltour-script-core.min.js')}}" id="traveltour-script-core-js"></script> --}}
     <script type="text/javascript" src="{{asset('/wp-content/uploads/siteground-optimizer-assets/tourmaster-tour-script.min.js')}}" id="tourmaster-tour-script-js"></script>
     <script type="text/javascript" id="popup-maker-site-js-extra">
         /* <![CDATA[ */

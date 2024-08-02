@@ -145,10 +145,14 @@ section.more-tours .card {
 /* Media Queries */
 @media (max-width: 767.98px) {
     .tour-details form {
-    border: 0;
-    background-color: transparent;
-    display: none;
-}
+        border: 0;
+        background-color: transparent;
+        display: none;
+    }
+    div.tour-details div.col-sm-6:nth-child(even)
+    {
+        padding-left:10%!important;
+    }
     .navbar {
         position: relative;
     }
@@ -235,7 +239,10 @@ section.more-tours .card {
         left: 25%;
         top: 10%;
     }
-
+    div.tour-details div.col-sm-6:nth-child(even)
+    {
+        padding-left:10%!important;
+    }
     .form-container {
         padding: 20px;
     }
@@ -483,7 +490,7 @@ i.fa-check, i.fa-close {
   <section class="tour-details">
     <div class="container-fluid">
       <div class="tour-details col-12 position-relative row">
-        <div class="col-4" style="padding-left:10%">
+        <div class="col-sm-6 col-xl-6  col-md-6" style="padding-left:10%">
             <div class="row mt-5 mb-1">
                 <i class="fa-solid fa-clock"></i>
                 <span class="px-3 "> 8 Days </span>
@@ -497,7 +504,7 @@ i.fa-check, i.fa-close {
                 <span class="px-3 "> Max people: 14</span>
             </div>
         </div>
-        <div class="col-8" style="padding-left:2%">
+        <div class="col-sm-6 col-xl-6  col-md-6" style="padding-left:2%">
             <div class="row mt-5 mb-3">
                 <div class="d-flex">
                     <i class="fa-solid fa-calendar-days"></i>

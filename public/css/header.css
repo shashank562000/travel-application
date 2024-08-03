@@ -8,17 +8,6 @@
     border-radius: 0px;
 }
 
-.hero-section {
-    background: url('../images/landing-header.jpg') no-repeat center center;
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 100px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
 
 .navbar-dark .navbar-toggler {
     border-color: black;

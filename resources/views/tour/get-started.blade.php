@@ -5,7 +5,7 @@
     @include('partials.head.booking-condition')
     @include('partials.head.header')
     @include('partials.head.header-transparent')
-    @include('partials.hero')
+    @include('partials.tour-page-hero')
 <style>
 .sticky{
     position:fixed;
@@ -37,7 +37,7 @@ body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 .image-bars img:not(.col-4 img) {
     transition: transform .2s; /* Animation */
@@ -720,8 +720,8 @@ i.fa-check, i.fa-close {
         <button class="btn-outline-light text-dark tourBtn"> VIEW TRIP </button>
     </div>
 </div>
-<div class="row justify-content-center">
-    <div class="col-10" style="border-top:2px solid darkgray">
+<div class="row justify-content-center" id ="Details">
+    <div class="col-10" style="border-top:2px solid darkgray" >
         <div class="hstack mx-3 mt-5 mb-5">
             <h5 style="font-family:fangsong;font-weight:600" class="text-secondary"> Details </h5>
         </div>
@@ -818,7 +818,7 @@ i.fa-check, i.fa-close {
     </div>
 </div>
 
-<section class="custom-section bg-light " id ="Details" >
+<section class="custom-section bg-light "  >
     <div class="container mt-5">
         <h1 class=" mb-5">More Tours</h1>
         <div class="row">

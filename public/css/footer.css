@@ -4,12 +4,12 @@
 }
 
 .zero-section {
-    background: url('../images/footer.jpg') no-repeat center center;
+    background: url('../images/footer (1).jpg') no-repeat center center;
     background-size: cover;
-    padding: 20px;
+    /* padding: 20px; */
     justify-content: center;
     align-items: center;
-
+    padding-top: 25%;
 }
 
 .zero-section h3 {

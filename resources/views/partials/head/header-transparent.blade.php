@@ -109,7 +109,7 @@
             display: block;
         }
 
-        .traveltour-main-menu a::after {
+        .traveltour-main-menu>ul>li>a::after {
             content: '';
             display: block;
             width: 0;
@@ -121,7 +121,7 @@
             left: 0;
         }
 
-        .traveltour-main-menu a:hover::after {
+        .traveltour-main-menu>ul>li>a:hover::after {
             width: 100%;
         }
 
@@ -304,13 +304,31 @@
                 padding-left: 0px;
                 padding-right: 0px;
             }
-            .traveltour-navigation .sf-menu > li > a{
+
+            .traveltour-navigation .sf-menu>li>a {
                 font-size: 12px;
             }
-            .traveltour-item-pdlr{
-                 padding-left: 10px;
+
+            .traveltour-item-pdlr {
+                padding-left: 10px;
                 padding-right: 10px;
             }
+
+            .traveltour-navigation .sf-menu>.traveltour-normal-menu .sub-menu {
+                font-size: 10px;
+            }
+
+            .traveltour-navigation .sf-menu>.traveltour-normal-menu .sub-menu>a {
+                text-decoration: none;
+            }
+        }
+
+        .traveltour-navigation .sf-menu>.traveltour-normal-menu .sub-menu>a {
+            text-decoration: none;
+        }
+
+        .traveltour-main-menu .sub-menu>a :hover::after {
+            width: 0;
         }
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">

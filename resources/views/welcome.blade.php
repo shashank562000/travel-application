@@ -194,8 +194,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
@@ -254,7 +254,7 @@
                         <hr style="font-size:large;font-weight:bold;color:black">
                         <div class="gdlr-core-pbf-element">
                             <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-top: 20px ;margin-bottom: 20px ;">
-                                <div class="gdlr-core-divider-container" style="max-width: 640px ;">
+                                <div class="gdlr-core-divider-container" style="">
                                     <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #999999 ;"></div>
                                 </div>
                             </div>
@@ -262,9 +262,9 @@
                         <div class="gdlr-core-pbf-element">
                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
                                 <div class="gdlr-core-text-box-item-content" style="text-transform: none ;">
-                                    <p style="text-align: center;">Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable .</p>
-                                    <p style="text-align: center;">people you can imagine. It’s a place where an adventurous soul will ﬁt right in and
-                                        where a wanderlust spirit will ﬁnally feel at peace.&nbsp;</p>
+                                    <p style="text-align: center;margin-bottom: 0px;">Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable .</p>
+                                    <p style="text-align: center;margin-bottom: 0px;">people you can imagine. It’s a place where an adventurous soul will ﬁt right in and </P>
+                                    <p style="text-align: center;margin-bottom: 0px;"> where a wanderlust spirit will ﬁnally feel at peace.&nbsp;</p>
                                 </div>
                             </div>
                         </div>
@@ -385,7 +385,7 @@
                 </div>
 
                 <div class="col-md-6 support-content">
-                    <div>
+                    <div class="p-3" style="text-align: end;">
                         <h2>Affordable Tours From 2 - 15 Days</h2>
                         <hr>
                         <p>Pakistan’s lakes and mountains are the jewel in
@@ -416,7 +416,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 support-content">
-                    <div>
+                    <div class="p-3" style="text-align: end;">
                         <h2>Explore Balochistan In Style</h2>
                         <hr>
                         <p>Still working on it, use lorem ipsum:Lorem
@@ -434,95 +434,97 @@
             </div>
         </div>
     </section>
-
-    <div class="container mt-5">
-        <div class="text-center section-title">
-            <h2>Explore by Month</h2>
-            <hr>
-            <p><em>There is always somewhere wonderful to explore in Pakistan!</em></p>
-            <p>
-                <center>
-                    Here you'll find the best month to adventure around our diverse eco-systems: from
-                    </br> beaches, dunes & deserts to the top of K2.</center>
-            </p>
+    <section class="bg-light text-center">
+        <div class="container mt-5">
+            <div class="text-center section-title ">
+                <h2>Explore by Month</h2>
+                <hr>
+                <p><em>There is always somewhere wonderful to explore in Pakistan!</em></p>
+                <p>
+                    <center>
+                        Here you'll find the best month to adventure around our diverse eco-systems: from
+                        </br> beaches, dunes & deserts to the top of K2.</center>
+                </p>
+            </div>
+            <div class="row justify-content-center pl-5 p-5">
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-015.jpg')}}" class="box-image" alt="January">
+                    </div>
+                    <div class="month-label">January</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
+                    </div>
+                    <div class="month-label">February</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="March">
+                    </div>
+                    <div class="month-label">March</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
+                    </div>
+                    <div class="month-label">April</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
+                    </div>
+                    <div class="month-label">May</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
+                    </div>
+                    <div class="month-label">June</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="July">
+                    </div>
+                    <div class="month-label">July</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="August">
+                    </div>
+                    <div class="month-label">August</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="September">
+                    </div>
+                    <div class="month-label">September</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="October">
+                    </div>
+                    <div class="month-label">October</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/2.jpg')}}" class="box-image" alt="November">
+                    </div>
+                    <div class="month-label">November</div>
+                </div>
+                <div class="col-md-4 month-card">
+                    <div class="image-container">
+                        <img src="{{asset('images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="December">
+                    </div>
+                    <div class="month-label">December</div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-015.jpg')}}" class="box-image" alt="January">
-                </div>
-                <div class="month-label">January</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
-                </div>
-                <div class="month-label">February</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="March">
-                </div>
-                <div class="month-label">March</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
-                </div>
-                <div class="month-label">April</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
-                </div>
-                <div class="month-label">May</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
-                </div>
-                <div class="month-label">June</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="July">
-                </div>
-                <div class="month-label">July</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="August">
-                </div>
-                <div class="month-label">August</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="September">
-                </div>
-                <div class="month-label">September</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="October">
-                </div>
-                <div class="month-label">October</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/2.jpg')}}" class="box-image" alt="November">
-                </div>
-                <div class="month-label">November</div>
-            </div>
-            <div class="col-md-4 month-card">
-                <div class="image-container">
-                    <img src="{{asset('images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="December">
-                </div>
-                <div class="month-label">December</div>
-            </div>
-        </div>
-    </div>
 
-    <section class="custom-section bg-light text-center">
+    </section>
+
+    <section class="custom-section text-center">
         <div class="container" style="width: 50%;">
             <h2>What is Lorem Ipsum?</h2>
             <hr>

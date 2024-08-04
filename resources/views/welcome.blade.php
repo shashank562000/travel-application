@@ -213,12 +213,15 @@
 </head>
 
 <body>
+    @php 
+    if(!blank($answers)){
+        $settingValues = json_decode($answers)->data;
+    }  
+    @endphp
     @include('partials.head.booking-condition')
     @include('partials.head.header')
     @include('partials.head.header-transparent')
-    {{-- @include('partials.header') --}}
     @include('partials.hero')
-
     <section class="custom-section text-center " style="padding:0;">
         <div class="search-container">
             <h1 class="pt-4 text-white">Your Adventure Begins Here </h1>
@@ -247,7 +250,9 @@
                         <div class="gdlr-core-pbf-element">
                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                 <div class="gdlr-core-title-item-title-wrap">
-                                    <h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 38px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">Journey Through History & Natural Wonders<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h1>
+                                    <h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 38px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">
+                                    {{$settingValues->journeyHeading??'Journey Through History & Natural Wonders'}}
+                                    <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h1>
                                 </div>
                             </div>
                         </div>
@@ -262,16 +267,18 @@
                         <div class="gdlr-core-pbf-element">
                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
                                 <div class="gdlr-core-text-box-item-content" style="text-transform: none ;">
-                                    <p style="text-align: center;margin-bottom: 0px;">Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable .</p>
-                                    <p style="text-align: center;margin-bottom: 0px;">people you can imagine. It’s a place where an adventurous soul will ﬁt right in and </P>
-                                    <p style="text-align: center;margin-bottom: 0px;"> where a wanderlust spirit will ﬁnally feel at peace.&nbsp;</p>
+                                    <p style="text-align: center;margin-bottom: 0px;">
+                                     {{$settingValues->journeyText??'Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable . people you can imagine. It’s a place where an adventurous soul will ﬁt right in and  where a wanderlust spirit will ﬁnally feel at peace.&nbsp;'}}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="gdlr-core-pbf-element">
                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
                                 <div class="gdlr-core-title-item-title-wrap">
-                                    <h2 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 22px ;font-weight: 400 ;font-style: italic ;text-transform: none ;color: #898989 ;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h2>
+                                    <h2 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 22px ;font-weight: 400 ;font-style: italic ;text-transform: none ;color: #898989 ;">
+                                    {{ $settingValues->journeySummary ?? 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }}
+                                    <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h2>
                                 </div>
                             </div>
                         </div>
@@ -528,9 +535,9 @@
         <div class="container" style="width: 50%;">
             <h2>What is Lorem Ipsum?</h2>
             <hr>
-            <p>Lorem Ipsum is simply dummy text of the printing and typeseing
-                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                since the 1500s, when an unknown .</p>
+            <p>{{ $settingValues->prefooterText ?? 'Lorem Ipsum is simply dummy text of the printing and typeseing
+                industry. Lorem Ipsum has been the industry\'s standard dummy text ever
+                since the 1500s, when an unknown .'}}</p>
         </div>
     </section>
 

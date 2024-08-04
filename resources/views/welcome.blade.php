@@ -254,7 +254,7 @@
                         <hr style="font-size:large;font-weight:bold;color:black">
                         <div class="gdlr-core-pbf-element">
                             <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-top: 20px ;margin-bottom: 20px ;">
-                                <div class="gdlr-core-divider-container" style="">
+                                <div class="gdlr-core-divider-container">
                                     <div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #999999 ;"></div>
                                 </div>
                             </div>

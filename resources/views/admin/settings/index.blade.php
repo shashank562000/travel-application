@@ -40,7 +40,7 @@
 <script>
     const init = ele => {
         $.ajax({
-            url: location.href + `info/${ele.value}`,
+            url: location.href + `/info/${ele.value}`,
             success:res=>{
                 console.log(res)
                 if(res.length)

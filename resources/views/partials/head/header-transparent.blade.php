@@ -323,13 +323,6 @@
             }
         }
 
-        .traveltour-navigation .sf-menu>.traveltour-normal-menu .sub-menu>a {
-            text-decoration: none;
-        }
-
-        .traveltour-main-menu .sub-menu>a :hover::after {
-            width: 0;
-        }
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 </head>

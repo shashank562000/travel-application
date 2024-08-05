@@ -37,5 +37,11 @@ Route::prefix('admin')->group(function () {
             Route::get('meta', 'index');
             Route::post('meta/{name}', 'update');
         });
+       
     })->name('settings');
+    
+});
+
+Route::get('/admin/dashboard', function(){
+    return view('admin.dashboard');
 });

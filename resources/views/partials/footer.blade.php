@@ -4,7 +4,7 @@
 <section class="footer">
     <div class="container-fluid zero-section">
         <form action="" class="form-group">
-            <h3 class="text-white">Keep me updated!</h3>
+            <h3 class="text-white">{{ isset($settingValues) ? $settingValues->footerHeading : 'Keep me updated!'}}</h3>
             <div class="form-group ">
                 <input type="text" class="mb-1" placeholder="First Name" style="background-color:transparent!important">
                 <input type="text" class="mb-1" placeholder="Last Name" style="background-color:transparent!important">

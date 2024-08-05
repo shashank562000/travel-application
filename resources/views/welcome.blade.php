@@ -213,10 +213,10 @@
 </head>
 
 <body>
-    @php 
+    @php
     if(!blank($answers)){
-        $settingValues = json_decode($answers)->data;
-    }  
+    $settingValues = json_decode($answers)->data;
+    }
     @endphp
     @include('partials.head.booking-condition')
     @include('partials.head.header')
@@ -251,8 +251,9 @@
                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                 <div class="gdlr-core-title-item-title-wrap">
                                     <h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 38px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">
-                                    {{$settingValues->journeyHeading??'Journey Through History & Natural Wonders'}}
-                                    <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h1>
+                                        {{$settingValues->journeyHeading??'Journey Through History & Natural Wonders'}}
+                                        <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                    </h1>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +269,7 @@
                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
                                 <div class="gdlr-core-text-box-item-content" style="text-transform: none ;">
                                     <p style="text-align: center;margin-bottom: 0px;">
-                                     {{$settingValues->journeyText??'Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable . people you can imagine. It’s a place where an adventurous soul will ﬁt right in and  where a wanderlust spirit will ﬁnally feel at peace.&nbsp;'}}
+                                        {{$settingValues->journeyText??'Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable . people you can imagine. It’s a place where an adventurous soul will ﬁt right in and  where a wanderlust spirit will ﬁnally feel at peace.&nbsp;'}}
                                     </p>
                                 </div>
                             </div>
@@ -277,8 +278,9 @@
                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
                                 <div class="gdlr-core-title-item-title-wrap">
                                     <h2 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 22px ;font-weight: 400 ;font-style: italic ;text-transform: none ;color: #898989 ;">
-                                    {{ $settingValues->journeySummary ?? 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }}
-                                    <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span></h2>
+                                        {{ $settingValues->journeySummary ?? 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }}
+                                        <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -299,11 +301,11 @@
                             <div class="custom-badge">Trekking</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg1headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg1Content ?? 'Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.
+                                the industry's standard.''}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -316,11 +318,11 @@
                             <div class="custom-badge">Balochistan</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg2headding ?? 'Lorem Ipsum is simply dummy text of the}}</h5>
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg2Content ?? 'Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.
+                                the industry's standard.'}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -335,11 +337,11 @@
                             <div class="custom-badge">North</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg3headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg3Content ?? 'Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.
+                                the industry's standard.'}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -352,11 +354,11 @@
                             <div class="custom-badge">Motorbike</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Lorem Ipsum is simply dummy text of the</h5>
-                            <p class="card-text">Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg4headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg4Content ?? 'Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.
+                                the industry's standard.'}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -533,7 +535,7 @@
 
     <section class="custom-section text-center">
         <div class="container" style="width: 50%;">
-            <h2>What is Lorem Ipsum?</h2>
+            <h2>{{ $settingValues->prefooterheadding?? 'What is Lorem Ipsum?'}}</h2>
             <hr>
             <p>{{ $settingValues->prefooterText ?? 'Lorem Ipsum is simply dummy text of the printing and typeseing
                 industry. Lorem Ipsum has been the industry\'s standard dummy text ever

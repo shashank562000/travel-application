@@ -21,7 +21,16 @@ class PageSettings extends Seeder
                     'journeyText',
                     'journeySummary',
                     'prefooterText', 
-                    'footerHeading'
+                    'prefooterheadding', 
+                    'footerHeading',
+                    'OurFavouriteExpertLedToursImg1headding',
+                    'OurFavouriteExpertLedToursImg2headding',
+                    'OurFavouriteExpertLedToursImg3headding',
+                    'OurFavouriteExpertLedToursImg4headding',
+                    'OurFavouriteExpertLedToursImg1Content',
+                    'OurFavouriteExpertLedToursImg2Content',
+                    'OurFavouriteExpertLedToursImg3Content',
+                    'OurFavouriteExpertLedToursImg4Content',
                 ]
             ],
             [

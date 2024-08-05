@@ -43,7 +43,7 @@
         if(url.includes('settings/'))
         {
             console.log(url)
-            url = url.replace('settings/','settings')
+            // url = url.replace('settings/','settings')
             console.log(url)
         }
         $.ajax({

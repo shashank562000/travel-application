@@ -1,6 +1,6 @@
 @extends('layouts.admin.default')
 @section('content')
- 
+
 <div class="container">
     <div class="row justify-content-center">
         <h2> ADMIN - Adventure Planners Pakistan </h2>
@@ -19,8 +19,8 @@
                           <option value="{{$page->name}}"> {{ucwords($page->name)}} </option>
                         @endforeach
                     </select>
-                </div> 
-                 
+                </div>
+
             </form>
         </div>
     </div>
@@ -57,10 +57,13 @@
                     $('.Selected').text(ele.value.toUpperCase())
                     let html = ``;
                     res.forEach( row => {
+                        if(!row.option.includes('{'))
+                        {
                         html+=`<tr>
                             <td><input type="text" name="name[]" value="${row.option}"></td>
                             <td><i class="fa fa-trash text-danger"></i></td>
                         </tr>`
+                        }
                     })
                     $('.formHere').html(html)
                 }
@@ -73,7 +76,7 @@
         e.preventDefault()
         form = document.querySelector('form.meta')
         let formData = new FormData(form)
-        
+
         $.ajax({
             url:location.href+'/'+$('.Selected').text().toLowerCase(),
             type:'POST',

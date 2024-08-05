@@ -20,7 +20,9 @@ Route::get('/what-we-Offer', function () {
 
 Route::get('/get-started', function () {
     $_COOKIE['path'] = asset('images/tour/tour-header.png');
-    return view('tour.get-started');
+    $settings = PageSetting::whereName('tour')->pluck('option');
+    $answers = SiteContent::whereName('tour')->first('data');
+    return view('tour.get-started', compact('settings','answers'));
 });
 
 Route::prefix('admin')->group(function () {

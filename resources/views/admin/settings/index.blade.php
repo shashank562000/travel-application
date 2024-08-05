@@ -1,6 +1,6 @@
 @extends('layouts.admin.default')
 @section('content')
- 
+
 <div class="container">
     <div class="row justify-content-center">
         <h2> ADMIN - Adventure Planners Pakistan </h2>
@@ -19,8 +19,8 @@
                           <option value="{{$page->name}}"> {{ucwords($page->name)}} </option>
                         @endforeach
                     </select>
-                </div> 
-                 
+                </div>
+
             </form>
         </div>
     </div>
@@ -40,21 +40,61 @@
 <script>
     const init = ele => {
         $.ajax({
-            url: location.href + `/info/${ele.value}`,
+            url: location.href + `info/${ele.value}`,
             success:res=>{
                 console.log(res)
+                $('.Selected').text(ele.value.toUpperCase())
                 if(res.length)
                 {
                     $('.form-container').removeClass('d-none')
-                    $('.Selected').text(ele.value.toUpperCase())
                     let html = `<input type="hidden" name="name" value="${ele.value}">`;
                     res.forEach( row => {
-                        html+=`<div class="form-group">
-                            <label for="${row.option}">${row.option}</label>
-                            <input type="text" class="form-control" name="${row.option}">
-                        </div>`
+                        if(row.option.includes('{'))
+                        {
+                            dec = JSON.parse(row.option)
+                            key = Object.keys(dec)[0];
+                            html+=`<tr>
+                            <td>
+                            <div class="container">
+                                <div class="row fs-3 mb-4">${key.toUpperCase()}</div>`
+                                for(let i=0;i<Object.values(dec)[0]; i++)
+                                {
+                                    if(key=='images')
+                                    {
+                                        html+=`<div class="row">
+                                            <b > Image ${i+1} </b> <br>
+                                            <input type="file" name="images[${i+1}]" class="mt-2 form-control">
+                                        </div>`
+                                    }
+                                    if(key=='cards')
+                                    {
+                                        html+=`<b>CardHeading${i+1}</b>
+                                        <br>
+                                        <input type="text" name="cardText[${i+1}]"  required class="mt-2 form-control">
+                                        <br>
+                                        <label >CardImage${i+1}</label> <br>
+                                        <input type="file" name="cardImage[${i+1}]" required class="mt-2 form-control"> <br>
+                                        `
+                                    }
+                                }
+                           html+= `</div>
+                            </td>
+                            <td></td>
+                            </tr>`
+
+                        }else
+                        {
+                            html+=`<div class="form-group">
+                                <label for="${row.option}">${row.option}</label>
+                                <input type="text" class="form-control" name="${row.option}">
+                            </div>`
+                        }
                     })
+                    $('.btn-success').removeClass('d-none')
                     $('.formHere').html(html)
+                } else {
+                    $('.btn-success').addClass('d-none')
+                    $('.formHere').html('<tr><td colspan="2"><div class="text-center"><h3> No Keys were set, go to meta settings to set the keys </h3></div></td></tr>')
                 }
             },
             error:err=>console.log(err.message)
@@ -65,7 +105,7 @@
         e.preventDefault()
         form = document.querySelector('form.meta')
         let formData = new FormData(form)
-        
+
         $.ajax({
             url:"{{ url('admin/settings/create') }}",
             type:'POST',
@@ -75,7 +115,7 @@
             success:res=>{
                 if(res.status)
                 {
-                    alert(res.message)
+                    alert('Page Content set successfully!')
                 }
             }
         })

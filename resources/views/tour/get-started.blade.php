@@ -6,6 +6,16 @@
 @include('partials.head.header')
 @include('partials.head.header-transparent')
 @include('partials.tour-page-hero')
+@php
+    if(!blank($answers)){
+        $settingValues = json_decode($answers)->data;
+        if(is_string($settingValues))
+        {
+            $settingValues = json_decode($settingValues);
+        }
+        //dd($settingValues);
+    }
+@endphp
 <style>
     .sticky {
         position: fixed;
@@ -652,11 +662,11 @@
         <div class="card-body">
             <h4 class="card-title">Balochistan Adventure</h4>
             <p class="card-text">
-                Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
-                Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.
+                {{$settingValues->adventureText?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                Join Pakistan\’s first-ever luxury small group tour across the entire length of Balochistan\’s south coast.'}}
             </p>
             <p class="">
-                **Please note: trip is for adults and children 16 years or older only
+                **Please note: {{$settingValues->note??'trip is for adults and children 16 years or older only'}}
             </p>
         </div>
     </div>
@@ -711,13 +721,13 @@
         <details open>
             <summary class="row p-4" style="background-color:#aab4b8">
                 <div>
-                    Day 1 - 2 Karachi
+                    Day 1 - 2 {{$settingValues->day1_2??'Karachi'}}
                 </div>
             </summary>
             <div class="card-body">
                 <p class="card-text py-3">
-                    Arrive in time to Karachi's Jinnah unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
-                    Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.
+                    {{$settingValues->day2_text??'Arrive in time to Karachi\'s Jinnah unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                    Join Pakistan\’s first-ever luxury small group tour across the entire length of Balochistan\’s south coast.'}}
                 </p>
                 <p class="card-text py-3">
                     Enjoy a relaxing unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
@@ -755,14 +765,14 @@
         <details open>
             <summary class="row p-4" style="background-color:#aab4b8">
                 <div>
-                    Day 3 - 4 Damb & Hingol National Park
+                    Day 3 - 4 {{$settingValues->day3_4??'Damb & Hingol National Park'}}
                 </div>
             </summary>
             <div class="card-body">
                 <p class="card-text py-3">
-                    Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
-                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we’ll drive to Kund Malir and check in to Gold Coast Resort on
-                    the beach. Dinner at the resort by the best chef in the region!
+                    {{$settingValues->day4_text??'Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
+                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we\’ll drive to Kund Malir and check in to Gold Coast Resort on
+                    the beach. Dinner at the resort by the best chef in the region!'}}
                 </p>
                 <p class="card-text py-3">
                     Next morning, we’ll head out early to beat the heat on our climb to the top of the Chandragup Mud Volcano. Then kick off your shoes for a walk
@@ -799,14 +809,14 @@
         <details>
             <summary class=" row p-4" style="background-color:#aab4b8">
                 <div>
-                    Day 5 - 7 Gwadar & Jiwani
+                    Day 5 - 7 {{$settingValues->day5_7?? 'Gwadar & Jiwani'}}
                 </div>
             </summary>
             <div class="card-body">
                 <p class="card-text py-3">
-                    Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
-                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we’ll drive to Kund Malir and check in to Gold Coast Resort on
-                    the beach. Dinner at the resort by the best chef in the region!
+                    {{$settingValues->day5_7_text??'Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
+                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we\’ll drive to Kund Malir and check in to Gold Coast Resort on
+                    the beach. Dinner at the resort by the best chef in the region!'}}
                 </p>
                 <p class="card-text py-3">
                     Next morning, we’ll head out early to beat the heat on our climb to the top of the Chandragup Mud Volcano. Then kick off your shoes for a walk
@@ -843,14 +853,14 @@
         <details>
             <summary class=" row p-4" style="background-color:#aab4b8">
                 <div>
-                    Day 8 Karachi
+                    Day 8 {{ $settingValues->day8??'Karachi'}}
                 </div>
             </summary>
             <div class="card-body">
                 <p class="card-text py-3">
-                    Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
+                    {{$settingValues->day8_text?? 'Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
                     boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we’ll drive to Kund Malir and check in to Gold Coast Resort on
-                    the beach. Dinner at the resort by the best chef in the region!
+                    the beach. Dinner at the resort by the best chef in the region!'}}
                 </p>
                 <p class="card-text py-3">
                     Next morning, we’ll head out early to beat the heat on our climb to the top of the Chandragup Mud Volcano. Then kick off your shoes for a walk
@@ -1076,8 +1086,8 @@
                     <h4 class="card-title">What is lorem ipsum ?</h4>
                     <hr>
                     <p class="card-text">
-                        Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
-                        Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.
+                        {{$settingValues->prefooter?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                        Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.'}}
                     </p>
                     <p class="">
                         **Please note: trip is for adults and children 16 years or older only

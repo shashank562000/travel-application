@@ -15,20 +15,28 @@ class PageSettings extends Seeder
     {
         $raw = [
             [
-                'name'=> 'landing',
-                'option'=> [
+                'name' => 'landing',
+                'option' => [
                     'journeyHeading',
                     'journeyText',
                     'journeySummary',
                     'prefooterText',
                     'footerHeading',
-                    json_encode(['cards'=>4]),
-                    json_encode(['images'=>12]),
+                    json_encode(['cards' => 4]),
+                    json_encode(['images' => 12]),
+                    'OurFavouriteExpertLedToursImg1headding',
+                    'OurFavouriteExpertLedToursImg2headding',
+                    'OurFavouriteExpertLedToursImg3headding',
+                    'OurFavouriteExpertLedToursImg4headding',
+                    'OurFavouriteExpertLedToursImg1Content',
+                    'OurFavouriteExpertLedToursImg2Content',
+                    'OurFavouriteExpertLedToursImg3Content',
+                    'OurFavouriteExpertLedToursImg4Content',
                 ]
             ],
             [
-                'name'=> 'tour',
-                'option'=> [
+                'name' => 'tour',
+                'option' => [
                     'adventureText',
                     'note',
                     'highlights',
@@ -46,26 +54,21 @@ class PageSettings extends Seeder
                 ]
             ],
             [
-                'name'=> 'booking',
-                'option'=> [
-
-                ]
+                'name' => 'booking',
+                'option' => []
             ],
             [
-                'name'=> 'hiking',
-                'option'=> [
-
-                ]
+                'name' => 'hiking',
+                'option' => []
             ],
         ];
         PageSetting::truncate();
         foreach ($raw as $row) {
-            if(count($row['option'])===0)
-            {
+            if (count($row['option']) === 0) {
                 continue;
             }
             foreach ($row['option'] as $opt) {
-                PageSetting::create(['name'=> $row['name'], 'option'=>$opt ]);
+                PageSetting::create(['name' => $row['name'], 'option' => $opt]);
             }
         }
     }

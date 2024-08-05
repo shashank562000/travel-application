@@ -39,8 +39,15 @@
 </div>
 <script>
     const init = ele => {
+        let url = location.href + `/info/${ele.value}`
+        if(url.includes('settings/'))
+        {
+            console.log(url)
+            url = url.replace('settings/','settings')
+            console.log(url)
+        }
         $.ajax({
-            url: location.href + `info/${ele.value}`,
+            url,
             success:res=>{
                 console.log(res)
                 $('.Selected').text(ele.value.toUpperCase())

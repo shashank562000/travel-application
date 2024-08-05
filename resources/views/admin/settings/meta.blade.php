@@ -47,8 +47,16 @@
 </div>
 <script>
     const init = ele => {
+        let url = location.href.replace('meta','info')
+        if(url.includes('info/'))
+        {
+            console.log(url)
+            url = url.replace('info/','info')
+            console.log(url)
+        }
+        url += `/${ele.value}`
         $.ajax({
-            url: location.href.replace('meta','info') + `/${ele.value}`,
+            url,
             success:res=>{
                 console.log(res)
                 if(res.length)

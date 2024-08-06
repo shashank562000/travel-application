@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('site_contents');
         Schema::create('site_contents', function (Blueprint $table) {
             $table->id();
             $table->json('data');

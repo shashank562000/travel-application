@@ -15,14 +15,14 @@ class Page extends Model
 
     public function texts():HasMany
     {
-        return $this->hasMany(Text::class);
+        return $this->hasMany(Text::class,'page_id','id');
     }
     public function cards():HasMany
     {
-        return $this->hasMany(Card::class);
+        return $this->hasMany(Card::class,'page_id','id');
     }
     public function images():HasMany
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class,'page_id','id');
     }
 }

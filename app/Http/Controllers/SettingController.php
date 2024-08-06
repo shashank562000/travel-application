@@ -65,6 +65,7 @@ class SettingController extends Controller
                 ];
                 SiteContent::create($data);
             }
+            session()->put('msg','Texts successfully updated!');
             return back()->with('old', $old->get());
     }
     public function cards($pageID){

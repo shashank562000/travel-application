@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\Page;
+use App\Models\PageSetting;
 use App\Models\SiteContent;
 use App\Models\Text;
 
@@ -39,7 +42,8 @@ class SettingController extends Controller
     }
     public function texts($pageID){
         return view('admin.text', [
-            'keys'=> Text::where('page_id',$pageID)->get(),
+            'keys'=> Text::where('page_id',$pageID)->get(['id','option']),
+            'answers'=>PageSetting::whereName(''),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
@@ -49,7 +53,8 @@ class SettingController extends Controller
     }
     public function cards($pageID){
         return view('admin.card', [
-            'keys'=> Text::where('page_id',$pageID)->get(),
+            'keys'=> Card::where('page_id',$pageID)->get(['id','option']),
+            'answers'=>PageSetting::whereName(''),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
@@ -57,7 +62,8 @@ class SettingController extends Controller
     {}
     public function images($pageID){
         return view('admin.image', [
-            'keys'=> Text::where('page_id',$pageID)->get(),
+            'keys'=> Image::where('page_id',$pageID)->get(['id','option']),
+            'answers'=>PageSetting::whereName(''),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }

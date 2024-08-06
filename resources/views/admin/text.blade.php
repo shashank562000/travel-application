@@ -12,5 +12,24 @@
 <div id="layout-wrapper">
 @include('layouts.admin.header')
 @include('layouts.admin.sidebar')
+<div class="vertical-overlay"></div>
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container ">
+                    <div class="col-5 position-absolute" style="left:">
+                        @foreach ($keys as $row)
+                            <div class="form-group">
+                                <label for="">{{ucwords($row->option)}}</label>
+                                <input type="text" name="text" class="form-control">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 @endsection

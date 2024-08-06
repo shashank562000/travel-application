@@ -18,28 +18,28 @@ class TextSeeder extends Seeder
            [
                 'page_id' => Page::whereName('landing')->first('id')->id,
                 'option'=>[
-                    'journeyHeading',
-                    'journeyText',
-                    'journeySummary',
-                    'prefooterText',
-                    'footerHeading',
-                    'OurFavouriteExpertLedToursImg1headding',
-                    'OurFavouriteExpertLedToursImg2headding',
-                    'OurFavouriteExpertLedToursImg3headding',
-                    'OurFavouriteExpertLedToursImg4headding',
-                    'OurFavouriteExpertLedToursImg1Content',
-                    'OurFavouriteExpertLedToursImg2Content',
-                    'OurFavouriteExpertLedToursImg3Content',
-                    'OurFavouriteExpertLedToursImg4Content',
+                    'journey_Heading',
+                    'journey_Text',
+                    'journey_Summary',
+                    'prefooter_Text',
+                    'footer_Heading',
+                    'Our_Favourite_Expert_Led_Tours_Img1_heading',
+                    'Our_Favourite_Expert_Led_Tours_Img2_headding',
+                    'Our_Favourite_Expert_Led_Tours_Img3_headding',
+                    'Our_Favourite_Expert_Led_Tours_Img4_headding',
+                    'Our_Favourite_Expert_Led_Tours_Img1_Content',
+                    'Our_Favourite_Expert_Led_Tours_Img2_Content',
+                    'Our_Favourite_Expert_Led_Tours_Img3_Content',
+                    'Our_Favourite_Expert_Led_Tours_Img4_Content',
                 ]
             ],
             [
                 'page_id'=>Page::whereName('tour')->first('id')->id,
                 'option' => [
-                    'adventureText',
+                    'adventure_Text',
                     'note',
                     'highlights',
-                    'tripText',
+                    'trip_Text',
                     'itinerary',
                     'day1_2',
                     'day2_text',
@@ -49,7 +49,7 @@ class TextSeeder extends Seeder
                     'day5_7_text',
                     'day8',
                     'day8_text',
-                    'prefooter',
+                    'pre_footer',
                 ]
             ]
         ];

@@ -15,12 +15,20 @@
 <div class="vertical-overlay"></div>
 <div class="main-content">
     <div class="page-content">
+        @if(session()->has('msg'))
+            <div class="alert alert-success alert-dismissible  fade show" role="alert">
+                {{ session()->get('msg') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @php session()->forget('msg'); @endphp
+        @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="container ">
                 <form action="{{ route('admin.setting.uploadImage') }}" enctype="multipart/form-data" method="POST">
                     @csrf
-                    <div class="col-5 position-absolute" >
+                    <div class="col-5">
+                        <input type="hidden" name="page_id" value="{{$page_id}}">
                         @foreach ($keys as $row)
                             @php
                                 $label = str_replace('_',' ',$row->option);
@@ -31,7 +39,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="col-5">
+                    <div class="col-5 mt-3">
                         <button class="btn btn-success"> SAVE </button>
                     </div>
                 </form>

@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('texts', function (Blueprint $table) {
+        Schema::dropIfExists('images');
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('option');
-            $table->foreignId('page_id')->references('id')->on('page');
+            $table->integer('page_id');
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('texts');
+        Schema::dropIfExists('images');
     }
 };

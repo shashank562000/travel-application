@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cards', function (Blueprint $table) {
+        Schema::dropIfExists('site_contents');
+        Schema::create('site_contents', function (Blueprint $table) {
             $table->id();
-            $table->string('option');
-            $table->foreignId('page_id')->references('id')->on('page');
+            $table->string('type');
+            $table->json('data');
+            $table->integer('page_id');
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cards');
+        Schema::dropIfExists('site_contents');
     }
 };

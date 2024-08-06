@@ -1,5 +1,10 @@
 @extends('layouts.admin.default')
 @section('content')
+<?php
+if(isset($answers)){
+    $answers = json_decode($answers)->data;
+}
+?>
 <head>
     <link href="{{asset('/assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css">
     <script src="{{asset('/assets/js/layout.js')}}"></script>
@@ -15,19 +20,27 @@
 <div class="vertical-overlay"></div>
 <div class="main-content">
     <div class="page-content">
+        @if(session()->has('msg'))
+            <div class="alert alert-success alert-dismissible  fade show" role="alert">
+                {{ session()->get('msg') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @php session()->forget('msg'); @endphp
+         @endif
         <div class="container-fluid">
             <div class="row">
                 <div class="container ">
                     <form action="{{ route('admin.setting.uploadText') }}" id="textForm" method="POST">
                     @csrf
                     <div class="col-5 " >
+                        <input type="hidden" name="page_id" value="{{$page_id}}">
                         @foreach ($keys as $row)
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 @php
                                 $label = str_replace('_',' ',$row->option);
                                 @endphp
-                                <label for="">{{ucwords($label)}}</label>
-                                <input type="text" name="{{$row->option}}" class="form-control">
+                                <b >{{ucwords($label)}}</b>
+                                <input type="text" name="{{$row->option}}" value="{{($answers?->{$row->option})??'' }}" class="form-control">
                             </div>
                         @endforeach
                     </div>

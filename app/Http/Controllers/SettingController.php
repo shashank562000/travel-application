@@ -42,32 +42,35 @@ class SettingController extends Controller
     }
     public function texts($pageID){
         return view('admin.text', [
+            'page_id'=> $pageID,
             'keys'=> Text::where('page_id',$pageID)->get(['id','option']),
-            'answers'=> SiteContent::whereId($pageID)->first('data'),
+            'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
     public function uploadTexts(Request $request)
     {
-        dd($request->all());
         $old = SiteContent::where('page_id',$request->page_id);
             $data = $request->all();
             unset($data['_token']);
             unset($data['page_id']);
             if($old->exists())
             {
-                $old->update(['data'=>json_encode($data)]);
+                $old->update(['data'=> $data]);
             } else {
                 $data = [
-                    'page_id'=> $request->page_id,
-                    'data'=> json_encode($data)
+                    'type' => 'text',
+                    'data'=> $data,
+                    'page_id'=> $request->page_id
                 ];
                 SiteContent::create($data);
             }
-            return [ 'status'=> true ];
+            session()->put('msg','Texts successfully updated!');
+            return back()->with('old', $old->get());
     }
     public function cards($pageID){
         return view('admin.card', [
+            'page_id'=> $pageID,
             'keys'=> Card::where('page_id',$pageID)->get(['id','option']),
             'answers'=> SiteContent::whereId($pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
@@ -77,8 +80,9 @@ class SettingController extends Controller
     {}
     public function images($pageID){
         return view('admin.image', [
+            'page_id'=> $pageID,
             'keys'=> Image::where('page_id',$pageID)->get(['id','option']),
-            'answers'=> SiteContent::whereId($pageID)->first('data'),
+            'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }

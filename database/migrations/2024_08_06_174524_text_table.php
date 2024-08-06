@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('site_contents');
-        Schema::create('site_contents', function (Blueprint $table) {
+        Schema::dropIfExists('texts');
+        Schema::create('texts', function (Blueprint $table) {
             $table->id();
-            $table->json('data');
+            $table->string('option');
             $table->integer('page_id');
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('site_contents');
+        Schema::dropIfExists('texts');
     }
 };

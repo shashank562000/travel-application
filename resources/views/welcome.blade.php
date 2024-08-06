@@ -302,10 +302,10 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg1headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg1Content ?? 'Lorem Ipsum is simply dummy text
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg1Content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.''}}
+                                the industry's standard."}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -318,11 +318,11 @@
                             <div class="custom-badge">Balochistan</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg2headding ?? 'Lorem Ipsum is simply dummy text of the}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg2Content ?? 'Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg2headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg2Content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.'}}
+                                the industry's standard."}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -338,10 +338,10 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg3headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg3Content ?? 'Lorem Ipsum is simply dummy text
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg3Content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.'}}
+                                the industry's standard."}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
@@ -355,10 +355,10 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg4headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg4Content ?? 'Lorem Ipsum is simply dummy text
+                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg4Content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
-                                the industry's standard.'}}
+                                the industry's standard."}}
                             </p>
                             <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>

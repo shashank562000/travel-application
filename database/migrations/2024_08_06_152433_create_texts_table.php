@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('site_contents', function (Blueprint $table) {
+        Schema::create('texts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->json('data');
+            $table->string('option');
+            $table->foreignId('page_id')->references('id')->on('page');
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('site_contents');
+        Schema::dropIfExists('texts');
     }
 };

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{MetaController,DataController,SettingController};
-use App\Models\{PageSetting,SiteContent};
+use App\Http\Controllers\{MetaController,DataController,SettingController,AdminController};
+use App\Models\{PageSetting,SiteContent,Page};
 
 Route::get('/', function () {
     $settings = PageSetting::whereName('landing')->pluck('option');
@@ -25,17 +25,24 @@ Route::get('/get-started', function () {
     return view('tour.get-started', compact('settings','answers'));
 });
 
-Route::prefix('admin')->group(function () {
-    Route::prefix('settings')->group(function () {
+Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
+    Route::group(['prefix'=> 'settings','as'=> 'setting.'],function () {
         Route::get('info/{page}', [DataController::class,'info'])->name('page');
         Route::controller(SettingController::class)->group(function(){
             Route::get('/', 'index');
             Route::post('/create', 'create')->name('create');
             Route::post('meta/{name}', 'update');
+            Route::get('texts/{page_id}', 'texts')->name('text');
+            Route::post('texts', 'uploadTexts')->name('uploadText');
+            Route::get('cards/{page_id}', 'cards')->name('card');
+            Route::post('cards', 'uploadCards')->name('uploadCard');
+            Route::get('images/{page_id}', 'images')->name('image');
+            Route::post('images', 'uploadImages')->name('uploadImage');
         });
         Route::controller(MetaController::class)->group(function(){
             Route::get('meta', 'index');
             Route::post('meta/{name}', 'update');
         });
     })->name('settings');
+    Route::get('/dashboard', [AdminController::class,'index'])->name('dashboard');
 });

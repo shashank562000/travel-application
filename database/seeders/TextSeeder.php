@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\PageSetting;
+use App\Models\Page;
+use App\Models\Text;
 
-class PageSettings extends Seeder
+class TextSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,19 +15,26 @@ class PageSettings extends Seeder
     public function run(): void
     {
         $raw = [
-            [
-                'name' => 'landing',
-                'option' => [
+           [
+                'page_id' => Page::whereName('landing')->first('id')->id,
+                'option'=>[
                     'journeyHeading',
                     'journeyText',
                     'journeySummary',
                     'prefooterText',
                     'footerHeading',
-                    json_encode(['images' => 12]),
+                    'OurFavouriteExpertLedToursImg1headding',
+                    'OurFavouriteExpertLedToursImg2headding',
+                    'OurFavouriteExpertLedToursImg3headding',
+                    'OurFavouriteExpertLedToursImg4headding',
+                    'OurFavouriteExpertLedToursImg1Content',
+                    'OurFavouriteExpertLedToursImg2Content',
+                    'OurFavouriteExpertLedToursImg3Content',
+                    'OurFavouriteExpertLedToursImg4Content',
                 ]
             ],
             [
-                'name' => 'tour',
+                'page_id'=>Page::whereName('tour')->first('id')->id,
                 'option' => [
                     'adventureText',
                     'note',
@@ -43,24 +51,15 @@ class PageSettings extends Seeder
                     'day8_text',
                     'prefooter',
                 ]
-            ],
-            [
-                'name' => 'booking',
-                'option' => []
-            ],
-            [
-                'name' => 'hiking',
-                'option' => []
-            ],
+            ]
         ];
-        PageSetting::truncate();
+
+        Text::truncate();
         foreach ($raw as $row) {
-            if (count($row['option']) === 0) {
-                continue;
-            }
             foreach ($row['option'] as $opt) {
-                PageSetting::create(['name' => $row['name'], 'option' => $opt]);
+                Text::create(['page_id' => $row['page_id'], 'option' => $opt]);
             }
         }
+
     }
 }

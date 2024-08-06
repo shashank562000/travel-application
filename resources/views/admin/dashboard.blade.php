@@ -1,76 +1,17 @@
-<!doctype html>
-<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
-
+@extends('layouts.admin.default')
+@section('content')
 <head>
-
-    <meta charset="utf-8">
-    <title>Analytics | Velzon - Admin & Dashboard Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
-    <meta content="Themesbrand" name="author">
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('/assets/images/favicon.ico')}}">
-
-    <!-- plugin css -->
     <link href="{{asset('/assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css">
-
-    <!-- Layout config Js -->
     <script src="{{asset('/assets/js/layout.js')}}"></script>
-    <!-- Bootstrap Css -->
     <link href="{{asset('/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-    <!-- Icons Css -->
     <link href="{{asset('/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
-    <!-- App Css-->
     <link href="{{asset('/assets/css/app.min.css')}}" rel="stylesheet" type="text/css">
-    <!-- custom Css-->
     <link href="{{asset('/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css">
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
-
-<body>
-
     <!-- Begin page -->
-    <div id="layout-wrapper">
-
-        <header id="page-topbar">
-    <div class="layout-width">
-        <div class="navbar-header">
-            <div class="d-flex">
-                <!-- LOGO -->
-                <div class="navbar-brand-box horizontal-logo">
-                    <a href="index.html" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="{{asset('/assets/images/logo-sm.png')}}" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="{{asset('/assets/images/logo-dark.png')}}" alt="" height="17">
-                        </span>
-                    </a>
-
-                    <a href="index.html" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="{{asset('/assets/images/logo-sm.png')}}" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="{{asset('/assets/images/logo-light.png')}}" alt="" height="17">
-                        </span>
-                    </a>
-                </div>
-
-                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger material-shadow-none" id="topnav-hamburger-icon">
-                    <span class="hamburger-icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-
-            </div>
-
-           
-        </div>
-    </div>
-</header>
+<div id="layout-wrapper">
+    @include('layouts.admin.header')
 
 <!-- removeNotificationModal -->
 <div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
@@ -97,240 +38,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <!-- ========== App Menu ========== -->
-        <div class="app-menu navbar-menu">
-            <!-- LOGO -->
-            <div class="navbar-brand-box">
-                <!-- Dark Logo-->
-                <a href="index.html" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="{{asset('/assets/images/logo-sm.png')}}" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{asset('/assets/images/logo-dark.png')}}" alt="" height="17">
-                    </span>
-                </a>
-                <!-- Light Logo-->
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="{{asset('/assets/images/logo-sm.png')}}" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{asset('/assets/images/logo-light.png')}}" alt="" height="17">
-                    </span>
-                </a>
-                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
-                    <i class="ri-record-circle-line"></i>
-                </button>
-            </div>
-    
-            <div class="dropdown sidebar-user m-1 rounded">
-                <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-flex align-items-center gap-2">
-                        <img class="rounded header-profile-user" src="{{asset('/assets/images/users/avatar-1.jpg')}}" alt="Header Avatar">
-                        <span class="text-start">
-                            <span class="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
-                            <span class="d-block fs-14 sidebar-user-name-sub-text"><i class="ri ri-circle-fill fs-10 text-success align-baseline"></i> <span class="align-middle">Online</span></span>
-                        </span>
-                    </span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-                    <h6 class="dropdown-header">Welcome Anna!</h6>
-                    <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
-                    <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
-                    <a class="dropdown-item" href="apps-tasks-kanban.html"><i class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Taskboard</span></a>
-                    <a class="dropdown-item" href="pages-faqs.html"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Help</span></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance : <b>$5971.67</b></span></a>
-                    <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
-                    <a class="dropdown-item" href="auth-lockscreen-basic.html"><i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Lock screen</span></a>
-                    <a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
-                </div>
-            </div>
-            <div id="scrollbar">
-                <div class="container-fluid">
-
-
-                    <div id="two-column-menu">
-                    </div>
-                    <ul class="navbar-nav" id="navbar-nav">
-                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
-                        <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                            <i class="ri-dashboard-2-line"></i> Dashboard
-                        </a>
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Authentication</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarAuth">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignIn" data-key="t-signin"> Sign In
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarSignIn">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-basic.html" class="nav-link" data-key="t-basic"> Basic
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-cover.html" class="nav-link" data-key="t-cover"> Cover
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
-                                <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarPages">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="pages-starter.html" class="nav-link" data-key="t-starter"> Starter </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarProfile" data-key="t-profile"> Profile
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarProfile">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="pages-profile.html" class="nav-link" data-key="t-simple-page">
-                                                        Simple Page </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="pages-profile-settings.html" class="nav-link" data-key="t-settings"> Settings </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-team.html" class="nav-link" data-key="t-team"> Team </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-timeline.html" class="nav-link" data-key="t-timeline"> Timeline </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-faqs.html" class="nav-link" data-key="t-faqs"> FAQs </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-pricing.html" class="nav-link" data-key="t-pricing"> Pricing </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-gallery.html" class="nav-link" data-key="t-gallery"> Gallery </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-maintenance.html" class="nav-link" data-key="t-maintenance"> Maintenance
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-coming-soon.html" class="nav-link" data-key="t-coming-soon"> Coming Soon
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-sitemap.html" class="nav-link" data-key="t-sitemap"> Sitemap </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-search-results.html" class="nav-link" data-key="t-search-results"> Search Results </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-privacy-policy.html" class="nav-link" data-key="t-privacy-policy">Privacy Policy</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="pages-term-conditions.html" class="nav-link" data-key="t-term-conditions">Term & Conditions</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Components</span></li>
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
-                                <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Forms</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarForms">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="forms-elements.html" class="nav-link" data-key="t-basic-elements">Basic
-                                            Elements</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-select.html" class="nav-link" data-key="t-form-select"> Form Select </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-checkboxs-radios.html" class="nav-link" data-key="t-checkboxs-radios">Checkboxs & Radios</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-pickers.html" class="nav-link" data-key="t-pickers"> Pickers </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-masks.html" class="nav-link" data-key="t-input-masks">Input Masks</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-advanced.html" class="nav-link" data-key="t-advanced">Advanced</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-range-sliders.html" class="nav-link" data-key="t-range-slider"> Range
-                                            Slider </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-validation.html" class="nav-link" data-key="t-validation">Validation</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-wizard.html" class="nav-link" data-key="t-wizard">Wizard</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-editors.html" class="nav-link" data-key="t-editors">Editors</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-file-uploads.html" class="nav-link" data-key="t-file-uploads">File
-                                            Uploads</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-layouts.html" class="nav-link" data-key="t-form-layouts">Form Layouts</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="forms-select2.html" class="nav-link" data-key="t-select2">Select2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
-                                <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarTables">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="tables-basic.html" class="nav-link" data-key="t-basic-tables">Basic Tables</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="tables-gridjs.html" class="nav-link" data-key="t-grid-js">Grid Js</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="tables-listjs.html" class="nav-link" data-key="t-list-js">List Js</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="tables-datatables.html" class="nav-link" data-key="t-datatables">Datatables</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Sidebar -->
-            </div>
-
-            <div class="sidebar-background"></div>
-        </div>
+    @include('layouts.admin.sidebar')
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->
         <div class="vertical-overlay"></div>
@@ -789,7 +497,7 @@
                     <div id="sidebar-visibility">
                         <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Sidebar Visibility</h6>
                         <p class="text-muted">Choose show or Hidden sidebar.</p>
-                
+
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check card-radio">
@@ -1246,7 +954,7 @@
                                 <label class="form-check-label p-0 avatar-sm h-auto" for="sidebarimg-01">
                                     <img src="{{asset('/assets/images/sidebar/img-1.jpg')}}" alt="" class="avatar-md w-auto object-fit-cover">
                                 </label>
-                            </div>	
+                            </div>
 
                             <div class="form-check sidebar-setting card-radio">
                                 <input class="form-check-input" type="radio" name="data-sidebar-image" id="sidebarimg-02" value="img-2">
@@ -1296,7 +1004,7 @@
                     <div id="preloader-menu">
                         <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Preloader</h6>
                         <p class="text-muted">Choose a preloader.</p>
-                    
+
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
@@ -1354,14 +1062,14 @@
                                 <h5 class="fs-13 text-center mt-2">Disable</h5>
                             </div>
                         </div>
-                    
+
                     </div>
                     <!-- end preloader-menu -->
 
                     <div id="body-img" style="display: none;">
                         <h6 class="mt-4 mb-0 fw-semibold text-uppercase">Background Image</h6>
                         <p class="text-muted">Choose a body background image.</p>
-                
+
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
@@ -1397,7 +1105,7 @@
                                 <h5 class="fs-13 text-center mt-2">One</h5>
                             </div>
                             <!-- end col -->
-                
+
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
                                     <input class="form-check-input" type="radio" name="data-body-image" id="body-img-two" value="img-2">
@@ -1407,7 +1115,7 @@
                                 <h5 class="fs-13 text-center mt-2">Two</h5>
                             </div>
                             <!-- end col -->
-                
+
                             <div class="col-4">
                                 <div class="form-check sidebar-setting card-radio">
                                     <input class="form-check-input" type="radio" name="data-body-image" id="body-img-three" value="img-3">
@@ -1460,3 +1168,4 @@
 </body>
 
 </html>
+@endsection

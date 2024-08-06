@@ -6,9 +6,8 @@ use App\Models\{PageSetting,SiteContent,Page, Text};
 
 Route::get('/', function () {
     $pageID = Page::whereName('landing')->first('id')->id;
-    $settings = Text::where('page_id', $pageID )->pluck('option');
-    $answers = SiteContent::where('page_id', $pageID )->get('data');
-    dd($answers);
+    $settings = Text::where('page_id', $pageID )->get('option');
+    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
     return view('welcome', compact('settings','answers'));
 });
 

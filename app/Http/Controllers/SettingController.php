@@ -43,18 +43,33 @@ class SettingController extends Controller
     public function texts($pageID){
         return view('admin.text', [
             'keys'=> Text::where('page_id',$pageID)->get(['id','option']),
-            'answers'=>PageSetting::whereName(''),
+            'answers'=> SiteContent::whereId($pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
     public function uploadTexts(Request $request)
     {
-
+        dd($request->all());
+        $old = SiteContent::where('page_id',$request->page_id);
+            $data = $request->all();
+            unset($data['_token']);
+            unset($data['page_id']);
+            if($old->exists())
+            {
+                $old->update(['data'=>json_encode($data)]);
+            } else {
+                $data = [
+                    'page_id'=> $request->page_id,
+                    'data'=> json_encode($data)
+                ];
+                SiteContent::create($data);
+            }
+            return [ 'status'=> true ];
     }
     public function cards($pageID){
         return view('admin.card', [
             'keys'=> Card::where('page_id',$pageID)->get(['id','option']),
-            'answers'=>PageSetting::whereName(''),
+            'answers'=> SiteContent::whereId($pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
@@ -63,7 +78,7 @@ class SettingController extends Controller
     public function images($pageID){
         return view('admin.image', [
             'keys'=> Image::where('page_id',$pageID)->get(['id','option']),
-            'answers'=>PageSetting::whereName(''),
+            'answers'=> SiteContent::whereId($pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }

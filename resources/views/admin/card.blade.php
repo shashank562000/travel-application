@@ -11,6 +11,35 @@
 </head>
 <div id="layout-wrapper">
 @include('layouts.admin.header')
-
+@include('layouts.admin.sidebar')
+<div class="vertical-overlay"></div>
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container ">
+                    <form action="{{ route('admin.setting.uploadCard') }}" method="POST">
+                    @csrf
+                    <div class="col-5 position-absolute" >
+                        @foreach ($keys as $row)
+                            <div class="form-group">
+                                @php
+                                    $label = str_replace('_',' ',$row->option);
+                                @endphp
+                                <label for="$row->option">{{ucwords($label)}}</label>
+                                <input type="text" id="{{$row->option}}"
+                                name="{{$row->option}}" class="form-control">
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="col-5">
+                        <button class="btn btn-success"> SAVE </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 @endsection

@@ -18,14 +18,23 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="container ">
-                    <div class="col-5 position-absolute" style="left:">
+                    <form action="{{ route('admin.setting.uploadText') }}" id="textForm" method="POST">
+                    @csrf
+                    <div class="col-5 " >
                         @foreach ($keys as $row)
                             <div class="form-group">
-                                <label for="">{{ucwords($row->option)}}</label>
-                                <input type="text" name="text" class="form-control">
+                                @php
+                                $label = str_replace('_',' ',$row->option);
+                                @endphp
+                                <label for="">{{ucwords($label)}}</label>
+                                <input type="text" name="{{$row->option}}" class="form-control">
                             </div>
                         @endforeach
                     </div>
+                    <div class="col-5 mt-3">
+                        <button class="btn btn-success"> SAVE </button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>

@@ -18,14 +18,23 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="container ">
-                    <div class="col-5 position-absolute" style="left:">
+                <form action="{{ route('admin.setting.uploadImage') }}" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="col-5 position-absolute" >
                         @foreach ($keys as $row)
+                            @php
+                                $label = str_replace('_',' ',$row->option);
+                            @endphp
                             <div class="form-group">
-                                <label for="">{{ucwords($row->option)}}</label>
+                                <label for="">{{ucwords($label)}}</label>
                                 <input type="file" name="image[{{$row->option}}]" class="form-control">
                             </div>
                         @endforeach
                     </div>
+                    <div class="col-5">
+                        <button class="btn btn-success"> SAVE </button>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>

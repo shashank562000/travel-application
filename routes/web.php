@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{MetaController,DataController,SettingController,AdminController};
-use App\Models\{PageSetting,SiteContent,Page};
+use App\Models\{PageSetting,SiteContent,Page, Text};
 
 Route::get('/', function () {
-    $settings = PageSetting::whereName('landing')->pluck('option');
-    $answers = SiteContent::whereName('landing')->first('data');
+    $pageID = Page::whereName('landing')->first('id')->id;
+    $settings = Text::where('page_id', $pageID )->pluck('option');
+    $answers = SiteContent::where('page_id', $pageID )->get('data');
+    dd($answers);
     return view('welcome', compact('settings','answers'));
 });
 

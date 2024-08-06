@@ -216,6 +216,7 @@
     @php
     if(!blank($answers)){
     $settingValues = json_decode($answers)->data;
+    dd($settingValues);
     }
     @endphp
     @include('partials.head.booking-condition')

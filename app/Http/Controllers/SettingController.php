@@ -87,5 +87,26 @@ class SettingController extends Controller
         ]);
     }
     public function uploadImages(Request $request)
-    {}
+    {
+        $filepaths = [];
+        foreach($request->image as $imageName => $image)
+        {
+            $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
+            $filepaths[$imageName]=$filePath;
+        }
+        $old = SiteContent::where('page_id',$request->page_id);
+        if($old->exists())
+        {
+            $old->update(['data'=> $filepaths]);
+        } else {
+            $data = [
+                'type' => 'image',
+                'data'=> $filepaths,
+                'page_id'=> $request->page_id
+            ];
+            SiteContent::create($data);
+        }
+        session()->put('msg','Images successfully updated!');
+        return back()->with('old', $old->get());
+    }
 }

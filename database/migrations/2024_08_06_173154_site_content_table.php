@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::dropIfExists('site_contents');
         Schema::create('site_contents', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
             $table->json('data');
             $table->integer('page_id');
         });

@@ -20,7 +20,8 @@
                 <div class="container ">
                 <form action="{{ route('admin.setting.uploadImage') }}" enctype="multipart/form-data" method="POST">
                     @csrf
-                    <div class="col-5 position-absolute" >
+                    <div class="col-5">
+                        <input type="hidden" name="page_id" value="{{$page_id}}">
                         @foreach ($keys as $row)
                             @php
                                 $label = str_replace('_',' ',$row->option);
@@ -31,7 +32,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="col-5">
+                    <div class="col-5 mt-3">
                         <button class="btn btn-success"> SAVE </button>
                     </div>
                 </form>

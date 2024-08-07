@@ -62,7 +62,7 @@
                         </a>
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
                                 <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Authentication</span>
                             </a>
@@ -86,7 +86,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
@@ -124,7 +124,7 @@
                         </li>
 
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-components">Components</span></li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarForms">
                                 <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Forms</span>
                             </a>
@@ -174,9 +174,9 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTables">
                                 <i class="ri-layout-grid-line"></i> <span data-key="t-tables">Tables</span>
                             </a>
@@ -196,7 +196,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
         <!-- Sidebar -->

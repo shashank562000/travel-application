@@ -21,8 +21,9 @@ Route::get('/what-we-Offer', function () {
 
 Route::get('/get-started', function () {
     $_COOKIE['path'] = asset('images/tour/tour-header.png');
-    $settings = PageSetting::whereName('tour')->pluck('option');
-    $answers = SiteContent::whereName('tour')->first('data');
+    $pageID = Page::whereName('tour')->first('id')->id;
+    $settings = Text::where('page_id', $pageID )->get('option');
+    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
     return view('tour.get-started', compact('settings','answers'));
 });
 

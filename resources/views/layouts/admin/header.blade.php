@@ -30,7 +30,10 @@
                         <span></span>
                     </span>
                 </button>
-
+                <div class="float-right position-absolute d-flex" style="left:87%;top:25%">
+                    <i class="fs-1 fa-solid fa-right-from-bracket"></i>
+                    <a href="{{ route('logout') }}" class="mt-1 ms-3">Logout</a>
+                </div>
             </div>
 
 

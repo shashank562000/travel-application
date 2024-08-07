@@ -44,13 +44,13 @@ class SettingController extends Controller
         return view('admin.text', [
             'page_id'=> $pageID,
             'keys'=> Text::where('page_id',$pageID)->get(['id','option']),
-            'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
+            'answers'=> SiteContent::where('page_id',$pageID)->where('type','text')->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
     public function uploadTexts(Request $request)
     {
-        $old = SiteContent::where('page_id',$request->page_id);
+        $old = SiteContent::where('page_id',$request->page_id)->where('type','text');
             $data = $request->all();
             unset($data['_token']);
             unset($data['page_id']);
@@ -81,7 +81,7 @@ class SettingController extends Controller
     public function images($pageID){
         return view('admin.image', [
             'page_id'=> $pageID,
-            'keys'=> Image::where('page_id',$pageID)->get(['id','option']),
+            'keys'=> Image::where('page_id',$pageID)->where('type','image')->get(['id','option']),
             'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
@@ -94,7 +94,7 @@ class SettingController extends Controller
             $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
             $filepaths[$imageName]=$filePath;
         }
-        $old = SiteContent::where('page_id',$request->page_id);
+        $old = SiteContent::where('page_id',$request->page_id)->where('type','image');
         if($old->exists())
         {
             $old->update(['data'=> $filepaths]);

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{MetaController,DataController,SettingController,AdminController};
+use App\Http\Controllers\{MetaController,DataController,SettingController,AdminController,AuthController};
 use App\Models\{PageSetting,SiteContent,Page, Text};
 
 Route::get('/', function () {
@@ -26,7 +26,21 @@ Route::get('/get-started', function () {
     return view('tour.get-started', compact('settings','answers'));
 });
 
-Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
+Route::get('login', function(){
+    if(auth()->user()){
+        return redirect()->route('admin.dashboard');
+    }
+    return view('auth.login');
+});
+Route::get('register', function(){
+    return view('auth.register');
+});
+Route::controller(AuthController::class)->group(function(){
+    Route::post('login','login')->name('login');
+    Route::post('register','register')->name('register');
+    Route::get('/logout','logout')->name('logout');
+});
+Route::group(['prefix'=>'admin', 'as'=>'admin.','middleware'=>'auth'], function () {
     Route::group(['prefix'=> 'settings','as'=> 'setting.'],function () {
         Route::get('info/{page}', [DataController::class,'info'])->name('page');
         Route::controller(SettingController::class)->group(function(){

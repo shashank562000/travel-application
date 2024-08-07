@@ -38,11 +38,17 @@ if(isset($answers)){
                             <div class="form-group mt-3">
                                 @php
                                 $label = str_replace('_',' ',$row->option);
+                                $isTextArea = stripos($label, 'text') !== false;
                                 @endphp
-                                <b >{{ucwords($label)}}</b>
-                                <input type="text" name="{{$row->option}}" value="{{($answers?->{$row->option})??'' }}" class="form-control">
+                                <b>{{ ucwords($label) }}</b>
+                                @if ($isTextArea)
+                                    <textarea name="{{ $row->option }}" class="form-control ckeditor">{{ ($answers?->{$row->option}) ?? '' }}</textarea>
+                                @else
+                                    <input type="text" name="{{ $row->option }}" value="{{ ($answers?->{$row->option}) ?? '' }}" class="form-control">
+                                @endif
                             </div>
-                        @endforeach
+                    @endforeach
+
                     </div>
                     <div class="col-5 mt-3">
                         <button class="btn btn-success"> SAVE </button>
@@ -54,4 +60,15 @@ if(isset($answers)){
     </div>
 </div>
 </div>
+
 @endsection
+<script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+<script>
+    $(document).ready(function() {
+        $('textarea.ckeditor').each(function() {
+            CKEDITOR.replace(this, {
+                width: '600px'  
+            });
+        });
+    });
+</script>

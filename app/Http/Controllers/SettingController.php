@@ -43,6 +43,7 @@ class SettingController extends Controller
     public function texts($pageID){
         return view('admin.text', [
             'page_id'=> $pageID,
+            'pageName'=> Page::find($pageID)->name,
             'keys'=> Text::where('page_id',$pageID)->get(['id','option']),
             'answers'=> SiteContent::where('page_id',$pageID)->where('type','text')->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
@@ -71,6 +72,7 @@ class SettingController extends Controller
     public function cards($pageID){
         return view('admin.card', [
             'page_id'=> $pageID,
+            'pageName'=> Page::find($pageID)->name,
             'keys'=> Card::where('page_id',$pageID)->get(['id','option']),
             'answers'=> SiteContent::whereId($pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
@@ -81,6 +83,7 @@ class SettingController extends Controller
     public function images($pageID){
         return view('admin.image', [
             'page_id'=> $pageID,
+            'pageName'=> Page::find($pageID)->name,
             'keys'=> Image::where('page_id',$pageID)->where('type','image')->get(['id','option']),
             'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()

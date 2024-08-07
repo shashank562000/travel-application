@@ -12,7 +12,6 @@ if(isset($answers)){
     <link href="{{asset('/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/assets/css/app.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('/assets/css/custom.min.css')}}" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <div id="layout-wrapper">
 @include('layouts.admin.header')
@@ -20,6 +19,9 @@ if(isset($answers)){
 <div class="vertical-overlay"></div>
 <div class="main-content">
     <div class="page-content">
+        <div class="row justify-content-center fs-4">
+            Page: {{ucwords($pageName)}}
+        </div>
         @if(session()->has('msg'))
             <div class="alert alert-success alert-dismissible  fade show" role="alert">
                 {{ session()->get('msg') }}
@@ -62,12 +64,13 @@ if(isset($answers)){
 </div>
 
 @endsection
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <script>
     $(document).ready(function() {
         $('textarea.ckeditor').each(function() {
             CKEDITOR.replace(this, {
-                width: '600px'  
+                width: '600px'
             });
         });
     });

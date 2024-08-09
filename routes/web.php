@@ -15,6 +15,7 @@ Route::get('/booking-condition', function () {
     return view('booking-condition');
 });
 
+
 Route::get('/what-we-Offer', function () {
     return view('hiking');
 });
@@ -26,6 +27,24 @@ Route::get('/get-started', function () {
     $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
     return view('tour.get-started', compact('settings','answers'));
 });
+
+Route::get('/8d_balochistan', function () {
+    $_COOKIE['path'] = asset('images/tour/tour-header.png');
+    $pageID = Page::whereName('tour')->first('id')->id;
+    $settings = Text::where('page_id', $pageID )->get('option');
+    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
+    return view('8d_balochistan', compact('settings','answers'));
+});
+
+Route::get('/15d_balochistan', function () {
+    $_COOKIE['path'] = asset('images/tour/tour-header.png');
+    $pageID = Page::whereName('tour')->first('id')->id;
+    $settings = Text::where('page_id', $pageID )->get('option');
+    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
+    return view('15d_balochistan', compact('settings','answers'));
+});
+
+
 
 Route::get('login', function(){
     if(auth()->user()){

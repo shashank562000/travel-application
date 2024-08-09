@@ -758,11 +758,11 @@
         <h4 class="card-title ml-5 pl-2" id="Videos-Pics"> Photos & Videos</h4>
     </div>
     <div class="d-flex justify-content-center">
-        <img src="{{ $settingValues->images->main_image ?? asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="Main Image">
+        <img src="{{ $settingValues->photosAndVideos->main_image ?? asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="Main Image">
     </div>
     <div class="row mx-4 p-5 justify-content-center text-center" style="border: 0px;">
         <div class="col-12">
-            <h5 style="font-family:math;font-weight:600"> {{ $settingValues->images->caption ?? 'Envision the dream' }} </h5>
+            <h5 style="font-family:math;font-weight:600"> {{ $settingValues->photosAndVideos->caption ?? 'Envision the dream' }} </h5>
             <br>
             <button class="btn-outline-light text-dark tourBtn border-1" style="border: 1px dotted #090909;"> VIEW TRIP </button>
         </div>
@@ -856,10 +856,10 @@
     <div class="container">
         <div class="card text-center">
             <div class="card-body p-5">
-                <h4 class="card-title">{{ $settingValues->footer_title ?? 'What is lorem ipsum?' }}</h4>
+                <h4 class="card-title">{{ $settingValues->prefooterTitle ?? 'What is lorem ipsum?' }}</h4>
                 <hr>
                 <p class="card-text">
-                    {{ $settingValues->footer_content ?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country. Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.' }}
+                    {{ $settingValues->prefooter ?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country. Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.' }}
                 </p>
                 <p class="">
                     **Please note: trip is for adults and children 16 years or older only

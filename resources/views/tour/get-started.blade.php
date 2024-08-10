@@ -10,6 +10,7 @@
     if(!blank($answers)){
         $settingValues = $answers;
     }
+    dd($settingValues);
 @endphp
 <style>
     .sticky {
@@ -534,39 +535,39 @@
             <div class="col-4" style="padding-left:10%">
                 <div class="row mt-5 mb-1">
                     <i class="fa-solid fa-clock"></i>
-                    <span class="px-3">{{ $settingValues->tourDuration ?? '8 Days' }}</span>
+                    <span class="px-3">{{ $settingValues->tour_highlights->tour_duration ?? '8 Days' }}</span>
                 </div>
                 <div class="row mt-4">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <span class="px-3">{{ $settingValues->tourLocation ?? 'Karachi' }}</span>
+                    <span class="px-3">{{ $settingValues->tour_highlights->tour_location ?? 'Karachi' }}</span>
                 </div>
                 <div class="row mt-4 mb-5">
                     <i class="fa-solid fa-plane-departure"></i>
-                    <span class="px-3">{{ $settingValues->maxPeople ?? 'Max people: 14' }}</span>
+                    <span class="px-3">{{ $settingValues->tour_highlights->maxPeople ?? 'Max people: 14' }}</span>
                 </div>
             </div>
             <div class="col-8" style="padding-left:2%">
                 <div class="row mt-5 mb-3">
                     <div class="d-flex">
                         <i class="fa-solid fa-calendar-days"></i>
-                        <span class="px-3">{{ $settingValues->tourDates ?? 'November 10 - 17, 2024' }}</span>
+                        <span class="px-3">{{ $settingValues->tour_highlights->tour_dates ?? 'November 10 - 17, 2024' }}</span>
                     </div>
                 </div>
                 <div class="row mt-4 mb-3">
                     <div class="d-flex">
                         <i class="fa-solid fa-plane-departure"></i>
-                        <span class="px-3">{{ $settingValues->departureLocations ?? 'Karachi or Lahore' }}</span>
+                        <span class="px-3">{{ $settingValues->tour_highlights->departure_locations ?? 'Karachi or Lahore' }}</span>
                     </div>
                 </div>
             </div>
             <form action="#" class="booking-form form-control position-absolute">
                 <div class="row justify-content-center" style="background-color:#7291b1;padding:10px">
-                    <h5 class="text-white ">{{ $settingValues->tourType ?? 'Small Group Tour' }}</h5>
+                    <h5 class="text-white ">{{ $settingValues->form->tour_type ?? 'Small Group Tour' }}</h5>
                 </div>
                 <div class="row form-container">
                     <div class="d-flex form-head justify-content-center bg-dark w-100">
                         <i class="fa-solid text-white fa-tag"></i>
-                        <h2 class="text-white"> &dollar;{{ $settingValues->tourPrice ?? '2,597' }}</h2>
+                        <h2 class="text-white"> &dollar;{{ $settingValues->form->tour_price ?? '2,597' }}</h2>
                     </div>
                     <div class="row form-body">
                         <div class="container justify-content-center">
@@ -633,16 +634,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-5">
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-dark" href="#about"> {{ $settingValues->navAbout ?? 'About' }} </a>
+                            <a class="nav-link text-dark" href="#about"> {{ $settingValues->body_Navbar->menu1 ?? 'About' }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Itinerary"> {{ $settingValues->navItinerary ?? 'Itinerary' }} </a>
+                            <a class="nav-link text-dark" href="#Itinerary"> {{ $settingValues->body_Navbar->menu2 ?? 'Itinerary' }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Videos-Pics">{{ $settingValues->navVideosPics ?? 'Videos & Pics' }} </a>
+                            <a class="nav-link text-dark" href="#Videos-Pics">{{ $settingValues->body_Navbar->menu3 ?? 'Videos & Pics' }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Details"> {{ $settingValues->navDetails ?? 'Details' }} </a>
+                            <a class="nav-link text-dark" href="#Details"> {{ $settingValues->body_Navbar->menu4 ?? 'Details' }} </a>
                         </li>
                     </ul>
                 </div>
@@ -655,21 +656,21 @@
 <div class="container adventure mt-2" id="about">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">{{$settingValues->adventure_heading??'Balochistan Adventure'}}</h4>
+            <h4 class="card-title">{{$settingValues->about->adventure_heading??'Balochistan Adventure'}}</h4>
             <p class="card-text">
-                {{$settingValues->adventureText?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                {{$settingValues->about->adventureText?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
                 Join Pakistan\’s first-ever luxury small group tour across the entire length of Balochistan\’s south coast.'}}
             </p>
             <p class="">
-                **Please note: {{$settingValues->note??'trip is for adults and children 16 years or older only'}}
+                **Please note: {{$settingValues->about->note??'trip is for adults and children 16 years or older only'}}
             </p>
         </div>
     </div>
 
     <div class="card mt-4">
         <div class="card-body">
-            <h5 class="card-title">{{ $settingValues->about_title ?? 'About This Adventure' }}</h5>
-            <h6 class="card-subtitle mb-2 mt-3 text-muted">{{ $settingValues->highlights_title ?? 'Highlights of your trip' }}</h6>
+            <h5 class="card-title">{{ $settingValues->about->about_title ?? 'About This Adventure' }}</h5>
+            <h6 class="card-subtitle mb-2 mt-3 text-muted">{{ $settingValues->about->highlights_title ?? 'Highlights of your trip' }}</h6>
             <div class="p-5">
                 <ul class="list-unstyled">
                     @php 

@@ -56,7 +56,7 @@ class SettingController extends Controller
     public function template($pageID)
     {
         $keys=[];
-        foreach(DB::table('meta_contents')->where('page_id',1)->get(['section','option']) as $dataset)
+        foreach(DB::table('meta_data')->where('page_id',$pageID)->get(['section','option']) as $dataset)
         {
             $keys[$dataset->section][] = $dataset->option;
         }
@@ -64,9 +64,12 @@ class SettingController extends Controller
         $data =  MetaData::where('page_id',$pageID)->get(['option','value','section']);
         foreach($data as $row)
         {
-            $section = new \stdClass();
-            $section->{$row->option} = $row->value;
-            $answers->{$row->section} = $section;
+            if(isset($answers->{$row->section}))
+            {
+                $answers->{$row->section}->{$row->option} = $row->value;
+            } else {
+                $answers->{$row->section} = (object)[$row->option => $row->value];
+            }
         }
         return view('admin.pages.template', [
             'page_id'=> $pageID,
@@ -92,7 +95,7 @@ class SettingController extends Controller
                 $image = $input;
                 $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
                 // dd($filePath);
-                $row->where('option', $name)->where('section', $section)->update(['value'=> json_encode($filePath)]);
+                $row->where('option', $name)->where('section', $section)->update(['value'=> $filePath]);
             } else {
                 $row->where('option', $name)->where('section', $section)->update(['value' => $input ]);
             }

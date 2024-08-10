@@ -82,18 +82,195 @@ class MetaSeeder extends Seeder
                     ]
                 ]
             ],
-
+            [
+                'page_id' => Page::whereName('tour')->first('id')->id,
+                'option' => [
+                    'tour_highlights' => [
+                        'tour_duration',
+                        'tour_location',
+                        'max_people',
+                        'tour_dates',
+                        'departure_locations',
+                    ],
+                    'form' => [
+                        'tour_type',
+                        'tour_price',
+                    ],
+                    'body_Navbar' => [
+                        'menu_1',
+                        'menu_2',
+                        'menu_3',
+                        'menu_4',
+                    ],
+                    'about'=>[
+                        'adventure_heading',
+                        'adventure_text',
+                        'note',
+                        'about_title',
+                        'highlights_title',
+                    ],
+                    'highlights' => [
+                        'highlight1',
+                        'highlight2',
+                        'highlight3',
+                        'highlight4',
+                        'highlight5',
+                        'highlight6',
+                    ],
+                    'triphost'=>[
+                        'name'
+                    ],
+                    'triphost_details'=>[
+                        'triphost_detail_1',
+                        'triphost_detail_2',
+                        'triphost_detail_3',
+                        'triphost_detail_4',
+                        'triphost_detail_5',
+                        'triphost_detail_6',
+                        'triphost_detail_7'
+                    ],
+                    'mapImage'=> [
+                        'image'
+                    ],
+                    'itinerary' =>[
+                        [
+                            'location',
+                            'description',
+                            'additional_info',
+                            'accommodation_name',
+                            'accommodation_image',
+                            'accommodation_rating',
+                            'accommodation_description',
+                        ],
+                        [
+                            'location',
+                            'description',
+                            'additional_info',
+                            'accommodation_name',
+                            'accommodation_image',
+                            'accommodation_rating',
+                            'accommodation_description',
+                        ],
+                        [
+                            'location',
+                            'description',
+                            'additional_info',
+                            'accommodation_name',
+                            'accommodation_image',
+                            'accommodation_rating',
+                            'accommodation_description',
+                        ],
+                        [
+                            'location',
+                            'description',
+                            'additional_info',
+                            'accommodation_name',
+                            'accommodation_image',
+                            'accommodation_rating',
+                            'accommodation_description',
+                        ]
+                    ],
+                    'images' => [
+                        'main_image',
+                        'caption'
+                    ],
+                    'included_details' => [
+                        'included_detail_1',
+                        'included_detail_2',
+                        'included_detail_3',
+                        'included_detail_4',
+                        'included_detail_5',
+                        'included_detail_6',
+                        'included_detail_7',
+                    ],
+                    'excluded_details' => [
+                        'excluded_detail_1',
+                        'excluded_detail_2',
+                        'excluded_detail_3',
+                        'excluded_detail_4',
+                        'excluded_detail_5',
+                    ],
+                    'tripCosts'=> [
+                        'cost_per_person',
+                        'single_supplement',
+                    ],
+                    'destinations'=>[
+                        'destination1' => [
+                            'name',
+                            'image'
+                        ],
+                        'destination2' => [
+                            'name',
+                            'image'
+                        ],
+                        'destination3' => [
+                            'name',
+                            'image'
+                        ],
+                    ],
+                    'tours'=>[
+                        'tour1'=>[
+                            'badge',
+                            'title',
+                            'image',
+                            'description',
+                            'price',
+                            'date'
+                        ],
+                        'tour2'=>[
+                            'badge',
+                            'title',
+                            'image',
+                            'description',
+                            'price',
+                            'date'
+                        ],
+                        'tour3'=>[
+                            'badge',
+                            'image',
+                            'title',
+                            'description',
+                            'price',
+                            'date'
+                        ],
+                        'tour4'=>[
+                            'badge',
+                            'image',
+                            'title',
+                            'description',
+                            'price',
+                            'date'
+                        ],
+                    ],
+                    'footer'=>[
+                        'footer_title',
+                        'footer_content'
+                    ]
+                ]
+            ]
         ];
         MetaData::truncate();
         foreach ($raw as $row) {
             foreach ($row['option'] as $title => $section) {
                 foreach($section as  $opt)
                 {
-                    MetaData::create([
-                        'page_id' => $row['page_id'],
-                        'option' => $opt,
-                        'section' => $title
-                    ]);
+                    if(is_array($opt))
+                    {
+                        foreach($opt as $n => $v)
+                        {
+                            MetaData::create([
+                                'page_id' => $row['page_id'],
+                                'option' => $v,
+                                'section' => $n
+                            ]);
+                        }
+                    } else {
+                        MetaData::create([
+                            'page_id' => $row['page_id'],
+                            'option' => $opt,
+                            'section' => $title
+                        ]);
+                    }
                 }
             }
         }

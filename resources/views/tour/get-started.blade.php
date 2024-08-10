@@ -534,39 +534,39 @@
             <div class="col-4" style="padding-left:10%">
                 <div class="row mt-5 mb-1">
                     <i class="fa-solid fa-clock"></i>
-                    <span class="px-3 "> 8 Days </span>
+                    <span class="px-3">{{ $settingValues->tourDuration ?? '8 Days' }}</span>
                 </div>
                 <div class="row mt-4">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <span class="px-3 "> Karachi </span>
+                    <span class="px-3">{{ $settingValues->tourLocation ?? 'Karachi' }}</span>
                 </div>
                 <div class="row mt-4 mb-5">
                     <i class="fa-solid fa-plane-departure"></i>
-                    <span class="px-3 "> Max people: 14</span>
+                    <span class="px-3">{{ $settingValues->maxPeople ?? 'Max people: 14' }}</span>
                 </div>
             </div>
             <div class="col-8" style="padding-left:2%">
                 <div class="row mt-5 mb-3">
                     <div class="d-flex">
                         <i class="fa-solid fa-calendar-days"></i>
-                        <span class="px-3"> November 10 - 17, 2024</span>
+                        <span class="px-3">{{ $settingValues->tourDates ?? 'November 10 - 17, 2024' }}</span>
                     </div>
                 </div>
                 <div class="row mt-4 mb-3">
                     <div class="d-flex">
                         <i class="fa-solid fa-plane-departure"></i>
-                        <span class="px-3"> Karachi or Lahore </span>
+                        <span class="px-3">{{ $settingValues->departureLocations ?? 'Karachi or Lahore' }}</span>
                     </div>
                 </div>
             </div>
             <form action="#" class="booking-form form-control position-absolute">
                 <div class="row justify-content-center" style="background-color:#7291b1;padding:10px">
-                    <h5 class="text-white ">Small Group Tour</h5>
+                    <h5 class="text-white ">{{ $settingValues->tourType ?? 'Small Group Tour' }}</h5>
                 </div>
                 <div class="row form-container">
                     <div class="d-flex form-head justify-content-center bg-dark w-100">
                         <i class="fa-solid text-white fa-tag"></i>
-                        <h2 class="text-white"> &dollar;2,597</h2>
+                        <h2 class="text-white"> &dollar;{{ $settingValues->tourPrice ?? '2,597' }}</h2>
                     </div>
                     <div class="row form-body">
                         <div class="container justify-content-center">
@@ -633,16 +633,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-5">
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-dark" href="#about"> About </a>
+                            <a class="nav-link text-dark" href="#about"> {{ $settingValues->navAbout ?? 'About' }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Itinerary"> Itinerary </a>
+                            <a class="nav-link text-dark" href="#Itinerary"> {{ $settingValues->navItinerary ?? 'Itinerary' }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Videos-Pics"> Videos & Pics </a>
+                            <a class="nav-link text-dark" href="#Videos-Pics">{{ $settingValues->navVideosPics ?? 'Videos & Pics' }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Details"> Details </a>
+                            <a class="nav-link text-dark" href="#Details"> {{ $settingValues->navDetails ?? 'Details' }} </a>
                         </li>
                     </ul>
                 </div>
@@ -655,7 +655,7 @@
 <div class="container adventure mt-2" id="about">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Balochistan Adventure</h4>
+            <h4 class="card-title">{{$settingValues->adventure_heading??'Balochistan Adventure'}}</h4>
             <p class="card-text">
                 {{$settingValues->adventureText?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
                 Join Pakistan\’s first-ever luxury small group tour across the entire length of Balochistan\’s south coast.'}}
@@ -668,16 +668,29 @@
 
     <div class="card mt-4">
         <div class="card-body">
-            <h5 class="card-title">About This Adventure</h5>
-            <h6 class="card-subtitle mb-2 mt-3 text-muted">Highlights of your trip</h6>
+            <h5 class="card-title">{{ $settingValues->about_title ?? 'About This Adventure' }}</h5>
+            <h6 class="card-subtitle mb-2 mt-3 text-muted">{{ $settingValues->highlights_title ?? 'Highlights of your trip' }}</h6>
             <div class="p-5">
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Go dolphin watching</li>
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Visit vibrant cities & remote villages</li>
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Climb a volcano</li>
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Stay in 5-star luxury & boutique hotels</li>
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Be the 1st to travel in Pakistan's #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)</li>
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Relax with a decadent beach picnic on the Arabian Sea</li>
+                    @php 
+                    $oldHighlights = [
+                        'Go dolphin watching',
+                        'Visit vibrant cities & remote villages',    
+                        'Climb a volcano',    
+                        'Stay in 5-star luxury & boutique hotels',    
+                        'Be the 1st to travel in Pakistan\'s #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)',    
+                        'Relax with a decadent beach picnic on the Arabian Sea',    
+                    ];
+                    @endphp
+                    @if(isset($settingValues->highlights) && $settingValues->highlights->highlight1)
+                        @foreach ($settingValues->highlights as $key => $highlight)
+                            <li><span class="fa fa-dot-circle-o mr-2"></span>{{ $highlight }} </li>
+                        @endforeach
+                    @else 
+                        @foreach ($oldHighlights as $key => $highlight)
+                            <li><span class="fa fa-dot-circle-o mr-2"></span>{{ $highlight }}</li>
+                        @endforeach
+                    @endif
                 </ul>
             </div>
         </div>
@@ -685,33 +698,84 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title"> Trip Host:Angela Carson </h5>
+            <h5 class="card-title">Trip Host: {{ $settingValues->triphost->name ?? 'Angela Carson' }}</h5>
             <div class="p-5">
                 <ul class="list-unstyled">
-                    <li><span class="fa fa-circle mr-2"></span>Traveller to spend the longest in Balochistan since 9/11:53 days </li>
-                    <li><span class="fa fa-circle mr-2"></span>Travel writer and content writer</li>
-                    <li><span class="fa fa-circle mr-2"></span>Explored Pakistan extensively, shooting 90+ videos</li>
-                    <li><span class="fa fa-circle mr-2"></span>1st person to review all 5-star hotels in Pakistan outside of the North </li>
-                    <li><span class="fa fa-circle mr-2"></span>Has lived in 9 countries & travelled 37</li>
-                    <li><span class="fa fa-circle mr-2"></span>From Los Angeles, resides in Islamabad, Pakistan</li>
-                    <li><span class="fa fa-circle mr-2"></span>Instagram | Youtube </li>
+                    @php 
+                    $oldTripHostDetails = [
+                        'Traveller to spend the longest in Balochistan since 9\/11:53 days',
+                        'Travel writer and content writer',
+                        'Explored Pakistan extensively, shooting 90+ videos',
+                        '1st person to review all 5-star hotels in Pakistan outside of the North',
+                        'Has lived in 9 countries & travelled 37',
+                        'From Los Angeles, resides in Islamabad, Pakistan',
+                        'Instagram | Youtube'
+                    ];
+                    @endphp
+                    @if($settingValues->triphost_details && $settingValues->triphost_details->triphost_detail_1)
+                    @foreach ($settingValues->triphost_details as $key => $detail)
+                        <li><span class="fa fa-circle mr-2"></span>{{ $detail }}</li>
+                    @endforeach
+                    @else
+                        @foreach ($oldTripHostDetails as $detail)
+                            <li><span class="fa fa-circle mr-2"></span>{{ $detail }}</li>
+                        @endforeach
+                    @endif
                 </ul>
             </div>
         </div>
     </div>
-
+    
     <div class="card">
-        <h5 class="card-title"> Where you're going </h5>
+        <h5 class="card-title">Where you're going</h5>
         <div class="card-body">
             <div class="p-5">
-                <img src="{{asset('images/tour/choose-in-map.png')}}">
+                <img src="{{ $settingValues->mapImage->image ?? asset('images/tour/choose-in-map.png') }}" alt="Map Image">
             </div>
         </div>
     </div>
-
     <div class="card">
         <h5 class="card-title" id="Itinerary"> Itinerary</h5>
     </div>
+    @if(isset($settingValues->itinerary))
+    @foreach ($settingValues->itinerary as $dayDetails)
+        <div class="card p-4">
+            <details open>
+                <summary class="row p-4" style="background-color:#aab4b8">
+                    <div>
+                        Day 2- 4 - {{ $dayDetails->location ?? 'Location Name' }}
+                    </div>
+                </summary>
+                <div class="card-body">
+                    <p class="card-text py-3">
+                        {{ $dayDetails->description ?? 'Default description for the day' }}
+                    </p>
+                    <p class="card-text py-3">
+                        {{ $dayDetails->additional_info ?? 'Additional info about the day' }}
+                    </p>
+                    <div class="card">
+                        <h5 class="card-title">Your Accommodation</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="{{ $dayDetails->accommodation_image ?? asset('images/tour/default-hotel.png') }}" alt="Accommodation">
+                                </div>
+                                <div class="col-7" style="display: grid; align-items: center;">
+                                    <div>
+                                        <h5 class="card-title">{{ $dayDetails->accommodation_name ?? 'Accommodation Name' }}</h5>
+                            {{ $dayDetails->mmodation_rating ?? 'Star Rating' }}</p>
+                                        <hr>
+                                        <p>{{ $dayDetails->accommodation_description ?? 'Description of the accommodation' }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    @endforeach    
+    @else 
     <div class="card p-4">
         <details open>
             <summary class="row p-4" style="background-color:#aab4b8">
@@ -890,18 +954,24 @@
     </div>
 </div>
 
+    @endif
+</div>
+
 
 <div class="container-fluid image-bars mt-4">
     <div class="p-4">
         <h4 class="card-title ml-5 pl-2" id="Videos-Pics"> Photos & Videos</h4>
     </div>
     <div class="d-flex justify-content-center">
-        <img src="{{ asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="">
+        <img src="{{ $settingValues->images->main_image ?? asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="Main Image">
     </div>
     <div class="row mx-4 p-5 justify-content-center text-center" style="border: 0px;">
         <div class="col-12">
-            <h5 style="font-family:math;font-weight:600"> Envision the dream </h5> <br>
-            <button class="btn-outline-light text-dark tourBtn border-1" style=" border: 1px dotted #090909;"> VIEW TRIP </button>
+            <h5 style="font-family:math;font-weight:600"> {{ $settingValues->images->caption ?? 'Envision the dream' }} </h5>
+            <br>
+            <button class="btn-outline-light text-dark tourBtn border-1" style="border: 1px dotted #090909;"> 
+                VIEW TRIP 
+            </button>
         </div>
     </div>
     <div class="row justify-content-center" id="Details">
@@ -914,34 +984,11 @@
                     What's included
                 </div>
                 <div class="col-8">
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Visa Support
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> NOC for Balochistan
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i>
-                        Airport transfer upon arrival and departure (departure transfer day/time depends on if additional excursions or travel days are added)
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Hotel Accodomations
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Transportation in a private cabin sleeper bus with driver and fuel
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Breakfast, group meals when noted in itinerary & box lunches when sightseeing
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Expert local tour guides
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Highway toll taxes
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-check mr-2"></i> Enterance tickets for the heritage sites, museums, etc
-                    </div>
+                    @foreach ($settingValues->included_details as $included)
+                        <div class="hstack">
+                            <i class="fa fa-check mr-2"></i> {{ $included }}
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <div class="d-flex mt-5 mb-4">
@@ -949,24 +996,11 @@
                     What's excluded
                 </div>
                 <div class="col-8">
-                    <div class="hstack">
-                        <i class="fa fa-close mr-2"></i> Meals and transportation during free time
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-close mr-2"></i> International Flights
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-close mr-2"></i> Personal and travel insurance
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-close mr-2"></i> Hotel Accodomations
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-close mr-2"></i> Tips to Driver/Hotel/Guides
-                    </div>
-                    <div class="hstack">
-                        <i class="fa fa-close mr-2"></i> Laundry, bevarages, and any expenses of a personal nature
-                    </div>
+                    @foreach ($settingValues->excluded_details as $excluded)
+                        <div class="hstack">
+                            <i class="fa fa-close mr-2"></i> {{ $excluded }}
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <div class="d-flex mt-5 mb-4" style="border-top:2px solid darkgray;border-bottom:2px solid darkgray;">
@@ -975,17 +1009,26 @@
                 </div>
                 <div class="col-8 mt-5 mb-5">
                     <div class="hstack">
-                        $6417 per person (double occupancy)
+                        {{ $settingValues->trip_costs->cost_per_person ?? '$6417' }} per person (double occupancy)
                         <br>
-                        Single Supplement $1949
-                        <br>
-                        <br>
+                        Single Supplement {{ $settingValues->trip_costs->single_supplement ?? '$1949' }}
+                        <br><br>
                         (VAT is already included in the prices above)
                     </div>
                 </div>
             </div>
 
         </div>
+        @if(isset($settingValues->destinations))
+        <div class="row mt-3">
+            @foreach ($settingValues->destinations as $destination)
+                <div class="col-4 position-relative">
+                    <img src="{{ $destination->image ?? asset('images/tour/default-image.png') }}" class="w-100" alt="{{ $destination->name }}">
+                    <h4 class="position-absolute text-white">{{ $destination->name ?? 'Name of Destination' }}</h4>
+                </div>
+            @endforeach
+        </div>
+        @else 
         <div class="row mt-3">
             <div class="col-4 position-relative">
                 <img src="{{ asset('images/tour/desert-walk.png') }}" class="w-100" alt="">
@@ -1000,12 +1043,39 @@
                 <h4 class="position-absolute text-white">Name of Destination</h4>
             </div>
         </div>
+        @endif
     </div>
+</div>
 
-    <section class="custom-section bg-light ">
-        <div class="container mt-5">
-            <h1 class=" mb-5">More Tours</h1>
-            <div class="row">
+
+<section class="custom-section bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-5">More Tours</h1>
+        @if(isset($settingValues->tours))
+        <div class="row">
+            @foreach($settingValues->tours as $tour)
+                <div class="col-md-3">
+                    <div class="journey-card">
+                        <div class="position-relative">
+                            <img src="{{ asset($tour->image) }}" alt="{{ $tour->altText }}">
+                            @if($tour->badge)
+                                <div class="badge">{{ $tour->badge }}</div>
+                            @endif
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $tour->title }}</h5>
+                            <p class="card-text">{{ $tour->description }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>{{ $tour->price }}</b>
+                            <b>{{ $tour->dates }}</b>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        @else 
+        <div class="row">
                 <div class="col-md-3">
                     <div class="journey-card">
                         <div class="position-relative">
@@ -1070,40 +1140,39 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        @endif
+    </div>
+</section>
 
-
-    <section class="more-tours">
-        <div class="container">
-            <div class="card text-center">
-                <div class="card-body p-5">
-                    <h4 class="card-title">What is lorem ipsum ?</h4>
-                    <hr>
-                    <p class="card-text">
-                        {{$settingValues->prefooter?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
-                        Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.'}}
-                    </p>
-                    <p class="">
-                        **Please note: trip is for adults and children 16 years or older only
-                    </p>
-                </div>
+<section class="more-tours">
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-body p-5">
+                <h4 class="card-title">{{ $settingValues->footer_title ?? 'What is lorem ipsum?' }}</h4>
+                <hr>
+                <p class="card-text">
+                    {{ $settingValues->footer_content ?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country. Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.' }}
+                </p>
+                <p class="">
+                    **Please note: trip is for adults and children 16 years or older only
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    @include('partials.footer')
-    @endsection
-    <script>
-        jQuery(document).ready(function() {
-            window.addEventListener('scroll', function() {
-                let navRow = document.getElementById('sticked')
-                console.log(window.pageYOffset)
-                if (window.pageYOffset > 900) {
-                    navRow.classList.add('sticky')
-                } else {
-                    navRow.classList.remove('sticky')
-                }
-            })
+@include('partials.footer')
+@endsection
+<script>
+    jQuery(document).ready(function() {
+        window.addEventListener('scroll', function() {
+            let navRow = document.getElementById('sticked')
+            console.log(window.pageYOffset)
+            if (window.pageYOffset > 900) {
+                navRow.classList.add('sticky')
+            } else {
+                navRow.classList.remove('sticky')
+            }
         })
-    </script>
+    })
+</script>

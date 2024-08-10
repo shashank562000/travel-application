@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PageSeeder::class,
-            TextSeeder::class,
-            CardSeeder::class,
-            ImageSeeder::class,
+            // TextSeeder::class,
+            // CardSeeder::class,
+            // ImageSeeder::class,
             MetaSeeder::class
         ]);
     }

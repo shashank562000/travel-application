@@ -23,7 +23,8 @@ class MetaSeeder extends Seeder
                 'page_id' => Page::whereName('landing')->first('id')->id,
                 'option'=>[
                     'head' => [
-                        'heading'
+                        'heading',
+                        'content'
                     ],
                     'head_end' => [
                         'heading'

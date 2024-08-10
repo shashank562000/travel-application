@@ -13,7 +13,7 @@
                         </span>
                     </a>
 
-                    <a href="index.html" class="logo logo-light">
+                    <a href="{{route('admin.dashboard')}}" class="logo logo-light">
                         <span class="logo-sm">
                             <img src="{{asset('/assets/images/logo-sm.png')}}" alt="" height="22">
                         </span>
@@ -30,7 +30,10 @@
                         <span></span>
                     </span>
                 </button>
-
+                <div class="float-right position-absolute d-flex" style="left:87%;top:25%">
+                    <i class="fs-1 fa-solid fa-right-from-bracket"></i>
+                    <a href="{{ route('logout') }}" class="mt-1 ms-3">Logout</a>
+                </div>
             </div>
 
 

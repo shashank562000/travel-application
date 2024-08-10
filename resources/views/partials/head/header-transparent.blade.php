@@ -409,10 +409,10 @@
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-42089">
-                                                <a href="#">8D Balochistan</a>
+                                                <a href="{{URL('/8d_balochistan')}}">8D Balochistan</a>
                                             </li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-42090">
-                                                <a href="#">15D Balochistan</a>
+                                                <a href="{{URL('/15d_balochistan')}}">15D Balochistan</a>
                                             </li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-42091">
                                                 <a href="#">4D Skardu</a>

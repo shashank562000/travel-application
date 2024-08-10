@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Card;
+use App\Models\Content;
 use App\Models\Image;
+use App\Models\MetaContent;
+use App\Models\MetaData;
 use Illuminate\Http\Request;
 use App\Models\Page;
 use App\Models\PageSetting;
 use App\Models\SiteContent;
 use App\Models\Text;
+use Illuminate\Support\Facades\DB;
 
 class SettingController extends Controller
 {
@@ -43,14 +47,65 @@ class SettingController extends Controller
     public function texts($pageID){
         return view('admin.text', [
             'page_id'=> $pageID,
+            'pageName'=> Page::find($pageID)->name,
             'keys'=> Text::where('page_id',$pageID)->get(['id','option']),
-            'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
+            'answers'=> SiteContent::where('page_id',$pageID)->where('type','text')->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
     }
+    public function template($pageID)
+    {
+        $keys=[];
+        foreach(DB::table('meta_data')->where('page_id',$pageID)->get(['section','option']) as $dataset)
+        {
+            $keys[$dataset->section][] = $dataset->option;
+        }
+        $answers=new \stdClass();
+        $data =  MetaData::where('page_id',$pageID)->get(['option','value','section']);
+        foreach($data as $row)
+        {
+            if(isset($answers->{$row->section}))
+            {
+                $answers->{$row->section}->{$row->option} = $row->value;
+            } else {
+                $answers->{$row->section} = (object)[$row->option => $row->value];
+            }
+        }
+        return view('admin.pages.template', [
+            'page_id'=> $pageID,
+            'pageName'=> Page::find($pageID)->name,
+            'keys'=> $keys, // Content Key
+            'answers'=> $answers,
+            'allPages'=> Page::with('texts','images','cards')->get()
+        ]);
+    }
+
+    public function updateTemplate(Request $req)
+    {
+        $pageID = $req->page_id;
+        $postData = $req->all();
+        unset($postData['_token']);
+        unset($postData['page_id']);
+        foreach($postData as $name => $input)
+        {
+            list($section, $name) = explode('**',$name);
+            $row = MetaData::where('page_id', $pageID);
+            if(str_contains(strtolower($name), 'image'))
+            {
+                $image = $input;
+                $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
+                // dd($filePath);
+                $row->where('option', $name)->where('section', $section)->update(['value'=> $filePath]);
+            } else {
+                $row->where('option', $name)->where('section', $section)->update(['value' => $input ]);
+            }
+        }
+        session()->put('msg','Data successfully updated!');
+        return back();
+    }
     public function uploadTexts(Request $request)
     {
-        $old = SiteContent::where('page_id',$request->page_id);
+        $old = SiteContent::where('page_id',$request->page_id)->where('type','text');
             $data = $request->all();
             unset($data['_token']);
             unset($data['page_id']);
@@ -71,6 +126,7 @@ class SettingController extends Controller
     public function cards($pageID){
         return view('admin.card', [
             'page_id'=> $pageID,
+            'pageName'=> Page::find($pageID)->name,
             'keys'=> Card::where('page_id',$pageID)->get(['id','option']),
             'answers'=> SiteContent::whereId($pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
@@ -81,7 +137,8 @@ class SettingController extends Controller
     public function images($pageID){
         return view('admin.image', [
             'page_id'=> $pageID,
-            'keys'=> Image::where('page_id',$pageID)->get(['id','option']),
+            'pageName'=> Page::find($pageID)->name,
+            'keys'=> Image::where('page_id',$pageID)->where('type','image')->get(['id','option']),
             'answers'=> SiteContent::where('page_id',$pageID)->first('data'),
             'allPages'=> Page::with('texts','images','cards')->get()
         ]);
@@ -94,7 +151,7 @@ class SettingController extends Controller
             $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
             $filepaths[$imageName]=$filePath;
         }
-        $old = SiteContent::where('page_id',$request->page_id);
+        $old = SiteContent::where('page_id',$request->page_id)->where('type','image');
         if($old->exists())
         {
             $old->update(['data'=> $filepaths]);

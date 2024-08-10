@@ -7,16 +7,12 @@ use App\Models\{Content, MetaData, PageSetting,SiteContent,Page, Text};
 Route::get('/', function () {
     $pageID = Page::whereName('landing')->first('id')->id;
     $answers = new stdClass();
-    $data = MetaData::where('page_id', $pageID )->get(['option','value','section']);
+    $data = MetaData::where('page_id', $pageID )->get(['option','value']);
     foreach($data as $row)
     {
-        if(isset($answers->{$row->section}))
-        {
-            $answers->{$row->section}->{$row->option} = $row->value;
-        } else {
-            $answers->{$row->section} = (object)[$row->option => $row->value];
-        }
+        $answers->{$row->option} = $row->value;
     }
+    // dd($answers);
     return view('welcome', compact('answers'));
 });
 
@@ -31,34 +27,11 @@ Route::get('/what-we-Offer', function () {
 Route::get('/get-started', function () {
     $_COOKIE['path'] = asset('images/tour/tour-header.png');
     $pageID = Page::whereName('tour')->first('id')->id;
-    $data = MetaData::where('page_id', $pageID )->get(['option','value','section']);
-    $answers = new stdClass();
-    foreach($data as $row)
-    {
-        if(isset($answers->{$row->section}))
-        {
-            $answers->{$row->section}->{$row->option} = $row->value;
-        } else {
-            $answers->{$row->section} = (object)[$row->option => $row->value];
-        }
-    }
-    // dd($answers);
-    return view('tour.get-started', compact('answers'));
-});
-Route::get('/8d_balochistan', function () {
-    $_COOKIE['path'] = asset('images/tour/tour-header.png');
-    $pageID = Page::whereName('tour')->first('id')->id;
     $settings = Text::where('page_id', $pageID )->get('option');
+    $answers = Content::where('page_id', $pageID )->get(['option','value']);
+    dd($answers);
     $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
-    return view('8d_balochistan', compact('settings','answers'));
-});
-
-Route::get('/15d_balochistan', function () {
-    $_COOKIE['path'] = asset('images/tour/tour-header.png');
-    $pageID = Page::whereName('tour')->first('id')->id;
-    $settings = Text::where('page_id', $pageID )->get('option');
-    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
-    return view('15d_balochistan', compact('settings','answers'));
+    return view('tour.get-started', compact('settings','answers'));
 });
 
 Route::get('login', function(){

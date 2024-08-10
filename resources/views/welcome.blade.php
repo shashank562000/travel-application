@@ -215,7 +215,7 @@
 <body>
     @php
     if(!blank($answers)){
-    $settingValues = json_decode($answers)->data;
+        $settingValues = $answers;
     }
     @endphp
     @include('partials.head.booking-condition')
@@ -251,7 +251,7 @@
                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px ;">
                                 <div class="gdlr-core-title-item-title-wrap">
                                     <h1 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 38px ;font-weight: 600 ;letter-spacing: 0px ;text-transform: none ;">
-                                        {{$settingValues->journeyHeading??'Journey Through History & Natural Wonders'}}
+                                        {{$settingValues->journey->journey_Heading??'Journey Through History & Natural Wonders'}}
                                         <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                                     </h1>
                                 </div>
@@ -269,7 +269,7 @@
                             <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
                                 <div class="gdlr-core-text-box-item-content" style="text-transform: none ;">
                                     <p style="text-align: center;margin-bottom: 0px;">
-                                        {{$settingValues->journeyText??'Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable . people you can imagine. It’s a place where an adventurous soul will ﬁt right in and  where a wanderlust spirit will ﬁnally feel at peace.&nbsp;'}}
+                                        {{$settingValues->journey->journey_Text??'Pakistan is a country rich in heritage, rugged landscapes, and the most hospitable . people you can imagine. It’s a place where an adventurous soul will ﬁt right in and  where a wanderlust spirit will ﬁnally feel at peace.&nbsp;'}}
                                     </p>
                                 </div>
                             </div>
@@ -278,7 +278,7 @@
                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
                                 <div class="gdlr-core-title-item-title-wrap">
                                     <h2 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 22px ;font-weight: 400 ;font-style: italic ;text-transform: none ;color: #898989 ;">
-                                        {{ $settingValues->journeySummary ?? 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }}
+                                        {{ $settingValues->journey->journey_Summary ?? 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }}
                                         <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                                     </h2>
                                 </div>
@@ -297,11 +297,11 @@
                 <div class="col-md-3">
                     <div class="journey-card">
                         <div class="position-relative">
-                            <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="custom-badge">Trekking</div>
+                            <img src="{{$settingValues->expert_led_tours->Image1? asset('storage/'.$settingValues->expert_led_tours->Image1) :asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
+                            <div class="custom-badge">{{$settingValues->expert_led_tours->Img1_tag ?? 'Trekking'}}</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg1headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <h5 class="card-title">{{$settingValues->expert_led_tours->Img1_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
                             <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg1Content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
@@ -314,12 +314,12 @@
                 <div class="col-md-3">
                     <div class="journey-card">
                         <div class="position-relative">
-                            <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="custom-badge">Balochistan</div>
+                            <img src="{{$settingValues->expert_led_tours->Image2? asset('storage/'.$settingValues->expert_led_tours->Image2) :asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
+                            <div class="custom-badge">{{$settingValues->expert_led_tours->Img2_tag??'Balochistan'}}</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg2headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg2Content ?? "Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->expert_led_tours->Img2_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->expert_led_tours->Img2_content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
                                 the industry's standard."}}
@@ -333,12 +333,12 @@
                 <div class="col-md-3">
                     <div class="journey-card">
                         <div class="position-relative">
-                            <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="custom-badge">North</div>
+                            <img src="{{$settingValues->expert_led_tours->Image3? asset('storage/'.$settingValues->expert_led_tours->Image3) : asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
+                            <div class="custom-badge">{{$settingValues->expert_led_tours->Img3_tag??'North'}}</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg3headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg3Content ?? "Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->expert_led_tours->Img3_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->expert_led_tours->Img3_content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
                                 the industry's standard."}}
@@ -350,12 +350,12 @@
                 <div class="col-md-3">
                     <div class="journey-card">
                         <div class="position-relative">
-                            <img src="{{asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
-                            <div class="custom-badge">Motorbike</div>
+                            <img src="{{$settingValues->expert_led_tours->Image4? asset('storage/'.$settingValues->expert_led_tours->Image4) : asset('images/landing page.pdf-image-022.jpg')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
+                            <div class="custom-badge">{{$settingValues->expert_led_tours->Img4_tag??'Motorbike'}}</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{$settingValues->OurFavouriteExpertLedToursImg4headding ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg4Content ?? "Lorem Ipsum is simply dummy text
+                            <h5 class="card-title">{{$settingValues->expert_led_tours->Img4_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
+                            <p class="card-text">{{$settingValues->expert_led_tours->Img4_content ?? "Lorem Ipsum is simply dummy text
                                 of the printing and typeseing
                                 industry. Lorem Ipsum has been
                                 the industry's standard."}}
@@ -386,22 +386,29 @@
                 </div>
                 <div class="col-md-6 support-content ">
                     <div>
-                        <h2>Visa & LOI Support</h2>
+                        <h2>{{ $settingValues->highlights->highlight_1_heading ?? 
+                            'Visa & LOI Support'
+                        }}</h2>
                         <hr>
-                        <p>We offer trusted visa support and letter of invitation services 7 days a week and free of charge if you book a tour with us. If you'd simply like to engage our visa services, the price is US$75.</p>
+                        <p>{{ $settingValues->highlights->highlight_1_content ?? 'We offer trusted visa support and letter of invitation services 7 days a week and free of charge if you book a tour with us. If you\'d simply like to engage our visa services, the price is US$75.'
+                        }}</p>
                         <a href="#" class="btn btn-outline-dark">APPLY HERE</a>
                     </div>
                 </div>
 
                 <div class="col-md-6 support-content">
                     <div class="p-3" style="text-align: end;">
-                        <h2>Affordable Tours From 2 - 15 Days</h2>
+                        <h2>{{ $settingValues->highlights->highlight_2_heading ?? 
+                            'Affordable Tours From 2 - 15 Days'
+                        }}</h2>
                         <hr>
-                        <p>Pakistan’s lakes and mountains are the jewel in
+                        <p>{{ $settingValues->highlights->highlight_2_content ?? 
+                            'Pakistan’s lakes and mountains are the jewel in
                             Still working on it, use lorem ipsum: Lorem
                             ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eusmod tempor incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim.</p>
+                            et dolore magna aliqua. Ut enim ad minim.'
+                        }}</p>
                         <a href="#" class="btn btn-outline-dark">DETAILS</a>
                     </div>
                 </div>
@@ -413,27 +420,35 @@
                 </div>
                 <div class="col-md-6 support-content">
                     <div>
-                        <h2>Custom-Made Luxury Journeys</h2>
+                        <h2>{{ $settingValues->highlights->highlight_3_heading ?? 
+                            'Custom-Made Luxury Journeys
+                        '}}</h2>
                         <hr>
-                        <p>Let our luxury expert craft the perfect bespoke
+                        <p>{{ $settingValues->highlights->highlight_3_content ?? 
+                            'Let our luxury expert craft the perfect bespoke
                             itinerary for your independent nature. We’ll
                             include everything from moments with top
                             chefs, 5-star hotels, and wonderful local guides
                             who will make each stop in your journey
-                            something special</p>
+                            something special'
+                        }}</p>
                         <a href="#" class="btn btn-outline-dark">DETAILS</a>
                     </div>
                 </div>
                 <div class="col-md-6 support-content">
                     <div class="p-3" style="text-align: end;">
-                        <h2>Explore Balochistan In Style</h2>
+                        <h2>{{ $settingValues->highlights->highlight_4_heading ?? 
+                            'Explore Balochistan In Style'
+                        }}</h2>
                         <hr>
-                        <p>Still working on it, use lorem ipsum:Lorem
+                        <p>{{ $settingValues->highlights->highlight_4_content ?? 
+                            'Still working on it, use lorem ipsum:Lorem
                             ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam,
                             quis nostrud exercitation ullamco laboris nisi
-                            ut aliquip ex ea commodo consequat..</p>
+                            ut aliquip ex ea commodo consequat..'
+                        }}</p>
                         <a href="#" class="btn btn-outline-dark">EXPLORE</a>
                     </div>
                 </div>
@@ -446,85 +461,125 @@
     <section class="bg-light text-center">
         <div class="container mt-5">
             <div class="text-center section-title ">
-                <h2>Explore by Month</h2>
+                <h2>{{$settingValues->explore->heading?? 'Explore by Month'}}</h2>
                 <hr>
-                <p><em>There is always somewhere wonderful to explore in Pakistan!</em></p>
+                <p><em>{{$settingValues->explore->highlight?? 'There is always somewhere wonderful to explore in Pakistan!'}}</em></p>
                 <p>
                     <center>
-                        Here you'll find the best month to adventure around our diverse eco-systems: from
-                        </br> beaches, dunes & deserts to the top of K2.</center>
+                    {{  $settingValues->explore->highlight?? 'Here you\'ll find the best month to adventure around our diverse eco-systems: from
+                        </br> beaches, dunes & deserts to the top of K2.'
+                    }}  
+                    </center>
                 </p>
             </div>
             <div class="row justify-content-center pl-5 p-5">
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-015.jpg')}}" class="box-image" alt="January">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->january_image)?
+                        'storage/'.$settingValues->month_images->january_image :
+                        'images/landing page.pdf-image-015.jpg')
+                        }}" class="box-image" alt="January">
                     </div>
                     <div class="month-label">January</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->february_image)?
+                        'storage/'.$settingValues->month_images->february_image :
+                        'images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="February">
                     </div>
                     <div class="month-label">February</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-017.jpg')}}" class="box-image" alt="March">
+                        <img src="{{ asset(
+                            isset($settingValues->month_images->march_image)?
+                            'storage/'.$settingValues->month_images->march_image :
+                            'images/landing page.pdf-image-017.jpg'
+                        )}}" class="box-image" alt="March">
                     </div>
                     <div class="month-label">March</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->april_image)?
+                        'storage/'.$settingValues->month_images->april_image :
+                        'images/landing page.pdf-image-019.jpg')}}" class="box-image" alt="April">
                     </div>
                     <div class="month-label">April</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->may_image)?
+                        'storage/'.$settingValues->month_images->may_image :
+                        'images/landing page.pdf-image-004.jpg')}}" class="box-image" alt="May">
                     </div>
                     <div class="month-label">May</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->june_image)?
+                        'storage/'.$settingValues->month_images->june_image :
+                        'images/landing page.pdf-image-005.jpg')}}" class="box-image" alt="June">
                     </div>
                     <div class="month-label">June</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="July">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->july_image)?
+                        'storage/'.$settingValues->month_images->july_image :
+                        'images/landing page.pdf-image-003.jpg')}}" class="box-image" alt="July">
                     </div>
                     <div class="month-label">July</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="August">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->august_image)?
+                        'storage/'.$settingValues->month_images->august_image :
+                        'images/landing page.pdf-image-006.jpg')}}" class="box-image" alt="August">
                     </div>
                     <div class="month-label">August</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="September">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->september_image)?
+                        'storage/'.$settingValues->month_images->september_image :
+                        'images/landing page.pdf-image-007.jpg')}}" class="box-image" alt="September">
                     </div>
                     <div class="month-label">September</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="October">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->october_image)?
+                        'storage/'.$settingValues->month_images->october_image :
+                        'images/landing page.pdf-image-008.jpg')}}" class="box-image" alt="October">
                     </div>
                     <div class="month-label">October</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/2.jpg')}}" class="box-image" alt="November">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->november_image)?
+                        'storage/'.$settingValues->month_images->november_image :
+                        'images/2.jpg')}}" class="box-image" alt="November">
                     </div>
                     <div class="month-label">November</div>
                 </div>
                 <div class="col-md-4 month-card">
                     <div class="image-container">
-                        <img src="{{asset('images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="December">
+                        <img src="{{
+                        asset(isset($settingValues->month_images->december_image)?
+                        'storage/'.$settingValues->month_images->december_image :
+                        'images/landing page.pdf-image-013.jpg')}}" class="box-image" alt="December">
                     </div>
                     <div class="month-label">December</div>
                 </div>
@@ -535,9 +590,9 @@
 
     <section class="custom-section text-center">
         <div class="container" style="width: 50%;">
-            <h2>{{ $settingValues->prefooterheadding?? 'What is Lorem Ipsum?'}}</h2>
+            <h2>{{ $settingValues->footer->heading ?? 'What is Lorem Ipsum?'}}</h2>
             <hr>
-            <p>{{ $settingValues->prefooterText ?? 'Lorem Ipsum is simply dummy text of the printing and typeseing
+            <p>{{ $settingValues->footer->text ?? 'Lorem Ipsum is simply dummy text of the printing and typeseing
                 industry. Lorem Ipsum has been the industry\'s standard dummy text ever
                 since the 1500s, when an unknown .'}}</p>
         </div>

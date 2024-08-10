@@ -15,6 +15,9 @@
 <div class="vertical-overlay"></div>
 <div class="main-content">
     <div class="page-content">
+        <div class="row justify-content-center fs-4">
+            Page: {{ucwords($pageName)}}
+        </div>
         @if(session()->has('msg'))
             <div class="alert alert-success alert-dismissible  fade show" role="alert">
                 {{ session()->get('msg') }}

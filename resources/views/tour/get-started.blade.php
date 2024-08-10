@@ -10,7 +10,6 @@
     if(!blank($answers)){
         $settingValues = $answers;
     }
-    dd($settingValues);
 @endphp
 <style>
     .sticky {

@@ -72,7 +72,7 @@
     <div class="container p-4 m-5"></div>
     <div class="container">
         <p class="lens-clinic">NAMED AS</p>
-        <h1>DESTINATION OF THE YEAR</h1>
+        <h1>{{isset($settingValues->head?->heading)?$settingValues->head->heading:'DESTINATION OF THE YEAR'}}</h1>
         <i><b>By Condé Nast Traveller magazine</b></i>
         <p style="text-justify:'';"><b>Here's what you need to know to </br>enter Pakistan in 2024</b></p>
         <a href="#" class="btn text-white">READ MORE</a>

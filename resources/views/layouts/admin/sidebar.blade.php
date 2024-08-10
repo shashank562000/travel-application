@@ -62,32 +62,6 @@
                         </a>
                         <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
 
-                        {{-- <li class="nav-item">
-                            <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                                <i class="ri-account-circle-line"></i> <span data-key="t-authentication">Authentication</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarAuth">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSignIn" data-key="t-signin"> Sign In
-                                        </a>
-                                        <div class="collapse menu-dropdown" id="sidebarSignIn">
-                                            <ul class="nav nav-sm flex-column">
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-basic.html" class="nav-link" data-key="t-basic"> Basic
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="auth-signin-cover.html" class="nav-link" data-key="t-cover"> Cover
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li> --}}
-
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
                                 <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
@@ -96,9 +70,9 @@
                                 <ul class="nav nav-sm flex-column">
                                     @foreach($allPages as $page)
                                     <li class="nav-item">
-                                        <a href="#{{$page->name}}" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="{{$page->name}}" data-key="t-profile"> {{ ucwords($page->name) }}
+                                        <a href="{{route('admin.setting.template',['page_id'=> $page->id])}}"class="nav-link" role="button" data-key="t-profile"> {{ ucwords($page->name) }}
                                         </a>
-                                        <div class="collapse menu-dropdown" id="{{$page->name}}">
+                                        <!-- <div class="collapse menu-dropdown" id="{{$page->name}}">
                                             <ul class="nav nav-sm flex-column">
                                                 <li class="nav-item">
                                                     <a href="{{route('admin.setting.text',['page_id'=> $page->id])}}" class="nav-link" data-key="t-simple-page">
@@ -116,7 +90,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </li>
                                     @endforeach
                                 </ul>

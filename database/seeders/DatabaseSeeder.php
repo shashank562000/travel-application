@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             TextSeeder::class,
             CardSeeder::class,
             ImageSeeder::class,
+            MetaSeeder::class
         ]);
     }
 }

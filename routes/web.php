@@ -42,7 +42,6 @@ Route::get('/get-started', function () {
             $answers->{$row->section} = (object)[$row->option => $row->value];
         }
     }
-    // dd($answers);
     return view('tour.get-started', compact('answers'));
 });
 Route::get('/8d_balochistan', function () {

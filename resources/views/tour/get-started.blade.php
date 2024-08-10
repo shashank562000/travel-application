@@ -8,12 +8,7 @@
 @include('partials.tour-page-hero')
 @php
     if(!blank($answers)){
-        $settingValues = json_decode($answers)->data;
-        if(is_string($settingValues))
-        {
-            $settingValues = json_decode($settingValues);
-        }
-        //dd($settingValues);
+        $settingValues = $answers;
     }
 @endphp
 <style>
@@ -539,39 +534,39 @@
             <div class="col-4" style="padding-left:10%">
                 <div class="row mt-5 mb-1">
                     <i class="fa-solid fa-clock"></i>
-                    <span class="px-3">{{ $settingValues->tourDuration ?? '8 Days' }}</span>
+                    <span class="px-3 "> 8 Days </span>
                 </div>
                 <div class="row mt-4">
                     <i class="fa-solid fa-calendar-days"></i>
-                    <span class="px-3">{{ $settingValues->tourLocation ?? 'Karachi' }}</span>
+                    <span class="px-3 "> Karachi </span>
                 </div>
                 <div class="row mt-4 mb-5">
                     <i class="fa-solid fa-plane-departure"></i>
-                    <span class="px-3">{{ $settingValues->maxPeople ?? 'Max people: 14' }}</span>
+                    <span class="px-3 "> Max people: 14</span>
                 </div>
             </div>
             <div class="col-8" style="padding-left:2%">
                 <div class="row mt-5 mb-3">
                     <div class="d-flex">
                         <i class="fa-solid fa-calendar-days"></i>
-                        <span class="px-3">{{ $settingValues->tourDates ?? 'November 10 - 17, 2024' }}</span>
+                        <span class="px-3"> November 10 - 17, 2024</span>
                     </div>
                 </div>
                 <div class="row mt-4 mb-3">
                     <div class="d-flex">
                         <i class="fa-solid fa-plane-departure"></i>
-                        <span class="px-3">{{ $settingValues->departureLocations ?? 'Karachi or Lahore' }}</span>
+                        <span class="px-3"> Karachi or Lahore </span>
                     </div>
                 </div>
             </div>
             <form action="#" class="booking-form form-control position-absolute">
                 <div class="row justify-content-center" style="background-color:#7291b1;padding:10px">
-                    <h5 class="text-white ">{{ $settingValues->tourType ?? 'Small Group Tour' }}</h5>
+                    <h5 class="text-white ">Small Group Tour</h5>
                 </div>
                 <div class="row form-container">
                     <div class="d-flex form-head justify-content-center bg-dark w-100">
                         <i class="fa-solid text-white fa-tag"></i>
-                        <h2 class="text-white"> &dollar;{{ $settingValues->tourPrice ?? '2,597' }}</h2>
+                        <h2 class="text-white"> &dollar;2,597</h2>
                     </div>
                     <div class="row form-body">
                         <div class="container justify-content-center">
@@ -638,16 +633,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-5">
                         <li class="nav-item mx-3">
-                            <a class="nav-link text-dark" href="#about"> {{ $settingValues->navAbout ?? 'About' }} </a>
+                            <a class="nav-link text-dark" href="#about"> About </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Itinerary"> {{ $settingValues->navItinerary ?? 'Itinerary' }} </a>
+                            <a class="nav-link text-dark" href="#Itinerary"> Itinerary </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Videos-Pics">{{ $settingValues->navVideosPics ?? 'Videos & Pics' }} </a>
+                            <a class="nav-link text-dark" href="#Videos-Pics"> Videos & Pics </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#Details"> {{ $settingValues->navDetails ?? 'Details' }} </a>
+                            <a class="nav-link text-dark" href="#Details"> Details </a>
                         </li>
                     </ul>
                 </div>
@@ -673,19 +668,16 @@
 
     <div class="card mt-4">
         <div class="card-body">
-            <h5 class="card-title">{{ $settingValues->aboutTitle ?? 'About This Adventure' }}</h5>
-            <h6 class="card-subtitle mb-2 mt-3 text-muted">{{ $settingValues->highlightsTitle ?? 'Highlights of your trip' }}</h6>
+            <h5 class="card-title">About This Adventure</h5>
+            <h6 class="card-subtitle mb-2 mt-3 text-muted">Highlights of your trip</h6>
             <div class="p-5">
                 <ul class="list-unstyled">
-                    @foreach ($settingValues->highlights ?? [] as $highlight)
-                        <li><span class="fa fa-dot-circle-o mr-2"></span>{{ $highlight }}</li>
-                    @endforeach
-                    {{-- <li><span class="fa fa-dot-circle-o mr-2"></span>Go dolphin watching</li>
+                    <li><span class="fa fa-dot-circle-o mr-2"></span>Go dolphin watching</li>
                     <li><span class="fa fa-dot-circle-o mr-2"></span>Visit vibrant cities & remote villages</li>
                     <li><span class="fa fa-dot-circle-o mr-2"></span>Climb a volcano</li>
                     <li><span class="fa fa-dot-circle-o mr-2"></span>Stay in 5-star luxury & boutique hotels</li>
                     <li><span class="fa fa-dot-circle-o mr-2"></span>Be the 1st to travel in Pakistan's #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)</li>
-                    <li><span class="fa fa-dot-circle-o mr-2"></span>Relax with a decadent beach picnic on the Arabian Sea</li> --}}
+                    <li><span class="fa fa-dot-circle-o mr-2"></span>Relax with a decadent beach picnic on the Arabian Sea</li>
                 </ul>
             </div>
         </div>
@@ -693,63 +685,209 @@
 
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Trip Host: {{ $settingValues->tripHost->name ?? 'Angela Carson' }}</h5>
+            <h5 class="card-title"> Trip Host:Angela Carson </h5>
             <div class="p-5">
                 <ul class="list-unstyled">
-                    @foreach ($settingValues->tripHost->details as $detail)
-                        <li><span class="fa fa-circle mr-2"></span>{{ $detail }}</li>
-                    @endforeach
+                    <li><span class="fa fa-circle mr-2"></span>Traveller to spend the longest in Balochistan since 9/11:53 days </li>
+                    <li><span class="fa fa-circle mr-2"></span>Travel writer and content writer</li>
+                    <li><span class="fa fa-circle mr-2"></span>Explored Pakistan extensively, shooting 90+ videos</li>
+                    <li><span class="fa fa-circle mr-2"></span>1st person to review all 5-star hotels in Pakistan outside of the North </li>
+                    <li><span class="fa fa-circle mr-2"></span>Has lived in 9 countries & travelled 37</li>
+                    <li><span class="fa fa-circle mr-2"></span>From Los Angeles, resides in Islamabad, Pakistan</li>
+                    <li><span class="fa fa-circle mr-2"></span>Instagram | Youtube </li>
                 </ul>
             </div>
         </div>
     </div>
-    
+
     <div class="card">
-        <h5 class="card-title">Where you're going</h5>
+        <h5 class="card-title"> Where you're going </h5>
         <div class="card-body">
             <div class="p-5">
-                <img src="{{ $settingValues->mapImage ?? asset('images/tour/choose-in-map.png') }}" alt="Map Image">
+                <img src="{{asset('images/tour/choose-in-map.png')}}">
             </div>
         </div>
     </div>
-    
-    @foreach ($settingValues->itinerary as $day => $dayDetails)
-        <div class="card p-4">
-            <details open>
-                <summary class="row p-4" style="background-color:#aab4b8">
-                    <div>
-                        Day {{ $day }} - {{ $dayDetails['location'] ?? 'Location Name' }}
-                    </div>
-                </summary>
-                <div class="card-body">
-                    <p class="card-text py-3">
-                        {{ $dayDetails['description'] ?? 'Default description for the day' }}
-                    </p>
-                    <p class="card-text py-3">
-                        {{ $dayDetails['additional_info'] ?? 'Additional info about the day' }}
-                    </p>
-                    <div class="card">
-                        <h5 class="card-title">Your Accommodation</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-5">
-                                    <img src="{{ $dayDetails['accommodation_image'] ?? asset('images/tour/default-hotel.png') }}" alt="{{ $dayDetails['accommodation_name'] ?? 'Accommodation' }}">
-                                </div>
-                                <div class="col-7" style="display: grid; align-items: center;">
-                                    <div>
-                                        <h5 class="card-title">{{ $dayDetails['accommodation_name'] ?? 'Accommodation Name' }}</h5>
-                                        <p>{{ $dayDetails['accommodation_rating'] ?? 'Star Rating' }}</p>
-                                        <hr>
-                                        <p>{{ $dayDetails['accommodation_description'] ?? 'Description of the accommodation' }}</p>
-                                    </div>
+
+    <div class="card">
+        <h5 class="card-title" id="Itinerary"> Itinerary</h5>
+    </div>
+    <div class="card p-4">
+        <details open>
+            <summary class="row p-4" style="background-color:#aab4b8">
+                <div>
+                    Day 1 - 2 {{$settingValues->day1_2??'Karachi'}}
+                </div>
+            </summary>
+            <div class="card-body">
+                <p class="card-text py-3">
+                    {{$settingValues->day2_text??'Arrive in time to Karachi\'s Jinnah unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                    Join Pakistan\’s first-ever luxury small group tour across the entire length of Balochistan\’s south coast.'}}
+                </p>
+                <p class="card-text py-3">
+                    Enjoy a relaxing unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                    Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.
+                </p>
+                <div class="card">
+                    <h5 class="card-title"> Your Accommodation </h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{ asset('images/tour/pearl-hotel.png') }}" alt="Pearl Continental Hotel Karachi">
+                            </div>
+                            <div class="col-7" style="display: grid; align-items: center;">
+                                <div>
+                                    <h5 class="card-title">
+                                        Pearl Continental Hotel Karachi
+                                    </h5>
+                                    <p>5-star</p>
+                                    <hr>
+                                    <p>
+                                        Overlooking the sprawling city in the heart of downtown Karachi,
+                                        Pearl-Continental Hotel Karachi is the perfect escape from Pakistan's most
+                                        bustling city.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </details>
-        </div>
-    @endforeach    
+            </div>
+        </details>
+    </div>
+    <!-- start -->
+    <div class="card p-4">
+        <details open>
+            <summary class="row p-4" style="background-color:#aab4b8">
+                <div>
+                    Day 3 - 4 {{$settingValues->day3_4??'Damb & Hingol National Park'}}
+                </div>
+            </summary>
+            <div class="card-body">
+                <p class="card-text py-3">
+                    {{$settingValues->day4_text??'Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
+                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we\’ll drive to Kund Malir and check in to Gold Coast Resort on
+                    the beach. Dinner at the resort by the best chef in the region!'}}
+                </p>
+                <p class="card-text py-3">
+                    Next morning, we’ll head out early to beat the heat on our climb to the top of the Chandragup Mud Volcano. Then kick off your shoes for a walk
+                    in the Arabian Sea at Sapat Beach / Tanak Koh Beach. Group dinner at the resort.
+                </p>
+                <div class="card">
+                    <h5 class="card-title"> Your Accommodation </h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{ asset('images/tour/Gold Coast Beach Resort.jpg') }}" alt="Gold Coast Beach Resort.jpg">
+                            </div>
+                            <div class="col-7" style="display:grid;align-items:center">
+                                <div>
+                                    <h5 class="card-title">
+                                        Gold Coast Beach Resort
+                                    </h5>
+                                    <p>3-Star</p>
+                                    <hr>
+                                    <p>
+                                        3-Star that we upgrade with luxury amenities & delightful extras
+                                        Located within Hingol National Park and sits on what is considered
+                                        one of Balochistan’s most beautiful beaches
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div class="card p-4">
+        <details>
+            <summary class=" row p-4" style="background-color:#aab4b8">
+                <div>
+                    Day 5 - 7 {{$settingValues->day5_7?? 'Gwadar & Jiwani'}}
+                </div>
+            </summary>
+            <div class="card-body">
+                <p class="card-text py-3">
+                    {{$settingValues->day5_7_text??'Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
+                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we\’ll drive to Kund Malir and check in to Gold Coast Resort on
+                    the beach. Dinner at the resort by the best chef in the region!'}}
+                </p>
+                <p class="card-text py-3">
+                    Next morning, we’ll head out early to beat the heat on our climb to the top of the Chandragup Mud Volcano. Then kick off your shoes for a walk
+                    in the Arabian Sea at Sapat Beach / Tanak Koh Beach. Group dinner at the resort.
+                </p>
+                <div class="card">
+                    <h5 class="card-title"> Your Accommodation </h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{ asset('images/tour/Gold Coast Beach Resort.jpg') }}" alt="Gold Coast Beach Resort.jpg">
+                            </div>
+                            <div class="col-7" style="display:grid;align-items:center">
+                                <div>
+                                    <h5 class="card-title">
+                                        Gold Coast Beach Resort
+                                    </h5>
+                                    <p>3-Star</p>
+                                    <hr>
+                                    <p>
+                                        3-Star that we upgrade with luxury amenities & delightful extras
+                                        Located within Hingol National Park and sits on what is considered
+                                        one of Balochistan’s most beautiful beaches
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+    <div class="card p-4">
+        <details>
+            <summary class=" row p-4" style="background-color:#aab4b8">
+                <div>
+                    Day 8 {{ $settingValues->day8??'Karachi'}}
+                </div>
+            </summary>
+            <div class="card-body">
+                <p class="card-text py-3">
+                    {{$settingValues->day8_text?? 'Check out of Pearl-Continental Hotel Karachi. Be one of the first foreigners in the world to go dolphin watching and explore the mangroves by
+                    boat in Damb. Lunch will be an assortment of fresh fish and rice. In the afternoon we’ll drive to Kund Malir and check in to Gold Coast Resort on
+                    the beach. Dinner at the resort by the best chef in the region!'}}
+                </p>
+                <p class="card-text py-3">
+                    Next morning, we’ll head out early to beat the heat on our climb to the top of the Chandragup Mud Volcano. Then kick off your shoes for a walk
+                    in the Arabian Sea at Sapat Beach / Tanak Koh Beach. Group dinner at the resort.
+                </p>
+                <div class="card">
+                    <h5 class="card-title"> Your Accommodation </h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{{ asset('images/tour/Gold Coast Beach Resort.jpg') }}" alt="Gold Coast Beach Resort.jpg">
+                            </div>
+                            <div class="col-7" style="display:grid;align-items:center">
+                                <div>
+                                    <h5 class="card-title">
+                                        Gold Coast Beach Resort
+                                    </h5>
+                                    <p>3-Star</p>
+                                    <hr>
+                                    <p>
+                                        3-Star that we upgrade with luxury amenities & delightful extras
+                                        Located within Hingol National Park and sits on what is considered
+                                        one of Balochistan’s most beautiful beaches
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
 </div>
 
 
@@ -758,13 +896,12 @@
         <h4 class="card-title ml-5 pl-2" id="Videos-Pics"> Photos & Videos</h4>
     </div>
     <div class="d-flex justify-content-center">
-        <img src="{{ $settingValues->images->main_image ?? asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="Main Image">
+        <img src="{{ asset('images/tour/boats.png') }}" class="img-fluid img-auto" alt="">
     </div>
     <div class="row mx-4 p-5 justify-content-center text-center" style="border: 0px;">
         <div class="col-12">
-            <h5 style="font-family:math;font-weight:600"> {{ $settingValues->images->caption ?? 'Envision the dream' }} </h5>
-            <br>
-            <button class="btn-outline-light text-dark tourBtn border-1" style="border: 1px dotted #090909;"> VIEW TRIP </button>
+            <h5 style="font-family:math;font-weight:600"> Envision the dream </h5> <br>
+            <button class="btn-outline-light text-dark tourBtn border-1" style=" border: 1px dotted #090909;"> VIEW TRIP </button>
         </div>
     </div>
     <div class="row justify-content-center" id="Details">
@@ -777,11 +914,34 @@
                     What's included
                 </div>
                 <div class="col-8">
-                    @foreach ($settingValues->details->included as $included)
-                        <div class="hstack">
-                            <i class="fa fa-check mr-2"></i> {{ $included }}
-                        </div>
-                    @endforeach
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Visa Support
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> NOC for Balochistan
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i>
+                        Airport transfer upon arrival and departure (departure transfer day/time depends on if additional excursions or travel days are added)
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Hotel Accodomations
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Transportation in a private cabin sleeper bus with driver and fuel
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Breakfast, group meals when noted in itinerary & box lunches when sightseeing
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Expert local tour guides
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Highway toll taxes
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-check mr-2"></i> Enterance tickets for the heritage sites, museums, etc
+                    </div>
                 </div>
             </div>
             <div class="d-flex mt-5 mb-4">
@@ -789,11 +949,24 @@
                     What's excluded
                 </div>
                 <div class="col-8">
-                    @foreach ($settingValues->details->excluded as $excluded)
-                        <div class="hstack">
-                            <i class="fa fa-close mr-2"></i> {{ $excluded }}
-                        </div>
-                    @endforeach
+                    <div class="hstack">
+                        <i class="fa fa-close mr-2"></i> Meals and transportation during free time
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-close mr-2"></i> International Flights
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-close mr-2"></i> Personal and travel insurance
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-close mr-2"></i> Hotel Accodomations
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-close mr-2"></i> Tips to Driver/Hotel/Guides
+                    </div>
+                    <div class="hstack">
+                        <i class="fa fa-close mr-2"></i> Laundry, bevarages, and any expenses of a personal nature
+                    </div>
                 </div>
             </div>
             <div class="d-flex mt-5 mb-4" style="border-top:2px solid darkgray;border-bottom:2px solid darkgray;">
@@ -802,10 +975,11 @@
                 </div>
                 <div class="col-8 mt-5 mb-5">
                     <div class="hstack">
-                        {{ $settingValues->tripCosts->cost_per_person ?? '$6417' }} per person (double occupancy)
+                        $6417 per person (double occupancy)
                         <br>
-                        Single Supplement {{ $settingValues->tripCosts->single_supplement ?? '$1949' }}
-                        <br><br>
+                        Single Supplement $1949
+                        <br>
+                        <br>
                         (VAT is already included in the prices above)
                     </div>
                 </div>
@@ -813,75 +987,123 @@
 
         </div>
         <div class="row mt-3">
-            @foreach ($settingValues->destinations as $destination)
-                <div class="col-4 position-relative">
-                    <img src="{{ $destination->image ?? asset('images/tour/default-image.png') }}" class="w-100" alt="{{ $destination->name }}">
-                    <h4 class="position-absolute text-white">{{ $destination->name ?? 'Name of Destination' }}</h4>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-
-
-<section class="custom-section bg-light">
-    <div class="container mt-5">
-        <h1 class="mb-5">More Tours</h1>
-        <div class="row">
-            @foreach($settingValues->tours as $tour)
-                <div class="col-md-3">
-                    <div class="journey-card">
-                        <div class="position-relative">
-                            <img src="{{ asset($tour->image) }}" alt="{{ $tour->altText }}">
-                            @if($tour->badge)
-                                <div class="badge">{{ $tour->badge }}</div>
-                            @endif
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $tour->title }}</h5>
-                            <p class="card-text">{{ $tour->description }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <b>{{ $tour->price }}</b>
-                            <b>{{ $tour->dates }}</b>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section class="more-tours">
-    <div class="container">
-        <div class="card text-center">
-            <div class="card-body p-5">
-                <h4 class="card-title">{{ $settingValues->footer_title ?? 'What is lorem ipsum?' }}</h4>
-                <hr>
-                <p class="card-text">
-                    {{ $settingValues->footer_content ?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country. Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.' }}
-                </p>
-                <p class="">
-                    **Please note: trip is for adults and children 16 years or older only
-                </p>
+            <div class="col-4 position-relative">
+                <img src="{{ asset('images/tour/desert-walk.png') }}" class="w-100" alt="">
+                <h4 class="position-absolute text-white">Name of Destination</h4>
+            </div>
+            <div class="col-4 position-relative">
+                <img src="{{ asset('images/tour/monument.png') }}" alt="" class="w-100">
+                <h4 class="position-absolute text-white">Name of Destination</h4>
+            </div>
+            <div class="col-4 position-relative">
+                <img src="{{ asset('images/tour/beaches.png') }}" alt="" class="w-100">
+                <h4 class="position-absolute text-white">Name of Destination</h4>
             </div>
         </div>
     </div>
-</section>
+
+    <section class="custom-section bg-light ">
+        <div class="container mt-5">
+            <h1 class=" mb-5">More Tours</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="journey-card">
+                        <div class="position-relative">
+                            <img src="{{asset('images/tour/mountains.png')}}" alt="Island Flavors: A Culinary Journey Through Taiwan">
+                            <div class="badge">Featured Experience</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam sit iure ex, dicta nemo sunt recusandae voluptates, reprehenderit inventore amet et a incidunt? Vel aperiam modi nobis mollitia voluptates.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Starting at $389</b>
+                            <b>15-25 October 2024</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="journey-card">
+                        <div class="position-relative">
+                            <img src="{{asset('images/tour/hills.png')}}" alt="Origins Of The Yangtze: Trekking The Jinsha River Valley">
+                            <div class="badge">Featured Experience</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam sit iure ex, dicta nemo sunt recusandae voluptates, reprehenderit inventore amet et a incidunt? Vel aperiam modi nobis mollitia voluptates.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Starting at $389</b>
+                            <b>15-25 October 2024</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="journey-card">
+                        <div class="position-relative">
+                            <img src="{{asset('images/tour/bike.png')}}" alt="Dunhuang Discovery: Desertscapes And Grottoes">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam sit iure ex, dicta nemo sunt recusandae voluptates, reprehenderit inventore amet et a incidunt? Vel aperiam modi nobis mollitia voluptates.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Starting at $389</b>
+                            <b>15-25 October 2024</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="journey-card">
+                        <div class="position-relative">
+                            <img src="{{asset('images/tour/lake.png')}}" alt="Inside Guizhou: A Discovery Of Miao, Buyi, And Dong Traditions">
+                            <div class="badge"> Editor's Choice</div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam sit iure ex, dicta nemo sunt recusandae voluptates, reprehenderit inventore amet et a incidunt? Vel aperiam modi nobis mollitia voluptates.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Starting at $389</b>
+                            <b>15-25 October 2024</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-@include('partials.footer')
-@endsection
-<script>
-    jQuery(document).ready(function() {
-        window.addEventListener('scroll', function() {
-            let navRow = document.getElementById('sticked')
-            console.log(window.pageYOffset)
-            if (window.pageYOffset > 900) {
-                navRow.classList.add('sticky')
-            } else {
-                navRow.classList.remove('sticky')
-            }
+    <section class="more-tours">
+        <div class="container">
+            <div class="card text-center">
+                <div class="card-body p-5">
+                    <h4 class="card-title">What is lorem ipsum ?</h4>
+                    <hr>
+                    <p class="card-text">
+                        {{$settingValues->prefooter?? 'Balochistan is the most unexplored area of Pakistan and the province with the most breathtakingly diverse ecosystems in the country.
+                        Join Pakistan’s first-ever luxury small group tour across the entire length of Balochistan’s south coast.'}}
+                    </p>
+                    <p class="">
+                        **Please note: trip is for adults and children 16 years or older only
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @include('partials.footer')
+    @endsection
+    <script>
+        jQuery(document).ready(function() {
+            window.addEventListener('scroll', function() {
+                let navRow = document.getElementById('sticked')
+                console.log(window.pageYOffset)
+                if (window.pageYOffset > 900) {
+                    navRow.classList.add('sticky')
+                } else {
+                    navRow.classList.remove('sticky')
+                }
+            })
         })
-    })
-</script>
+    </script>

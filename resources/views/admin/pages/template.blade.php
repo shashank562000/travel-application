@@ -94,6 +94,7 @@ if(isset($answers)){
                                 @else
                                     @if(str_contains(strtolower($option), 'image'))
                                         <input type="file" name="{{ $title."**".$option }}" class="form-control">
+                                        <p class="size text-secondary"></p>
                                     @else
                                     <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control">
                                     @endif
@@ -119,6 +120,12 @@ if(isset($answers)){
 </div>
 
 @endsection
+<script src="{{asset('/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('/assets/libs/simplebar/simplebar.min.js')}}"></script>
+<script src="{{asset('/assets/libs/node-waves/waves.min.js')}}"></script>
+<script src="{{asset('/assets/libs/feather-icons/feather.min.js')}}"></script>
+<script src="{{asset('/assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+<script src="{{asset('/assets/js/plugins.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <script>
@@ -128,5 +135,22 @@ if(isset($answers)){
                 width: '600px'
             });
         });
+        $('input[type=file]').on('change', function(e){
+            let filesize = e.target.files[0].size
+            if(filesize > 1048576)
+            {
+                alert('File exceeds the limit of 1MB, please select another one!')
+                e.target.value = ''
+            } else {
+                if(filesize < 716800)
+                {
+                    alert('File should be at least of 700KB')
+                    e.target.value='';
+                } else {
+                    filesize= (filesize/1024).toFixed(2)
+                    $(this).next('.size').text('Size : '+filesize+'K')
+                }
+            }
+        })
     });
 </script>

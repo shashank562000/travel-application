@@ -1,7 +1,6 @@
 <style>
     .hero-section {
-        background: url('../images/tour/tour-header.png') no-repeat center center;
-        background-size: cover;
+        background-size: cover!important;
         color: white;
         text-align: center;
         padding: 100px 0;
@@ -68,7 +67,8 @@
         }
     }
 </style>
-<section class="hero-section">
+<section class="hero-section"
+ style="background: url({{$settingValues?->slider?->header_image??'../images/tour/tour-header.png'}}) no-repeat center center">
     <div class="container p-4 m-5"></div>
     <div class="container">
         <!-- <p class="lens-clinic">NAMED AS</p>

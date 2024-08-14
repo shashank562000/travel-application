@@ -1,4 +1,9 @@
 @extends('layouts.default')
+@php
+    if(!blank($answers)){
+        $settingValues = $answers;
+    }
+@endphp
 <link rel="stylesheet" src="{{asset('css/header.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour-media.css')}}">
@@ -6,11 +11,6 @@
 @include('partials.head.header')
 @include('partials.head.header-transparent')
 @include('partials.tour-page-hero')
-@php
-    if(!blank($answers)){
-        $settingValues = $answers;
-    }
-@endphp
 <style>
     .sticky {
         position: fixed;
@@ -672,21 +672,21 @@
             <h6 class="card-subtitle mb-2 mt-3 text-muted">{{ $settingValues->about->highlights_title ?? 'Highlights of your trip' }}</h6>
             <div class="p-5">
                 <ul class="list-unstyled">
-                    @php 
+                    @php
                     $oldHighlights = [
                         'Go dolphin watching',
-                        'Visit vibrant cities & remote villages',    
-                        'Climb a volcano',    
-                        'Stay in 5-star luxury & boutique hotels',    
-                        'Be the 1st to travel in Pakistan\'s #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)',    
-                        'Relax with a decadent beach picnic on the Arabian Sea',    
+                        'Visit vibrant cities & remote villages',
+                        'Climb a volcano',
+                        'Stay in 5-star luxury & boutique hotels',
+                        'Be the 1st to travel in Pakistan\'s #1 luxury private cabin/sleeper bus (absolute comfort for our days on the road)',
+                        'Relax with a decadent beach picnic on the Arabian Sea',
                     ];
                     @endphp
                     @if(isset($settingValues->highlights) && $settingValues->highlights->highlight1)
                         @foreach ($settingValues->highlights as $key => $highlight)
                             <li><span class="fa fa-dot-circle-o mr-2"></span>{{ $highlight }} </li>
                         @endforeach
-                    @else 
+                    @else
                         @foreach ($oldHighlights as $key => $highlight)
                             <li><span class="fa fa-dot-circle-o mr-2"></span>{{ $highlight }}</li>
                         @endforeach
@@ -701,7 +701,7 @@
             <h5 class="card-title">Trip Host: {{ $settingValues->triphost->name ?? 'Angela Carson' }}</h5>
             <div class="p-5">
                 <ul class="list-unstyled">
-                    @php 
+                    @php
                     $oldTripHostDetails = [
                         'Traveller to spend the longest in Balochistan since 9\/11:53 days',
                         'Travel writer and content writer',
@@ -725,7 +725,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="card">
         <h5 class="card-title">Where you're going</h5>
         <div class="card-body">
@@ -774,8 +774,8 @@
                 </div>
             </details>
         </div>
-    @endforeach    
-    @else 
+    @endforeach
+    @else
     <div class="card p-4">
         <details open>
             <summary class="row p-4" style="background-color:#aab4b8">
@@ -969,8 +969,8 @@
         <div class="col-12">
             <h5 style="font-family:math;font-weight:600"> {{ $settingValues->images->caption ?? 'Envision the dream' }} </h5>
             <br>
-            <button class="btn-outline-light text-dark tourBtn border-1" style="border: 1px dotted #090909;"> 
-                VIEW TRIP 
+            <button class="btn-outline-light text-dark tourBtn border-1" style="border: 1px dotted #090909;">
+                VIEW TRIP
             </button>
         </div>
     </div>
@@ -1028,7 +1028,7 @@
                 </div>
             @endforeach
         </div>
-        @else 
+        @else
         <div class="row mt-3">
             <div class="col-4 position-relative">
                 <img src="{{ asset('images/tour/desert-walk.png') }}" class="w-100" alt="">
@@ -1074,7 +1074,7 @@
                 </div>
             @endforeach
         </div>
-        @else 
+        @else
         <div class="row">
                 <div class="col-md-3">
                     <div class="journey-card">

@@ -19,6 +19,7 @@ Route::get('/', function () {
     }
     return view('welcome', compact('answers'));
 });
+Route::get('/convert/{filename?}', [SettingController::class,'convert'])->name('convert');
 
 Route::get('/booking-condition', function () {
     return view('booking-condition');

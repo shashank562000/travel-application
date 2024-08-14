@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('section');
             $table->string('option');
-            $table->string('value')->nullable();
+            $table->longText('value')->nullable();
             $table->integer('page_id');
         });
     }

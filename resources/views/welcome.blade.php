@@ -224,7 +224,7 @@
     @include('partials.hero')
     <section class="custom-section text-center " style="padding:0;">
         <div class="search-container">
-            <h1 class="pt-4 text-white">Your Adventure Begins Here </h1>
+            <h1 class="pt-4 text-white">{{isset($settingValues->head_end?->heading )? $settingValues->head_end->heading : 'Your Adventure Begins Here'}} </h1>
             <div class="search-box">
                 <input type="text" class="form-control" placeholder="Keywords">
                 <select class="form-control">
@@ -386,7 +386,7 @@
                 </div>
                 <div class="col-md-6 support-content ">
                     <div>
-                        <h2>{{ $settingValues->highlights->highlight_1_heading ?? 
+                        <h2>{{ $settingValues->highlights->highlight_1_heading ??
                             'Visa & LOI Support'
                         }}</h2>
                         <hr>
@@ -398,11 +398,11 @@
 
                 <div class="col-md-6 support-content">
                     <div class="p-3" style="text-align: end;">
-                        <h2>{{ $settingValues->highlights->highlight_2_heading ?? 
+                        <h2>{{ $settingValues->highlights->highlight_2_heading ??
                             'Affordable Tours From 2 - 15 Days'
                         }}</h2>
                         <hr>
-                        <p>{{ $settingValues->highlights->highlight_2_content ?? 
+                        <p>{{ $settingValues->highlights->highlight_2_content ??
                             'Pakistan’s lakes and mountains are the jewel in
                             Still working on it, use lorem ipsum: Lorem
                             ipsum dolor sit amet, consectetur adipiscing
@@ -420,11 +420,11 @@
                 </div>
                 <div class="col-md-6 support-content">
                     <div>
-                        <h2>{{ $settingValues->highlights->highlight_3_heading ?? 
+                        <h2>{{ $settingValues->highlights->highlight_3_heading ??
                             'Custom-Made Luxury Journeys
                         '}}</h2>
                         <hr>
-                        <p>{{ $settingValues->highlights->highlight_3_content ?? 
+                        <p>{{ $settingValues->highlights->highlight_3_content ??
                             'Let our luxury expert craft the perfect bespoke
                             itinerary for your independent nature. We’ll
                             include everything from moments with top
@@ -437,11 +437,11 @@
                 </div>
                 <div class="col-md-6 support-content">
                     <div class="p-3" style="text-align: end;">
-                        <h2>{{ $settingValues->highlights->highlight_4_heading ?? 
+                        <h2>{{ $settingValues->highlights->highlight_4_heading ??
                             'Explore Balochistan In Style'
                         }}</h2>
                         <hr>
-                        <p>{{ $settingValues->highlights->highlight_4_content ?? 
+                        <p>{{ $settingValues->highlights->highlight_4_content ??
                             'Still working on it, use lorem ipsum:Lorem
                             ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et
@@ -468,7 +468,7 @@
                     <center>
                     {{  $settingValues->explore->highlight?? 'Here you\'ll find the best month to adventure around our diverse eco-systems: from
                         </br> beaches, dunes & deserts to the top of K2.'
-                    }}  
+                    }}
                     </center>
                 </p>
             </div>

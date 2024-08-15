@@ -68,13 +68,17 @@
         }
     }
 </style>
-<section class="hero-section">
+<section class="hero-section" style="background:url({{$settingValues?->slider?->header_image??'../images/landing-header.jpg'}}) no-repeat center center">
     <div class="container p-4 m-5"></div>
     <div class="container">
         <p class="lens-clinic">NAMED AS</p>
-        <h1>DESTINATION OF THE YEAR</h1>
+        <h1>{{isset($settingValues->slider?->heading)?$settingValues->slider->heading:'DESTINATION OF THE YEAR'}}</h1>
         <i><b>By Condé Nast Traveller magazine</b></i>
-        <p style="text-justify:'';"><b>Here's what you need to know to </br>enter Pakistan in 2024</b></p>
+        <p style="text-justify:'';"><b>
+        {{
+        isset($settingValues->slider?->content)?$settingValues->slider->content:
+        'Here\'s what you need to know to enter Pakistan in 2024'}}
+        </b></p>
         <a href="#" class="btn text-white">READ MORE</a>
         <center>
             <div class="circle">

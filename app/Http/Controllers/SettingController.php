@@ -12,7 +12,9 @@ use App\Models\Page;
 use App\Models\PageSetting;
 use App\Models\SiteContent;
 use App\Models\Text;
+use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class SettingController extends Controller
 {
@@ -82,25 +84,45 @@ class SettingController extends Controller
 
     public function updateTemplate(Request $req)
     {
-        $pageID = $req->page_id;
-        $postData = $req->all();
-        unset($postData['_token']);
-        unset($postData['page_id']);
-        foreach($postData as $name => $input)
-        {
-            list($section, $name) = explode('**',$name);
-            $row = MetaData::where('page_id', $pageID);
-            if(str_contains(strtolower($name), 'image'))
+        try{
+             $pageID = $req->page_id;
+            $postData = $req->all();
+            unset($postData['_token']);
+            unset($postData['page_id']);
+            foreach($postData as $name => $input)
             {
-                $image = $input;
-                $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
-                // dd($filePath);
-                $row->where('option', $name)->where('section', $section)->update(['value'=> $filePath]);
-            } else {
-                $row->where('option', $name)->where('section', $section)->update(['value' => $input ]);
+                list($section, $name) = explode('**',$name);
+                $row = MetaData::where('page_id', $pageID);
+                if(str_contains(strtolower($name), 'image'))
+                {
+                    $image = $input;
+                    // $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
+                    $data = base64_encode($image->get());
+                    $pre='';
+                    $ext = $image->extension();
+                    if($ext=='pdf')
+                    {
+                        session()->put('error','Can\'t upload a pdf for preview!');
+                        return back();
+                    }
+                    switch ($ext) {
+                        case 'jpg':case 'jpeg':
+                            $pre = 'data:image/jpeg;base64,';
+                            break;
+                        case 'png':
+                            $pre = 'data:image/png;base64,';
+                            break;
+                    }
+                    $row->where('option', $name)->where('section', $section)->update(['value'=> $pre.$data ]);
+                } else {
+                    $row->where('option', $name)->where('section', $section)->update(['value' => $input ]);
+                }
             }
+            session()->put('msg','Data successfully updated!');
+        }catch(Exception $e){
+            Log::info($e->getMessage(),$e->getTrace());
+
         }
-        session()->put('msg','Data successfully updated!');
         return back();
     }
     public function uploadTexts(Request $request)
@@ -148,7 +170,7 @@ class SettingController extends Controller
         $filepaths = [];
         foreach($request->image as $imageName => $image)
         {
-            $filePath = $image->storeAs('public/images', $image->getClientOriginalName());
+            $filePath = $image->storeAs('images', $image->getClientOriginalName());
             $filepaths[$imageName]=$filePath;
         }
         $old = SiteContent::where('page_id',$request->page_id)->where('type','image');
@@ -165,5 +187,14 @@ class SettingController extends Controller
         }
         session()->put('msg','Images successfully updated!');
         return back()->with('old', $old->get());
+    }
+
+    public function convert($filename)
+    {
+        // todo
+        return [
+            'status'=>true,
+            'data'=>'abhi nhi '.$filename
+        ];
     }
 }

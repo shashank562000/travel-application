@@ -19,6 +19,7 @@ Route::get('/', function () {
     }
     return view('welcome', compact('answers'));
 });
+Route::get('/convert/{filename?}', [SettingController::class,'convert'])->name('convert');
 
 Route::get('/booking-condition', function () {
     return view('booking-condition');
@@ -42,23 +43,38 @@ Route::get('/get-started', function () {
             $answers->{$row->section} = (object)[$row->option => $row->value];
         }
     }
-    // dd($answers);
     return view('tour.get-started', compact('answers'));
 });
 Route::get('/8d_balochistan', function () {
-    $_COOKIE['path'] = asset('images/tour/tour-header.png');
     $pageID = Page::whereName('tour')->first('id')->id;
-    $settings = Text::where('page_id', $pageID )->get('option');
-    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
-    return view('8d_balochistan', compact('settings','answers'));
+    $data = MetaData::where('page_id', $pageID )->get(['option','value','section']);
+    $answers = new stdClass();
+    foreach($data as $row)
+    {
+        if(isset($answers->{$row->section}))
+        {
+            $answers->{$row->section}->{$row->option} = $row->value;
+        } else {
+            $answers->{$row->section} = (object)[$row->option => $row->value];
+        }
+    }
+    return view('8d_balochistan', compact('answers'));
 });
 
 Route::get('/15d_balochistan', function () {
-    $_COOKIE['path'] = asset('images/tour/tour-header.png');
     $pageID = Page::whereName('tour')->first('id')->id;
-    $settings = Text::where('page_id', $pageID )->get('option');
-    $answers = SiteContent::where('page_id', $pageID )->whereType('text')->get('data');
-    return view('15d_balochistan', compact('settings','answers'));
+    $data = MetaData::where('page_id', $pageID )->get(['option','value','section']);
+    $answers = new stdClass();
+    foreach($data as $row)
+    {
+        if(isset($answers->{$row->section}))
+        {
+            $answers->{$row->section}->{$row->option} = $row->value;
+        } else {
+            $answers->{$row->section} = (object)[$row->option => $row->value];
+        }
+    }
+    return view('15d_balochistan', compact('answers'));
 });
 
 Route::get('login', function(){

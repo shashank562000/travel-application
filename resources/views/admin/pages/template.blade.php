@@ -6,6 +6,10 @@ if(isset($answers)){
 }
 ?>
 <head>
+    <script>
+        const CONVERT_URL = "{{route('convert')}}"
+    </script>
+    <script src="{{asset('js/attachments.js')}}"></script>
     <link href="{{asset('/assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css">
     <script src="{{asset('/assets/js/layout.js')}}"></script>
     <link href="{{asset('/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
@@ -29,6 +33,10 @@ if(isset($answers)){
         width: 1em;
     }
 
+    b {
+        font-family:monospace;
+        font-size:large;
+    }
     details[open] summary::before {
         content: "-";
     }
@@ -56,6 +64,9 @@ if(isset($answers)){
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @php session()->forget('msg'); @endphp
+         @endif
+         @if(session()->has('error'))
+         {{dd(session()->get('error'))}}
          @endif
         <div class="container-fluid">
             <div class="row">
@@ -93,9 +104,15 @@ if(isset($answers)){
                                     <textarea name="{{ $title."**".$option }}" class="form-control ckeditor">{{ $value }}</textarea>
                                 @else
                                     @if(str_contains(strtolower($option), 'image'))
-                                        <input type="file" name="{{ $title."**".$option }}" class="form-control">
+                                        <input type="file" name="{{ $title."**".$option }}" class="form-control" placeholder={{str_contains(strtolower($option),'tag')?'One word maximum':''}}>
+                                        <b style="margin-top:5px"> {{ $option=='header_image'? '920 X 550' :  '460 X 490' }} </b>
+                                        @if($value)
+                                            <button type="button" class="btn btn-outline-success btn-sm ms-5 mt-2" onclick="preview('{{$value}}', 'todo in case of default file')"><i class="fa fa-paperclip"></i> View previous </button>
+                                        @endif
                                     @else
-                                    <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control">
+                                        <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control {{str_contains(strtolower($option),'tag') ? 'tag' : '' }}">
+                                        <b>{{ str_contains(strtolower($option),'tag') ? 'One word maximum' : '' }}</b>
+                                        <span class="text-danger"></span>
                                     @endif
                                 @endif
                             </div>
@@ -119,6 +136,17 @@ if(isset($answers)){
 </div>
 
 @endsection
+    <script src="{{asset('/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('/assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('/assets/libs/node-waves/waves.min.js')}}"></script>
+    <script src="{{asset('/assets/libs/feather-icons/feather.min.js')}}"></script>
+    <script src="{{asset('/assets/js/pages/plugins/lord-icon-2.1.0.js')}}"></script>
+    <script src="{{asset('/assets/js/plugins.js')}}"></script>
+    <script src="{{asset('/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('/assets/libs/jsvectormap/js/jsvectormap.min.js')}}"></script>
+    <script src="{{asset('/assets/libs/jsvectormap/maps/world-merc.js')}}"></script>
+    <script src="{{asset('/assets/js/pages/dashboard-analytics.init.js')}}"></script>
+    <script src="{{asset('/assets/js/app.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 <script>
@@ -128,5 +156,25 @@ if(isset($answers)){
                 width: '600px'
             });
         });
+        lastTime = setInterval(()=>{
+            if($('.cke_notifications_area').remove())
+            {
+                clearInterval(lastTime)
+            }
+            console.log('repeating...')
+        },600)
+
+        $('#textForm').submit(function(e){
+            let tags = $(this).find('.tag')
+            $(tags).each(function(k,input){
+                 if(input.value?.trim().split(' ').length > 1)
+                 {
+                     e.preventDefault();
+                     $(input).parent().find('span.text-danger').text('can\'t have more than one word')
+                 }else {
+                     $(input).parent().find('span.text-danger').text('')
+                 }
+            })
+        })
     });
 </script>

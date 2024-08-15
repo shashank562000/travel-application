@@ -6,6 +6,7 @@ use App\Models\MetaData;
 use App\Models\Page;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MetaSeeder extends Seeder
 {
@@ -22,8 +23,10 @@ class MetaSeeder extends Seeder
             [
                 'page_id' => Page::whereName('landing')->first('id')->id,
                 'option'=>[
-                    'head' => [
-                        'heading'
+                    'slider' => [
+                        'heading',
+                        'content',
+                        'header_image'
                     ],
                     'head_end' => [
                         'heading'
@@ -85,6 +88,9 @@ class MetaSeeder extends Seeder
             [
                 'page_id' => Page::whereName('tour')->first('id')->id,
                 'option' => [
+                    'slider'=>[
+                        'header_image'
+                    ],
                     'tour_highlights' => [
                         'tour_duration',
                         'tour_location',

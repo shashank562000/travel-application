@@ -110,9 +110,13 @@ if(isset($answers)){
                                             <button type="button" class="btn btn-outline-success btn-sm ms-5 mt-2" onclick="preview('{{$value}}', 'todo in case of default file')"><i class="fa fa-paperclip"></i> View previous </button>
                                         @endif
                                     @else
+                                        @if(str_contains(strtolower($option),'date'))
+                                            <input type="date" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control">
+                                        @else
                                         <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control {{str_contains(strtolower($option),'tag') ? 'tag' : '' }}">
                                         <b>{{ str_contains(strtolower($option),'tag') ? 'One word maximum' : '' }}</b>
                                         <span class="text-danger"></span>
+                                        @endif
                                     @endif
                                 @endif
                             </div>

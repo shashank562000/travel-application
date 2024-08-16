@@ -13,6 +13,16 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        .read-more-text{
+            display:none;
+        }
+        .read-more-text--show{
+            display: inline;
+        }
+        .read-more-btn{
+            color:#0984e3;
+            cursor: pointer;
+        }
         h1,
         h2,
         h3,
@@ -302,12 +312,30 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->expert_led_tours->Img1_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->OurFavouriteExpertLedToursImg1Content ?? "Lorem Ipsum is simply dummy text
-                                of the printing and typeseing
-                                industry. Lorem Ipsum has been
-                                the industry's standard."}}
+                            <?php
+                                $card_1_text = $settingValues->expert_led_tours->Img1_content ??"Lorem Ipsum is simply dummy text of the printing and typeseing industry. Lorem Ipsum has been the industry's standard.";
+                                if(strlen($card_1_text)> 120){
+                                    $firstpart = substr($card_1_text, 0, 120);
+                                    $extra = substr($card_1_text,120);
+                                    // dd($firstpart,$extra);
+                                    echo "<p class=\"card-text\">".$firstpart."
+                                        <span class=\"read-more-text\">.$extra.</span></p>
+                                        <span class='read-more-btn'>Read More...</span>";
+                                } else {
+                                    echo "<p class=\"card-text\">".$card_1_text."</p>";
+                                }
+                            ?>
+                            <p class="card-footers-2">Starting at {{$settingValues->expert_led_tours->Img1_price??"$389"}} <br>
+                            <?php
+                                if($settingValues->expert_led_tours->Img1_date1 && $settingValues->expert_led_tours->Img1_date2)
+                                {
+                                    $date1 = date('d-',strtotime($settingValues->expert_led_tours->Img1_date1)). date('d F, Y',strtotime($settingValues->expert_led_tours->Img1_date2));
+                                }else {
+                                    $date1 = '15-24 October 2024';
+                                }
+                            ?>
+                            {{$date1}}
                             </p>
-                            <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
                         </div>
                     </div>
                 </div>
@@ -319,12 +347,29 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->expert_led_tours->Img2_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->expert_led_tours->Img2_content ?? "Lorem Ipsum is simply dummy text
-                                of the printing and typeseing
-                                industry. Lorem Ipsum has been
-                                the industry's standard."}}
-                            </p>
-                            <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
+                            <?php
+                                $card_2_text = $settingValues->expert_led_tours->Img2_content ??"Lorem Ipsum is simply dummy text of the printing and typeseing industry. Lorem Ipsum has been the industry's standard.";
+                                if(strlen($card_2_text)> 120){
+                                    $firstpart = substr($card_2_text, 0, 120);
+                                    $extra = substr($card_2_text,120);
+                                    // dd($firstpart,$extra);
+                                    echo "<p class=\"card-text\">".$firstpart."
+                                        <span class=\"read-more-text\">.$extra.</span></p>
+                                        <span class='read-more-btn'>Read More...</span>";
+                                } else {
+                                    echo "<p class=\"card-text\">".$card_2_text."</p>";
+                                }
+                            ?>
+                            <p class="card-footers-2">Starting at {{$settingValues->expert_led_tours->Img2_price??'$389'}} <br>
+                            <?php
+                                if($settingValues->expert_led_tours->Img2_date1 && $settingValues->expert_led_tours->Img2_date2)
+                                {
+                                    $date2 = date('d-',strtotime($settingValues->expert_led_tours->Img2_date1)). date('d F, Y',strtotime($settingValues->expert_led_tours->Img2_date2));
+                                }else {
+                                    $date2 = '15-24 October 2024';
+                                }
+                            ?>
+                            {{$date2}}</p>
                         </div>
                     </div>
                 </div>
@@ -338,12 +383,29 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->expert_led_tours->Img3_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->expert_led_tours->Img3_content ?? "Lorem Ipsum is simply dummy text
-                                of the printing and typeseing
-                                industry. Lorem Ipsum has been
-                                the industry's standard."}}
-                            </p>
-                            <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
+                            <?php
+                                $card_3_text = $settingValues->expert_led_tours->Img3_content ??"Lorem Ipsum is simply dummy text of the printing and typeseing industry. Lorem Ipsum has been the industry's standard.";
+                                if(strlen($card_3_text)> 120){
+                                    $firstpart = substr($card_3_text, 0, 120);
+                                    $extra = substr($card_3_text,120);
+                                    // dd($firstpart,$extra);
+                                    echo "<p class=\"card-text\">".$firstpart."
+                                        <span class=\"read-more-text\">.$extra.</span></p>
+                                        <small class='read-more-btn'>Read More...</small>";
+                                } else {
+                                    echo "<p class=\"card-text\">".$card_3_text."</p>";
+                                }
+                            ?>
+                            <p class="card-footers-2">Starting at {{$settingValues->expert_led_tours->Img3_price??"$389"}}<br>
+                            <?php
+                                if($settingValues->expert_led_tours->Img3_date1 && $settingValues->expert_led_tours->Img3_date2)
+                                {
+                                    $date3 = date('d-',strtotime($settingValues->expert_led_tours->Img3_date1)). date('d F, Y',strtotime($settingValues->expert_led_tours->Img3_date2));
+                                }else {
+                                    $date3 = '15-24 October 2024';
+                                }
+                            ?>
+                            {{$date3}}</p>
                         </div>
                     </div>
                 </div>
@@ -355,12 +417,21 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{$settingValues->expert_led_tours->Img4_heading ?? 'Lorem Ipsum is simply dummy text of the'}}</h5>
-                            <p class="card-text">{{$settingValues->expert_led_tours->Img4_content ?? "Lorem Ipsum is simply dummy text
-                                of the printing and typeseing
-                                industry. Lorem Ipsum has been
-                                the industry's standard."}}
-                            </p>
-                            <p class="card-footers-2">Starting at $389 <br> 15-24 October 2024</p>
+                            <?php
+                                $card_4_text = $settingValues->expert_led_tours->Img4_content ??"Lorem Ipsum is simply dummy text of the printing and typeseing industry. Lorem Ipsum has been the industry's standard.";
+                                if(strlen($card_4_text)> 120){
+                                    $firstpart = substr($card_4_text, 0, 120);
+                                    $extra = substr($card_4_text,120);
+                                    // dd($firstpart,$extra);
+                                    echo "<p class=\"card-text\">".$firstpart."
+                                        <span class=\"read-more-text\">.$extra.</span></p>
+                                        <span class='read-more-btn'>Read More...</span>";
+                                } else {
+                                    echo "<p class=\"card-text\">".$card_4_text."</p>";
+                                }
+                            ?>
+                            <p class="card-footers-2">Starting at
+                            {{$settingValues->expert_led_tours->Img4_price?? "$389"}} <br> 15-24 October 2024</p>
                         </div>
                     </div>
                 </div>
@@ -610,6 +681,17 @@
 <script type="text/javascript" src="{{asset('/wp-includes/js/jquery/ui/datepicker.min.js')}}" id="jquery-ui-datepicker-js"></script>
 <script type="text/javascript" id="jquery-ui-datepicker-js-after">
     /* <![CDATA[ */
+    const parentContainer = document.querySelectorAll('.journey-card');
+    parentContainer.forEach(ele=>{
+        ele.addEventListener('click',evt => {
+            const current = evt.target
+            const isReadMoreBtn = current.className.includes('read-more-btn');
+            if(!isReadMoreBtn) return;
+            const currentText = evt.target.parentNode.querySelector('.read-more-text')
+            currentText.classList.toggle('read-more-text--show');
+            current.textContent = current.textContent.includes('Read More') ? 'Read Less...' : 'Read More...';
+        })
+    })
     jQuery(function(jQuery) {
         jQuery.datepicker.setDefaults({
             "closeText": "Close",

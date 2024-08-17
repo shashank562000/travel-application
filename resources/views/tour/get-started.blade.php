@@ -738,35 +738,38 @@
     <div class="card">
         <h5 class="card-title" id="Itinerary"> Itinerary</h5>
     </div>
-    @if(isset($settingValues->itinerary))
-    @foreach ($settingValues->itinerary as $dayDetails)
-        <div class="card p-4">
+    @if(isset($settingValues->itinerary_section_1) && !blank($settingValues->itinerary_section_1))
+    @php
+        $hotels = ['pearl-hotel.png','Gold Coast Beach Resort.jpg','Gold Coast Beach Resort.jpg','Gold Coast Beach Resort.jpg'];
+    @endphp
+    @foreach ([$settingValues->itinerary_section_1, $settingValues->itinerary_section_2, $settingValues->itinerary_section_3, $settingValues->itinerary_section_4, ] as $dayDetails)
+        <div class="card p-4 loop-k-andar-ka">
             <details open>
                 <summary class="row p-4" style="background-color:#aab4b8">
                     <div>
-                        Day 2- 4 - {{ $dayDetails->location ?? 'Location Name' }}
+                        Day 2- 4 - {{ $dayDetails->{'location_'.$loop->iteration} ?? 'Location Name' }}
                     </div>
                 </summary>
                 <div class="card-body">
                     <p class="card-text py-3">
-                        {{ $dayDetails->description ?? 'Default description for the day' }}
+                        {{ $dayDetails->{'description_'.$loop->iteration} ?? 'Default description for the day' }}
                     </p>
                     <p class="card-text py-3">
-                        {{ $dayDetails->additional_info ?? 'Additional info about the day' }}
+                        {{ $dayDetails->{'additional_info_'.$loop->iteration} ?? 'Additional info about the day' }}
                     </p>
                     <div class="card">
                         <h5 class="card-title">Your Accommodation</h5>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
-                                    <img src="{{ $dayDetails->accommodation_image ?? asset('images/tour/default-hotel.png') }}" alt="Accommodation">
+                                    <img src="{{ $dayDetails->{'accommodation_image_'.$loop->iteration} ?? asset('images/tour/'.$hotels[$loop->index]) }}" alt="Accommodation">
                                 </div>
                                 <div class="col-7" style="display: grid; align-items: center;">
                                     <div>
-                                        <h5 class="card-title">{{ $dayDetails->accommodation_name ?? 'Accommodation Name' }}</h5>
-                            {{ $dayDetails->mmodation_rating ?? 'Star Rating' }}</p>
+                                        <h5 class="card-title">{{ $dayDetails->{'accommodation_name_'.$loop->iteration} ?? 'Accommodation Name' }}</h5>
+                            {{ $dayDetails->{'accommodation_rating_'.$loop->iteration} ?? 'Star Rating' }}</p>
                                         <hr>
-                                        <p>{{ $dayDetails->accommodation_description ?? 'Description of the accommodation' }}</p>
+                                        <p>{{ $dayDetails->{'accommodation_description_'.$loop->iteration} ?? 'Description of the accommodation' }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -986,9 +989,11 @@
                 </div>
                 <div class="col-8">
                     @foreach ($settingValues->included_details as $included)
+                        @if($included)
                         <div class="hstack">
                             <i class="fa fa-check mr-2"></i> {{ $included }}
                         </div>
+                        @endif
                     @endforeach
                 </div>
             </div>
@@ -998,9 +1003,11 @@
                 </div>
                 <div class="col-8">
                     @foreach ($settingValues->excluded_details as $excluded)
+                        @if($excluded)
                         <div class="hstack">
                             <i class="fa fa-close mr-2"></i> {{ $excluded }}
                         </div>
+                        @endif
                     @endforeach
                 </div>
             </div>

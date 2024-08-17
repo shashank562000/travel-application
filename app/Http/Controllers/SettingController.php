@@ -115,7 +115,14 @@ class SettingController extends Controller
                     }
                     $row->where('option', $name)->where('section', $section)->update(['value'=> $pre.$data ]);
                 } else {
-                    $row->where('option', $name)->where('section', $section)->update(['value' => $input ]);
+                    if(str_contains(strtolower($name), 'video'))
+                    {
+                        $video = $input;
+                        $filePath = $video->storeAs('public/videos', $video->getClientOriginalName());
+                        $row->where('option', $name)->where('section', $section)->update(['value' => $filePath ]);
+                    } else {
+                        $row->where('option', $name)->where('section', $section)->update(['value' => $input ]);
+                    }
                 }
             }
             session()->put('msg','Data successfully updated!');

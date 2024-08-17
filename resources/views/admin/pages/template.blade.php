@@ -104,7 +104,7 @@ if(isset($answers)){
                                     <textarea name="{{ $title."**".$option }}" class="form-control ckeditor">{{ $value }}</textarea>
                                 @else
                                     @if(str_contains(strtolower($option), 'image'))
-                                        <input type="file" name="{{ $title."**".$option }}" class="form-control" placeholder={{str_contains(strtolower($option),'tag')?'One word maximum':''}}>
+                                        <input type="file" name="{{ $title."**".$option }}" accept="image/*" class="form-control" placeholder={{str_contains(strtolower($option),'tag')?'One word maximum':''}}>
                                         <b style="margin-top:5px"> {{ $option=='header_image'? '920 X 550' :  '460 X 490' }} </b>
                                         @if($value)
                                             <button type="button" class="btn btn-outline-success btn-sm ms-5 mt-2" onclick="preview('{{$value}}', 'todo in case of default file')"><i class="fa fa-paperclip"></i> View previous </button>
@@ -113,9 +113,13 @@ if(isset($answers)){
                                         @if(str_contains(strtolower($option),'date'))
                                             <input type="date" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control">
                                         @else
-                                        <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control {{str_contains(strtolower($option),'tag') ? 'tag' : '' }}">
-                                        <b>{{ str_contains(strtolower($option),'tag') || str_contains(strtolower($option),'badge') ? 'One word maximum' : '' }}</b>
-                                        <span class="text-danger"></span>
+                                            @if(str_contains(strtolower($option),'video'))
+                                                <input type="file" name="{{ $title."**".$option }}" class="form-control video" accept="video/*">
+                                            @else
+                                                <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control {{str_contains(strtolower($option),'tag') ? 'tag' : '' }}">
+                                                <b>{{ str_contains(strtolower($option),'tag') || str_contains(strtolower($option),'badge') ? 'One word maximum' : '' }}</b>
+                                                <span class="text-danger"></span>
+                                            @endif
                                         @endif
                                     @endif
                                 @endif

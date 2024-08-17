@@ -105,7 +105,8 @@ class MetaSeeder extends Seeder
                 'page_id' => Page::whereName('tour')->first('id')->id,
                 'option' => [
                     'slider'=>[
-                        'header_image'
+                        'header_image',
+                        'header_video'
                     ],
                     'tour_highlights' => [
                         'tour_duration',
@@ -154,43 +155,41 @@ class MetaSeeder extends Seeder
                     'mapImage'=> [
                         'image'
                     ],
-                    'itinerary' =>[
-                        [
-                            'location',
-                            'description',
-                            'additional_info',
-                            'accommodation_name',
-                            'accommodation_image',
-                            'accommodation_rating',
-                            'accommodation_description',
-                        ],
-                        [
-                            'location',
-                            'description',
-                            'additional_info',
-                            'accommodation_name',
-                            'accommodation_image',
-                            'accommodation_rating',
-                            'accommodation_description',
-                        ],
-                        [
-                            'location',
-                            'description',
-                            'additional_info',
-                            'accommodation_name',
-                            'accommodation_image',
-                            'accommodation_rating',
-                            'accommodation_description',
-                        ],
-                        [
-                            'location',
-                            'description',
-                            'additional_info',
-                            'accommodation_name',
-                            'accommodation_image',
-                            'accommodation_rating',
-                            'accommodation_description',
-                        ]
+                    'itinerary_section_1' => [
+                        'location_1',
+                        'description_1',
+                        'additional_info_1',
+                        'accommodation_name_1',
+                        'accommodation_image_1',
+                        'accommodation_rating_1',
+                        'accommodation_description_1',
+                    ],
+                    'itinerary_section_2' => [
+                        'location_2',
+                        'description_2',
+                        'additional_info_2',
+                        'accommodation_name_2',
+                        'accommodation_image_2',
+                        'accommodation_rating_2',
+                        'accommodation_description_2',
+                    ],
+                    'itinerary_section_3' => [
+                        'location_3',
+                        'description_3',
+                        'additional_info_3',
+                        'accommodation_name_3',
+                        'accommodation_image_3',
+                        'accommodation_rating_3',
+                        'accommodation_description_3',
+                    ],
+                    'itinerary_section_4' => [
+                        'location_4',
+                        'description_4',
+                        'additional_info_4',
+                        'accommodation_name_4',
+                        'accommodation_image_4',
+                        'accommodation_rating_4',
+                        'accommodation_description_4',
                     ],
                     'images' => [
                         'main_image',
@@ -216,53 +215,51 @@ class MetaSeeder extends Seeder
                         'cost_per_person',
                         'single_supplement',
                     ],
-                    'destinations'=>[
-                        'destination1' => [
-                            'name',
-                            'image'
-                        ],
-                        'destination2' => [
-                            'name',
-                            'image'
-                        ],
-                        'destination3' => [
-                            'name',
-                            'image'
-                        ],
+
+                    'destination1' => [
+                        'name_1',
+                        'image_1'
                     ],
-                    'tours'=>[
-                        'tour1'=>[
-                            'badge',
-                            'title',
-                            'image',
-                            'description',
-                            'price',
-                            'date'
-                        ],
-                        'tour2'=>[
-                            'badge',
-                            'title',
-                            'image',
-                            'description',
-                            'price',
-                            'date'
-                        ],
-                        'tour3'=>[
-                            'badge',
-                            'image',
-                            'title',
-                            'description',
-                            'price',
-                            'date'
-                        ],
-                        'tour4'=>[
-                            'badge',
-                            'image',
-                            'title',
-                            'description',
-                            'price',
-                            'date'
-                        ],
+                    'destination2' => [
+                        'name_2',
+                        'image_2'
+                    ],
+                    'destination3' => [
+                        'name_3',
+                        'image_3'
+                    ],
+
+                    'tour1'=>[
+                        'badge_1',
+                        'title_1',
+                        'image_1',
+                        'description_1',
+                        'price_1',
+                        'date_1'
+                    ],
+                    'tour2'=>[
+                        'badge_2',
+                        'title_2',
+                        'image_2',
+                        'description_2',
+                        'price_2',
+                        'date_2'
+                    ],
+                    'tour3'=>[
+                        'badge_3',
+                        'image_3',
+                        'title_3',
+                        'description_3',
+                        'price_3',
+                        'date_3'
+                    ],
+                    'tour4'=>[
+                        'badge_4',
+                        'image_4',
+                        'title_4',
+                        'description_4',
+                        'price_4',
+                        'date_4'
                     ],
                     'footer'=>[
                         'footer_title',

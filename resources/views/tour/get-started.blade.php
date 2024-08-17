@@ -3,6 +3,7 @@
     if(!blank($answers)){
         $settingValues = $answers;
     }
+    // dd($settingValues);
 @endphp
 <link rel="stylesheet" src="{{asset('css/header.css')}}">
 <link rel="stylesheet" src="{{asset('css/tour.css')}}">
@@ -1051,24 +1052,25 @@
 <section class="custom-section bg-light">
     <div class="container mt-5">
         <h1 class="mb-5">More Tours</h1>
-        @if(isset($settingValues->tours))
+        @if(isset($settingValues->tour1) && $settingValues->tour1->badge_1)
         <div class="row">
-            @foreach($settingValues->tours as $tour)
+            @php
+                $images = ['mountains.png','hills.png','bike.png','lake.png'];
+            @endphp
+            @foreach([$settingValues->tour1,$settingValues->tour2,$settingValues->tour3,$settingValues->tour4] as $tour)
                 <div class="col-md-3">
                     <div class="journey-card">
                         <div class="position-relative">
-                            <img src="{{ asset($tour->image) }}" alt="{{ $tour->altText }}">
-                            @if($tour->badge)
-                                <div class="badge">{{ $tour->badge }}</div>
-                            @endif
+                            <img src="{{ $tour?->{'image_'.$loop->iteration}?? asset('images/tour/'.$images[$loop->index]) }}" alt="not found">
+                            <div class="badge">{{ $tour?->{'badge_'.$loop->iteration}?? 'Featured Experience' }}</div>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $tour->title }}</h5>
-                            <p class="card-text">{{ $tour->description }}</p>
+                            <h5 class="card-title">{{ $tour?->{'title_'.$loop->iteration}??'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }}</h5>
+                            <p class="card-text">{{ $tour?->{'description_'.$loop->iteration }??'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aperiam sit iure ex, dicta nemo sunt recusandae voluptates, reprehenderit inventore amet et a incidunt? Vel aperiam modi nobis mollitia voluptates.' }}</p>
                         </div>
                         <div class="card-footer">
-                            <b>{{ $tour->price }}</b>
-                            <b>{{ $tour->dates }}</b>
+                            <b>{{ $tour?->{'price_'.$loop->iteration }??'Starting at $389' }}</b>
+                            <b>{{ $tour?->{'date_'.$loop->iteration }??'15-25 October 2024'}}</b>
                         </div>
                     </div>
                 </div>

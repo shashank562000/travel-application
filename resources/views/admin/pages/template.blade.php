@@ -114,7 +114,7 @@ if(isset($answers)){
                                             <input type="date" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control">
                                         @else
                                         <input type="text" name="{{ $title."**".$option }}" value="{{ $value }}" class="form-control {{str_contains(strtolower($option),'tag') ? 'tag' : '' }}">
-                                        <b>{{ str_contains(strtolower($option),'tag') ? 'One word maximum' : '' }}</b>
+                                        <b>{{ str_contains(strtolower($option),'tag') || str_contains(strtolower($option),'badge') ? 'One word maximum' : '' }}</b>
                                         <span class="text-danger"></span>
                                         @endif
                                     @endif

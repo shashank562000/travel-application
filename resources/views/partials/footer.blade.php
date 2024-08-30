@@ -50,21 +50,11 @@
 
         <div class="textwidget custom-html-widget">
             <span class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px ;display: block ;">
-                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" rel="noopener"><i class="fa fa-facebook"></i></a>
-
-                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="instagram" rel="noopener"><i class="fa fa-instagram"></i></a>
-                <a href="#" target="_blank" class="gdlr-core-social-network-icon" title="youtube" rel="noopener"><i class="fa fa-youtube"></i></a>
+                <img class="icon-img" src="{{asset('images/icons/FB.png')}}"/>
+                <img class="icon-img" src="{{asset('images/icons/insta.png')}}"/>
+                <img class="icon-img" src="{{asset('images/icons/youtube.png')}}"/>
             </span>
         </div>
-
-        <!-- <div class="row justify-content-center align-items-center mt-2 mb-2">
-            <div class="text-center ">
-                <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-youtube-play" aria-hidden="true"></i>
-            </div>
-        </div> -->
         @include('partials.footer-bottom')
     </div>
 </section>
